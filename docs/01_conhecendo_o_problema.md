@@ -59,15 +59,18 @@ Uma hipótese explicitada é melhor do que uma suposição escondida.
 
 | Nome completo | Matrícula | GitHub |
 |---|---:|---|
-| {{...}} | {{...}} | {{...}} |
+| Willian Verenka Oliveira Silva | 22.124.081-5 | https://github.com/willianverenka |
+| Gabriel Lovato | 22.123.004-8 | https://github.com/gabriellovato7 |
+| Théo Zago Zimmermann | 22.123.035-2 | https://github.com/theozago |
+| João Vitor Sitta | 22.123.054-3 | https://github.com/JVSittaG |
 
 ## 0.2 Título atual do TCC
 
-{{...}}
+Diagnóstico de falhas em sistemas distribuídos por pipeline em dois estágios: filtragem estrutural em grafos de observabilidade e geração de hipóteses com LLMs
 
 ## 0.3 Orientador(a)
 
-{{...}}
+Leonardo Anjoletto Ferreira
 
 ## 0.4 Qual é o resultado principal atualmente previsto no TCC?
 
@@ -79,7 +82,7 @@ Marque e descreva:
 - [ ] biblioteca/API/framework;
 - [ ] análise de dataset;
 - [ ] estudo/benchmark/avaliação experimental;
-- [ ] infraestrutura/backend;
+- [ x ] infraestrutura/backend;
 - [ ] componente embarcado/IoT;
 - [ ] outro: {{...}}.
 
@@ -88,7 +91,7 @@ Marque e descreva:
 ## 0.5 O TCC já previa desenvolvimento de interface com usuário?
 
 - [ ] Sim, a interface já faz parte do TCC.
-- [ ] Parcialmente; existe alguma interação, mas ainda não está bem definida.
+- [ x ] Parcialmente; existe alguma interação, mas ainda não está bem definida.
 - [ ] Não. O TCC é predominantemente técnico e não previa interface.
 
 **Explique o que está formalmente previsto no TCC:** {{...}}
@@ -101,7 +104,7 @@ Marque e descreva:
 
 ## 1.1 Explique o TCC em uma frase, sem citar linguagem de programação, framework ou banco de dados.
 
-{{...}}
+Algoritmos para analisar e auxiliar o diagnóstico de problemas em sistemas distribuídos.
 
 ## 1.2 Qual situação, atividade ou problema do mundo real motivou o TCC?
 
@@ -115,11 +118,11 @@ Complete, se ajudar:
 
 Exemplos: otimizar consultas; classificar imagens; detectar anomalias; comparar modelos; identificar padrões; prever demanda; analisar desempenho; gerar resumos; recomendar configurações.
 
-{{...}}
+“Nosso TCC permite que profissionais da tecnologia detectem problemas e suas possíveis origens a partir de classificações e explicações plausíveis de erros.
 
 ## 1.4 O que se espera que esteja diferente **para pessoas, organizações ou processos** se essa contribuição for bem-sucedida?
 
-{{[F/H/?] ...}}
+[H] Espera-se que pessoas que estejam monitorando sistemas distribuídos possam ter maior visibilidade dos erros que estão acontecendo e que consigam entender a causa raíz de forma rápida, a fim de contribuir também para uma ação assertiva adequada.
 
 ## 1.5 O que é mérito técnico/científico do TCC e o que seria uma possível aplicação prática?
 
@@ -135,7 +138,7 @@ Exemplos: otimizar consultas; classificar imagens; detectar anomalias; comparar 
 
 Se não houver interface prevista no TCC, escreva `NÃO SE APLICA AO ESCOPO ORIGINAL` e prossiga para 2.2.
 
-{{[F/H/?] ...}}
+[F] Desenvolvedores, administradores de sistema, gestores de equipes de tecnologia, DevOps, SRE's (Site Reliability Engineer) e QA's.
 
 ## 2.2 Quem poderia **usar, configurar, administrar, operar, interpretar ou tomar decisões** a partir da contribuição técnica?
 
@@ -143,19 +146,22 @@ Considere perfis profissionais e stakeholders, não apenas consumidores finais.
 
 | Perfil | Relação com a contribuição | O que faria | Status/evidência |
 |---|---|---|---|
-| {{DBA / analista / gestor / técnico / pesquisador / usuário final...}} | {{...}} | {{...}} | F / H / ? |
+| Desenvolvedor | Responsável por atualizar o código para correções | Utilizaria a telemetria e hipóteses geradas para resolver bugs pela causa raiz no código  | F |
+| SRE | Responsável por monitorar infraestrutura | Utilizaria a telemetria para determinar a saúde (a nível de aplicação ou infraestrutura) dos sistemas  | F |
+| Gestor de equipe | Alocar recursos (humanos) para manutenção do sistema | Utilizaria as evidências e propagações de erros para priorizar correções de problemas específicos e alocar desenvolvedores para a correção | F |
+
 
 ## 2.3 Existem pessoas afetadas que não usariam a interface diretamente?
 
 | Stakeholder | Como é afetado | Usa interface? | Status/evidência |
 |---|---|---|---|
-| {{...}} | {{...}} | sim/não | {{...}} |
+| Representante da empresa (relacionamento com cliente) | Terá insumos para comunicar instabilidades no sistema para clientes e parceiros estratégicos | não | F |
 
 ## 2.4 Que características desses perfis podem influenciar a interação?
 
 Considere conhecimento do domínio, experiência tecnológica, frequência de uso, necessidades de acessibilidade, responsabilidade profissional, familiaridade com métricas, linguagem técnica, urgência etc.
 
-{{[F/H/?] ...}}
+[F] O conhecimento técnico da arquitetura dos sistemas, entendimento da temática (domínio) e a familiaridade com telemetria de sistemas distribuídos podem influenciar a interação com a ferramenta, de forma positiva ou negativa. 
 
 ---
 
@@ -165,23 +171,23 @@ Considere conhecimento do domínio, experiência tecnológica, frequência de us
 
 Não responda “usar o algoritmo”, “clicar no sistema” ou “ver o dashboard”.
 
-{{[F/H/?] ...}}
+[H] Diagnosticar e entender problemas complexos em sistemas distribuídos de forma rápida e com evidências concentradas.
 
 ## 3.2 Quais são as atividades mais importantes?
 
 | ID | Atividade/objetivo | Quem realiza | Frequência/criticidade inicial | Status/evidência |
 |---|---|---|---|---|
-| A01 | {{...}} | {{...}} | {{...}} | {{...}} |
-| A02 | {{...}} | {{...}} | {{...}} | {{...}} |
-| A03 | {{...}} | {{...}} | {{...}} | {{...}} |
+| A01 | Corrigir bugs | Desenvolvedor | Diariamente | {{...}} |
+| A02 | Classificar a saúde do sistema | SRE | Diariamente | {{...}} |
+| A03 | Classificar se bugs foram realmente resolvidos | QA's | Diariamente | {{...}} |
 
 ## 3.3 Qual atividade parece mais frequente? Por quê?
 
-{{[F/H/?] ...}}
+[F] A02 deve ser a mais frequente. O escopo do SRE é mais fechado, e a maior responsabilidade do profissional é justamente entender o estado atual dos sistemas e identificar problemas que podem estar ocorrendo em tempo real. Por conta disso, ele utilizaria a ferramenta o tempo todo como forma de apoio para apontar áreas problemáticas do sistema e poder reportar de forma adequada.
 
 ## 3.4 Qual parece mais crítica? Que consequência existe se for mal executada?
 
-{{[F/H/?] ...}}
+[H] A02 deve ser também a mais crítica. Por que engloba o caso que, caso existam áreas do sistema que estejam falhando frequentemente e a ferramenta não reporte de forma evidente, então se enfrenta uma situação que não há visibilidade suficiente de erros para o monitoramento, e é justamente o propósito da ferramenta.
 
 ---
 
@@ -191,25 +197,25 @@ Não responda “usar o algoritmo”, “clicar no sistema” ou “ver o dashbo
 
 Pode existir software concorrente, linha de comando, planilha, notebook, script, painel técnico, processo manual, consulta a logs, análise visual, troca de mensagens, decisão por especialista etc.
 
-{{[F/H/?] ...}}
+[F] Existem softwares concorrentes, como DynaTrace e DataDog. Ainda sim, para diagnóstico de problemas, ainda depende da consulta de logs de partes faltosas e da construção uma relação causal para entender como que um erro aconteceu e qual foi seu impacto.
 
 ## 4.2 O que é difícil, demorado, confuso, repetitivo, arriscado ou pouco transparente?
 
-{{[F/H/?] ...}}
+[H] É demorado pra encontrar os logs relevantes para análise técnica, e é difícil construir a relação pra entender qual foi a causa raíz do erro.
 
 ## 4.3 Que informações o profissional precisa interpretar para tomar decisão?
 
-{{[F/H/?] ...}}
+Logs, telemetria do sistema, funcionamento da codebase e o conhecimento do domínio para entender o impacto do usuário.
 
 ## 4.4 O que acontece quando a atividade falha ou quando o resultado é interpretado incorretamente?
 
-{{[F/H/?] ...}}
+[F] A análise errônea leva a uma ação inadequada, como uma correção de um bug de forma parcial, ou até mesmo a falha em resolver este problema.
 
 ## 4.5 Conte uma situação concreta.
 
 Escreva uma pequena narrativa com pessoa, objetivo, atividade, contexto, dificuldade e consequência. **Não descreva ainda a futura solução.**
 
-{{[F/H/?] narrativa...}}
+[F] Um desenvolvedor é comunicado de um erro em certo sistema. Para entender o problema e planejar sua ação de correção, ele utiliza uma plataforma para pesquisar a telemetria e logs produzidos por aquele problema que está procurando. A dificuldade está em encontrar as evidências corretas em tempo hábil para trabalhar em sua solução, e a consequência é a baixa assertividade e a demora para o diagnóstico da causa raiz do problema.
 
 ## 4.6 Que evidência existe hoje?
 
@@ -223,17 +229,17 @@ Escreva uma pequena narrativa com pessoa, objetivo, atividade, contexto, dificul
 
 ## 5.1 Onde e em quais situações a interação poderia ocorrer?
 
-{{[F/H/?] ...}}
+[F] Em qualquer local do sistema, momentos após deploys e atualizações no sistema são propícios para aparição de novos erros, e a ferramenta auxilia nestes cenários. Também para a procura de bugs específicos já mapeados.
 
 ## 5.2 Em quais dispositivos/equipamentos?
 
-{{[F/H/?] ...}}
+[F] Nos servidores que hospedam os serviços que compõem o sistema. 
 
 ## 5.3 Existem condições físicas relevantes?
 
 Considere iluminação, ruído, mobilidade, conexão, privacidade, uso compartilhado, interrupções, pressão de tempo etc.
 
-{{[F/H/?] ...}}
+[F] A pressão de tempo é um fator determinante, alguns usuários, como o desenvolvedor, possuem um prazo máximo estipulado por seus superiores para diagnosticar, planejar e executar a resolução do problema.
 
 ## 5.4 Existem fatores sociais ou organizacionais?
 
@@ -243,12 +249,11 @@ Considere papéis, chefias, equipes, permissões, aprovação, responsabilidade 
 
 ## 5.5 Existe necessidade de histórico, rastreabilidade ou auditoria?
 
-{{[F/H/?] ...}}
+[F] Existe a necessidade de auditoria e restrição do uso, pois os logs dos sistemas podem revelar informações sensíveis sobre dados de usuários, por exemplo. Portanto, o acesso à esses dados e filtros deve ser limitado e planejado para perfis de usuários específicos.
 
 ## 5.6 Um erro pode produzir consequência relevante? Qual?
 
-{{[F/H/?] ...}}
-
+[F] Pode contribuir para a continuidade de sistemas faltosos e inconfiáveis, prejudicando o fornecimento do produto/software e o relacionamento com os clientes.
 ---
 
 # 6. Entendendo mercado e alternativas existentes
@@ -263,13 +268,13 @@ Considere papéis, chefias, equipes, permissões, aprovação, responsabilidade 
 
 ## 6.2 Existem produtos que atuam na mesma área, mesmo sem serem equivalentes ao TCC?
 
-{{[F/H/?] ...}}
+[F] DataDog, DynaTrace são equivalentes, mas também existem produtos da mesma área como o Grafana, Application Insights, etc.
 
 ## 6.3 Quais interfaces profissionais esse público já conhece?
 
 Exemplos possíveis: ferramentas de banco, IDEs, consoles de nuvem, dashboards, plataformas de dados, ferramentas de monitoramento, painéis de IA, sistemas administrativos.
 
-{{[F/H/?] ...}}
+Ferramentas de monitoramento de telemetria de aplicações e logs. 
 
 ## 6.4 O que essas soluções parecem fazer bem?
 
