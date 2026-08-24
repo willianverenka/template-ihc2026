@@ -1,7 +1,7 @@
 # Entrega 1 — Conhecendo o projeto, o usuário e o problema
 
-**Data:** {{dd/mm/aaaa}}  
-**Status:** ⬜ não iniciada  
+**Data:** 17/08/2026 
+**Status:** em andamento 
 **Responsabilidade:** 1 solução consolidada por equipe
 
 ## Objetivo da atividade
@@ -86,7 +86,7 @@ Marque e descreva:
 - [ ] componente embarcado/IoT;
 - [ ] outro: {{...}}.
 
-**Descrição:** {{...}}
+**Descrição:** O TCC prevê um pipeline de diagnóstico de falhas em sistemas distribuídos que, no primeiro estágio, filtra estruturalmente um grafo de observabilidade para selecionar evidências relevantes e, no segundo, utiliza um modelo de linguagem de grande porte para gerar hipóteses plausíveis sobre a origem da falha.
 
 ## 0.5 O TCC já previa desenvolvimento de interface com usuário?
 
@@ -94,7 +94,9 @@ Marque e descreva:
 - [ x ] Parcialmente; existe alguma interação, mas ainda não está bem definida.
 - [ ] Não. O TCC é predominantemente técnico e não previa interface.
 
-**Explique o que está formalmente previsto no TCC:** {{...}}
+**Explique o que está formalmente previsto no TCC:** 
+
+Formalmente, o TCC prevê a construção e a avaliação técnica do pipeline de diagnóstico, incluindo os mecanismos necessários para fornecer dados de observabilidade e consultar os resultados produzidos. Existe uma interação técnica parcialmente prevista, mas uma interface completa orientada a um produto ainda não está definida. 
 
 > Esta resposta serve para separar o compromisso do TCC do projeto da disciplina. Mesmo quando a opção for **não**, a equipe irá definir uma interface para exercitar IHC.
 
@@ -108,7 +110,7 @@ Algoritmos para analisar e auxiliar o diagnóstico de problemas em sistemas dist
 
 ## 1.2 Qual situação, atividade ou problema do mundo real motivou o TCC?
 
-{{[F/H/?] ...}}
+[F] Como dois devs participantes no grupo, notamos que diariamente em nosso trabalhos nós nos encontravamos perdendo muito tempo filtrando logs de sistemas, em quantidades massivas, de forma manual distribuídos para formar uma análise diagnóstica, e a motivação foi justamente trabalhar em métodos para fornecer ferramentas que mitiguem este problema. 
 
 ## 1.3 Qual é a **capacidade/contribuição central** produzida pelo TCC?
 
@@ -118,7 +120,7 @@ Complete, se ajudar:
 
 Exemplos: otimizar consultas; classificar imagens; detectar anomalias; comparar modelos; identificar padrões; prever demanda; analisar desempenho; gerar resumos; recomendar configurações.
 
-“Nosso TCC permite que profissionais da tecnologia detectem problemas e suas possíveis origens a partir de classificações e explicações plausíveis de erros.
+Nosso TCC investiga um pipeline que reduz o espaço de busca em dados de observabilidade por meio de filtragem estrutural em grafos e gera hipóteses plausíveis para apoiar o diagnóstico de falhas em sistemas distribuídos.
 
 ## 1.4 O que se espera que esteja diferente **para pessoas, organizações ou processos** se essa contribuição for bem-sucedida?
 
@@ -128,7 +130,7 @@ Exemplos: otimizar consultas; classificar imagens; detectar anomalias; comparar 
 
 | Mérito/contribuição técnica | Possível aplicação/valor em uso |
 |---|---|
-| {{...}} | {{...}} |
+| Filtragem estrutural de grafos de observabilidade e geração de hipóteses diagnósticas com LLM | Apoiar profissionais na investigação de incidentes, concentrando evidências relevantes e oferecendo hipóteses inspecionáveis para orientar o diagnóstico inicial |
 
 ---
 
@@ -245,7 +247,7 @@ Considere iluminação, ruído, mobilidade, conexão, privacidade, uso compartil
 
 Considere papéis, chefias, equipes, permissões, aprovação, responsabilidade profissional, auditoria, turnos e colaboração.
 
-{{[F/H/?] ...}}
+[H] H04: A investigação de incidentes ocorre sob pressão de tempo e pode envolver colaboração entre o SRE de plantão, desenvolvedores responsáveis pelos serviços e gestores. Políticas de acesso, responsabilidade sobre cada serviço e a possível presença de dados sensíveis na telemetria também podem limitar quem consulta, compartilha ou registra evidências.
 
 ## 5.5 Existe necessidade de histórico, rastreabilidade ou auditoria?
 
@@ -264,7 +266,8 @@ Considere papéis, chefias, equipes, permissões, aprovação, responsabilidade 
 
 | Alternativa atual | Quem usa | Para quê | Status/evidência |
 |---|---|---|---|
-| {{...}} | {{...}} | {{...}} | {{...}} |
+| Consulta e filtragem manual de logs, métricas e traces | SREs e desenvolvedores | Localizar sintomas e evidências de um incidente | {{...}} |
+| Mapas de serviços e navegação entre sinais de observabilidade | SREs e DevOps | Investigar dependências e propagação da falha | {{...}} |
 
 ## 6.2 Existem produtos que atuam na mesma área, mesmo sem serem equivalentes ao TCC?
 
@@ -278,15 +281,15 @@ Ferramentas de monitoramento de telemetria de aplicações e logs.
 
 ## 6.4 O que essas soluções parecem fazer bem?
 
-{{[F/H/?] ...}}
+[F] As soluções existentes concentram sinais de observabilidade, oferecem filtros por serviço e período, permitem aprofundamento em logs e traces e apresentam relações entre componentes. Algumas também agrupam anomalias e apresentam candidatos a causa.
 
 ## 6.5 O que parecem fazer mal, dificultar ou não atender?
 
-{{[F/H/?] ...}}
+Apresentam dados que são heterogêneos uniformimente, dificulta a formulação de hipóteses de causalidade e, por consequência, um diagnóstico técnico.
 
 ## 6.6 Que padrões de interface ou vocabulário parecem familiares a esse público?
 
-{{[F/H/?] ...}}
+[F] São familiares padrões como seleção de intervalo de tempo, filtros por serviço e ambiente, severidade e estado do incidente, mapas de dependências, listas de ocorrências e aprofundamento progressivo do resumo para logs, métricas e traces.
 
 ---
 
@@ -298,7 +301,7 @@ Ferramentas de monitoramento de telemetria de aplicações e logs.
 
 Explique qual parte da interface será usada como recorte da disciplina e por que esse fluxo é relevante.
 
-{{...}}
+Será explorado o fluxo de investigação de um único incidente: delimitação do serviço e período afetados, acompanhamento do processamento, inspeção do subgrafo de observabilidade, avaliação das hipóteses geradas e consulta às evidências relacionadas. O fluxo é relevante porque apoia diretamente o diagnóstico do usuário.
 
 ### Caminho B — TCC não possui interface prevista
 
@@ -319,13 +322,15 @@ Responda:
 
 ## 7.2 Qual perfil será priorizado no projeto de IHC?
 
-{{...}}
+SRE.
 
-**Por que esse perfil foi escolhido?** {{...}}
+**Por que esse perfil foi escolhido?** 
+
+esse perfil lida diretamente com telemetria, precisa entender rapidamente a propagação das falhas e conecta o resultado do pipeline às decisões operacionais e ao encaminhamento para desenvolvedores.
 
 ## 7.3 Qual objetivo desse usuário será priorizado?
 
-{{...}}
+Formular e comunicar um diagnóstico inicial fundamentado sobre a provável origem e o impacto de um incidente.
 
 ## 7.4 Que interface será explorada na disciplina?
 
@@ -333,12 +338,12 @@ Complete:
 
 > **Para fins da disciplina de IHC, será projetada uma interface que permita a `{{perfil}}` utilizar `{{capacidade/resultado do TCC}}` para `{{objetivo}}`, no contexto de `{{situação}}`.**
 
-{{...}}
+Para fins da disciplina de IHC, será projetada uma interface que permita a um SRE de plantão utilizar o subgrafo de observabilidade filtrado e as hipóteses geradas pelo pipeline para formular e comunicar um diagnóstico inicial fundamentado de um incidente, sob pressão de tempo após um alerta ou implantação.
 
 ## 7.5 Qual é a relação dessa interface com o TCC?
 
 - [ ] Já fazia parte do TCC.
-- [ ] É um aprofundamento de algo parcialmente previsto.
+- [ x ] É um aprofundamento de algo parcialmente previsto.
 - [ ] É uma extensão conceitual criada para a disciplina.
 - [ ] É um protótipo demonstrativo de aplicação potencial.
 - [ ] Outra: {{...}}.
@@ -355,20 +360,20 @@ Marque apenas as que parecem plausíveis e explique o objetivo correspondente.
 
 | Possibilidade | Pode fazer sentido? | Objetivo/tarefa que justificaria | Evidência atual |
 |---|---|---|---|
-| Dashboard/visão geral | sim/não/talvez | {{...}} | {{...}} |
-| Configuração/parametrização | sim/não/talvez | {{...}} | {{...}} |
-| Entrada/upload/seleção de dados | sim/não/talvez | {{...}} | {{...}} |
-| Acompanhamento de processamento | sim/não/talvez | {{...}} | {{...}} |
-| Relatório/resultados | sim/não/talvez | {{...}} | {{...}} |
-| Histórico com busca/filtros | sim/não/talvez | {{...}} | {{...}} |
-| Comparação de resultados | sim/não/talvez | {{...}} | {{...}} |
-| Explicabilidade/detalhamento | sim/não/talvez | {{...}} | {{...}} |
-| Administração/configurações globais | sim/não/talvez | {{...}} | {{...}} |
-| Usuários/perfis/permissões | sim/não/talvez | {{...}} | {{...}} |
-| CRUD de entidade do domínio | sim/não/talvez | {{...}} | {{...}} |
-| Auditoria/logs | sim/não/talvez | {{...}} | {{...}} |
-| Alertas/ocorrências | sim/não/talvez | {{...}} | {{...}} |
-| Ajuda/documentação | sim/não/talvez | {{...}} | {{...}} |
+| Dashboard/visão geral | sim | entender a saúde geral da aplicação | {{...}} |
+| Configuração/parametrização | sim | configurar a frequência da ingestão e processamento de dados | {{...}} |
+| Entrada/upload/seleção de dados | sim | selecionar quais dados serão ingeridos | {{...}} |
+| Acompanhamento de processamento | talvez | entender a quantidade de dados que ainda não foram processados, já que são potenciais insumos para análise | {{...}} |
+| Relatório/resultados | sim | {{...}} | {{...}} |
+| Histórico com busca/filtros | não | {{...}} | {{...}} |
+| Comparação de resultados | não | {{...}} | {{...}} |
+| Explicabilidade/detalhamento | sim | detalhamento de erros individuais em vértices dos grafos para enriquecer a análise do usuário | {{...}} |
+| Administração/configurações globais | não | {{...}} | {{...}} |
+| Usuários/perfis/permissões | talvez | restringir o acesso a pessoas autorizadas | {{...}} |
+| CRUD de entidade do domínio | não | {{...}} | {{...}} |
+| Auditoria/logs | talvez | {{...}} | {{...}} |
+| Alertas/ocorrências | sim | alertar sobre erros recorrentes que estão se propagando pelos serviços, também sobre erros e quedas críticas | {{...}} |
+| Ajuda/documentação | não | {{...}} | {{...}} |
 
 > **Atenção:** “login + dashboard + CRUD” não é uma solução universal. Cada padrão deve surgir de uma tarefa real.
 
@@ -380,13 +385,15 @@ Marque apenas as que parecem plausíveis e explique o objetivo correspondente.
 
 | Benefício esperado | Problema/necessidade | Usuário | Status/evidência |
 |---|---|---|---|
-| {{...}} | {{...}} | {{...}} | {{...}} |
+| Reduzir o esforço para reunir e interpretar evidências durante a investigação de um incidente | Telemetria dispersa e dificuldade de estabelecer uma relação provável entre sintomas e origem | SRE | {{...}} |
 
 ## 9.2 Que ações o usuário deverá conseguir realizar?
 
 | ID | O usuário precisa conseguir... | Para alcançar... | Prioridade inicial |
 |---|---|---|---|
-| F01 | {{ação}} | {{objetivo}} | alta/média/baixa |
+| F01 | Delimitar o incidente por serviço, sintoma e período | Restringir o espaço/amostra de evidências | média |
+| F02 | Inspecionar o subgrafo e os componentes afetados | Compreender a propagação da falha | alta |
+| F03 | Examinar hipóteses e suas evidências | Formular um diagnóstico fundamentado | alta |
 
 ## 9.3 Tecnologias/restrições já definidas no TCC
 
@@ -465,20 +472,20 @@ Essa síntese ajuda a apresentar o projeto para público não especializado sem 
 # Checklist de qualidade
 
 - [ ] Está clara a diferença entre tema do TCC, escopo formal do TCC e escopo de IHC.
-- [ ] A equipe declarou se o TCC já previa interface.
+- [ x ] A equipe declarou se o TCC já previa interface.
 - [ ] Se não previa, foi derivado um usuário plausível e um objetivo de uso.
-- [ ] A interface de IHC não foi apresentada como obrigação automática do TCC.
-- [ ] A contribuição do TCC foi descrita sem começar por tecnologias de implementação.
-- [ ] Usuários diretos e stakeholders foram diferenciados.
-- [ ] Foram considerados profissionais que configuram, administram, interpretam ou decidem, quando pertinente.
-- [ ] Objetivo do usuário não foi confundido com objetivo do projeto.
-- [ ] Processo/problema atual foi descrito antes da solução.
-- [ ] Existe situação concreta de uso/problema.
-- [ ] Contexto físico, social/organizacional, dispositivos e consequências de erro foram considerados.
-- [ ] Mercado/alternativas existentes foram levantados inicialmente.
-- [ ] Possibilidades como dashboard, relatório, histórico, filtros e CRUD foram tratadas como hipóteses de solução, não como requisitos automáticos.
-- [ ] Cada possibilidade de interface tem um objetivo/tarefa que poderia justificá-la.
-- [ ] Afirmações relevantes estão marcadas `[F]`, `[H]` ou `[?]`.
+- [ x ] A interface de IHC não foi apresentada como obrigação automática do TCC.
+- [ x ] A contribuição do TCC foi descrita sem começar por tecnologias de implementação.
+- [ x ] Usuários diretos e stakeholders foram diferenciados.
+- [ x ] Foram considerados profissionais que configuram, administram, interpretam ou decidem, quando pertinente.
+- [ x ] Objetivo do usuário não foi confundido com objetivo do projeto.
+- [ x ] Processo/problema atual foi descrito antes da solução.
+- [ x ] Existe situação concreta de uso/problema.
+- [ x ] Contexto físico, social/organizacional, dispositivos e consequências de erro foram considerados.
+- [ x ] Mercado/alternativas existentes foram levantados inicialmente.
+- [ x ] Possibilidades como dashboard, relatório, histórico, filtros e CRUD foram tratadas como hipóteses de solução, não como requisitos automáticos.
+- [ x ] Cada possibilidade de interface tem um objetivo/tarefa que poderia justificá-la.
+- [ x ] Afirmações relevantes estão marcadas `[F]`, `[H]` ou `[?]`.
 - [ ] Hipóteses prioritárias receberam IDs e foram para a rastreabilidade.
 - [ ] O recorte de IHC é viável para modelar, prototipar e avaliar no semestre.
-- [ ] A equipe consegue explicar problema humano → contribuição computacional → forma de uso.
+- [ x ] A equipe consegue explicar problema humano → contribuição computacional → forma de uso.
