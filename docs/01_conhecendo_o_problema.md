@@ -409,9 +409,9 @@ A tecnologia aparece **agora**, depois do entendimento do uso.
 
 | ID | Hipótese/dúvida | Por que importa | Como poderá ser investigada |
 |---|---|---|---|
-| H01 | {{...}} | {{...}} | Entrega 2/3/7/... |
-| H02 | {{...}} | {{...}} | {{...}} |
-| H03 | {{...}} | {{...}} | {{...}} |
+| H01 | [H] A visualização da estrutura de dependências entre serviços e spans será relevante para que o SRE compreenda a propagação da falha. | O TCC utiliza grafos de spans como representação estrutural e a interface proposta prevê a inspeção do subgrafo. É necessário descobrir quanto dessa estrutura deve ser apresentada ao usuário e em qual nível de detalhe. | Entrega 2/3/7/... |
+| H02 | [?] Ainda não sabemos qual quantidade de detalhes deve ser apresentada inicialmente para equilibrar compreensão e redução de sobrecarga cognitiva. | Mostrar o trace completo pode reproduzir o problema original de excesso de informação, enquanto uma filtragem muito agressiva pode ocultar evidências relevantes. | {{...}} |
+| H03 | [H] As hipóteses geradas pelo LLM serão mais úteis ao SRE quando apresentadas acompanhadas das evidências estruturais que as sustentam, em vez de apresentadas apenas como uma conclusão textual. | O TCC gera uma hipótese diagnóstica estruturada, mas a utilização profissional depende da capacidade do usuário de avaliar criticamente a resposta. A apresentação das evidências pode ser necessária para que o resultado seja interpretável e confiável. | {{...}} |
 
 Registre em [`../RASTREABILIDADE.md`](../RASTREABILIDADE.md).
 
@@ -421,23 +421,23 @@ Registre em [`../RASTREABILIDADE.md`](../RASTREABILIDADE.md).
 
 | Pergunta | Síntese atual |
 |---|---|
-| Qual é a contribuição central do TCC? | {{...}} |
-| O TCC já previa interface? | {{...}} |
-| Quem é o usuário prioritário de IHC? | {{...}} |
-| O que ele precisa alcançar? | {{...}} |
-| Qual problema/atividade será estudado? | {{...}} |
-| Como isso acontece hoje? | {{...}} |
-| Qual é o contexto de uso? | {{...}} |
+| Qual é a contribuição central do TCC? | O TCC utiliza um pipeline em dois estágios para apoiar o diagnóstico de falhas em sistemas distribuídos. O primeiro estágio representa traces como grafos e realiza uma filtragem estrutural por GNN ou heurística; o segundo utiliza um LLM para transformar a evidência selecionada em uma hipótese diagnóstica estruturada. |
+| O TCC já previa interface? | Não completamente. O escopo formal prevê a construção e avaliação técnica do pipeline e os mecanismos necessários para fornecer dados de observabilidade e consultar seus resultados, mas não define uma interface completa orientada a um produto. |
+| Quem é o usuário prioritário de IHC? | SRE |
+| O que ele precisa alcançar? | Identificar e formular uma resolução sobre a provável origem e o impacto de um incidente |
+| Qual problema/atividade será estudado? | A investigação de incidentes em sistemas distribuídos, especialmente o processo de localizar evidências relevantes em grandes volumes de telemetria e compreender a propagação de uma falha entre diferentes serviços. |
+| Como isso acontece hoje? | O profissional utiliza plataformas de observabilidade para consultar e filtrar logs, métricas e traces. |
+| Qual é o contexto de uso? | Após alertas, deploys, atualizações ou durante a procura de bugs específicos. |
 | Que interface/recorte será explorado? | {{...}} |
-| Como a interface se relaciona ao TCC? | {{...}} |
+| Como a interface se relaciona ao TCC? | Ela utiliza o subgrafo de observabilidade filtrado e a hipótese diagnóstica gerada pelo LLM, produzido pelo pipeline. |
 | Quais pontos ainda são hipóteses? | {{H01...}} |
 
 ### Delimitação
 
-**Dentro do escopo de IHC:** {{...}}  
-**Fora do escopo de IHC:** {{...}}  
-**Dentro do escopo formal do TCC:** {{...}}  
-**Interface da disciplina será implementada no TCC?** não definido / sim / não — {{justificativa, se houver}}
+**Dentro do escopo de IHC:** Apoiar o diagnóstico inicial de um incidente, disponibilizacao do subgrafo, apresentação das hipóteses, delimitação de serviço, período e sintomas e comunicação de um diagnóstico inicial. 
+**Fora do escopo de IHC:** Treinamento da GNN, construção dos grafos, definição dos algoritmos de filtragem,,   
+**Dentro do escopo formal do TCC:** Construção e avaliação experimental do pipeline em dois estágios, incluindo a representação dos traces como grafos, filtragem estrutural por GNN e heurística, geração de hipóteses diagnósticas por LLM e comparação entre trace completo, subgrafo GNN e subgrafo heurístico segundo métricas estruturais, diagnósticas e operacionais.  
+**Interface da disciplina será implementada no TCC?** Não definido
 
 ---
 
