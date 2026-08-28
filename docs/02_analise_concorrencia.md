@@ -46,7 +46,7 @@ Delimitar um incidente → inspecionar o subgrafo → avaliar evidências → an
 
 ### Análise C01 — {{produto}}
 
-**Autor(a):** Théo Zago Zimmermann 22.123.035-2 
+**Autor(a):** Théo Zago Zimmermann 22.123.035-2  
 **Tipo:** análogo   
 **Link oficial:** [{{URL}}](https://www.datadoghq.com/dg/monitor/free-trial-b/?utm_source=google&utm_medium=paid-search&utm_campaign=dg-coreplatform-multi-ww-en-brand&utm_keyword=datadog&utm_matchtype=e&igaag=198192973844&igaat=&igacm=23852702120&igacr=808951976832&igakw=datadog&igamt=e&igant=g&utm_campaignid=23852702120&utm_adgroupid=198192973844&gad_source=1&gad_campaignid=23852702120&gbraid=0AAAAADFY9Nm7Gbuts42odNhbqKdYLKqvl&gclid=EAIaIQobChMIxaz1i_bBlgMVxUdIAB2qFDx1EAAYASAAEgKo0vD_BwE)  
 **Data de acesso:** 27/08/2026
@@ -129,21 +129,13 @@ Relação com o TCC: aproxima-se do cenário escolhido para a disciplina, no qua
 | Ponto | Evidência | Implicação para nosso projeto |
 |---|---|---|
 | Concentração de informações | Logs, traces e outros sinais podem ser investigados dentro da plataforma. | Adotar como referência. Evitar que o SRE precise procurar evidências em fontes completamente separadas. |
-
 | Filtros	 | O Log Explorer permite restringir e agrupar informações. (Datadog Monitoramento)	Adotar. |  Relaciona-se diretamente à F01 |
-
 | Visualização de dependências | O Service Map apresenta relações entre serviços. | Adotar como referência. O subgrafo do TCC pode utilizar representação visual das relações relevantes. |
-
 | Aprofundamento progressivo | O Trace Explorer permite pesquisar spans e investigar informações específicas.  | Adotar. Mostrar inicialmente apenas informações relevantes e permitir detalhamento sob demanda. |
-
 | Grande quantidade de recursos | Avaliações apontam curva de aprendizado e complexidade para alguns usuários.  | Evitar copiar. O protótipo deve apresentar apenas informações relacionadas às tarefas prioritárias. |
-
 | Integração de sinais | A plataforma trabalha com diferentes fontes de telemetria. | Adotar. Relacionar hipótese, subgrafo e evidências relevantes. |
-
 | Visualizações configuráveis | Logs podem ser visualizados e transformados em diferentes representações.  | Adotar parcialmente. A flexibilidade pode ser útil, mas não deve aumentar desnecessariamente a carga cognitiva. |
-
 | Compartilhamento	 | Explorações podem ser salvas e compartilhadas com colegas. | Considerar. Pode apoiar a comunicação do diagnóstico inicial entre SRE e desenvolvedores. |
-
 
 
 
