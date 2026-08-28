@@ -70,17 +70,11 @@ A principal contribuição desta análise, portanto, é entender como uma ferram
 | Funcionalidade | Como é realizada | Evidência/print | Observação de IHC |
 |---|---|---|---|
 | Dashboard	 | Apresenta informações de monitoramento em uma visão consolidada, permitindo acompanhar diferentes indicadores. | `-` | [F] Favorece uma visão geral antes do aprofundamento. Para o projeto, pode apoiar a tarefa de compreender rapidamente o estado do incidente. |
-
 | Log Explorer | Permite pesquisar, filtrar, agrupar e visualizar logs. | `-` | [F] O filtro reduz o conjunto de informações apresentado. É diretamente relacionado à tarefa F01 da Entrega 1 |
-
 | Trace Explorer | Permite pesquisar spans por tags e atributos e explorar traces. | `-` | [F] Permite passar de uma visão de busca para a inspeção de evidências específicas. Isso é relevante para H02. |
-
 | Service Map | Representa serviços e suas dependências observadas. | `-` | [F] É diretamente relacionado à H01, pois apresenta visualmente relações entre componentes do sistema. |
-
 | Correlação entre sinais | Permite relacionar diferentes informações de observabilidade durante a investigação. | `-` | [H] Esse padrão pode reduzir a necessidade de analisar sinais completamente isolados e pode inspirar a relação entre hipóteses e evidências do TCC. |
-
 | Alertas/monitores | Monitores acompanham condições definidas e podem sinalizar ocorrências. | `-` | [F] Pode funcionar como ponto inicial para uma investigação de incidente. |
-
 | Investigação de incidentes | A plataforma possui recursos voltados ao acompanhamento e resposta a incidentes. | `-` | {{...}} |
 
 #### Experiência do usuário e opiniões
