@@ -32,38 +32,43 @@ Antes de criar personas, retome os tipos de usuários, características relevant
 
 ## 1. Personas
 
-### Persona P01 — {{nome fictício}}
+### Persona P03 — Mariana, a Analista de QA
 
-**Autor(a):** {{nome — matrícula}}  
-**Tipo:** primária / secundária  
-**Base de evidências:** entrevista / questionário / literatura / observação / proto-persona a validar / combinação  
-**Hipóteses da Entrega 1 relacionadas:** {{H01, H02 ou —}}
+**Autor(a):** Willian Verenka Oliveira Silva - 22.124.081-5
 
-![Persona P01](../assets/03_personas/persona_p01.svg)
+**Tipo:** secundária 
+
+**Base de evidências:** Entrega 1 e das análises de interfaces profissionais de observabilidade da Entrega 2
+
+**Hipóteses da Entrega 1 relacionadas:** H02, H03, H04
 
 | Campo | Descrição |
 |---|---|
-| Faixa etária / contexto relevante | {{somente o que impacta o uso}} |
-| Ocupação/papel | {{...}} |
-| Conhecimento do domínio | {{...}} |
-| Experiência tecnológica | {{...}} |
-| Objetivos | {{...}} |
-| Necessidades | {{...}} |
-| Dores/frustrações | {{...}} |
-| Motivadores | {{...}} |
-| Restrições/acessibilidade | {{...}} |
-| Ambiente típico de uso | {{...}} |
-| Comportamentos relevantes | {{...}} |
+| Faixa etária / contexto relevante | Adulta em contexto profissional de tecnologia, 30 anos. [H] Atua em uma equipe responsável por validar correções antes de sua liberação. |
+| Ocupação/papel | Analista de Qualidade de Software (QA), responsável por verificar se falhas foram corrigidas e se a mudança não causou regressões. [F] O perfil e a atividade A03 foram identificados na Entrega 1. |
+| Conhecimento do domínio | [H] Conhece os fluxos de negócio, os critérios de aceitação e os comportamentos esperados do sistema, mas não domina toda a topologia da infraestrutura distribuída. |
+| Experiência tecnológica | [H] Tem alta familiaridade com ferramentas de teste, APIs, esteiras de integração contínua e registros de defeitos; possui experiência intermediária na consulta de logs, traces e mapas de dependências. |
+| Objetivos | Confirmar, com evidências, se a correção eliminou o comportamento observado no incidente e identificar possíveis efeitos colaterais antes da liberação. |
+| Necessidades | Receber o contexto preservado do incidente, compreender a hipótese diagnóstica e as evidências relacionadas, reproduzir o cenário em ambiente autorizado e registrar um resultado verificável. |
+| Dores/frustrações | [H] Receber um chamado sem serviço, período, ambiente ou evidências suficientes; precisar reconstruir a investigação feita por SREs e desenvolvedores; não conseguir distinguir ausência de erro de ausência de telemetria. |
+| Motivadores | [H] Evitar reincidências e regressões, dar retorno objetivo à equipe e liberar uma correção com confiança proporcional às evidências disponíveis. |
+| Restrições/acessibilidade | [H] Possui acesso limitado à telemetria de produção e trabalha sob prazo de liberação. Resultados podem estar incompletos por diferenças entre produção e homologação, cobertura parcial de instrumentação ou dados sensíveis restritos. |
+| Ambiente típico de uso | [H] Computador em ambiente de trabalho híbrido, alternando entre ferramenta de testes, sistema de chamados, comunicação da equipe e plataforma de observabilidade. |
+| Comportamentos relevantes | [H] Parte do cenário e dos critérios de aceitação, tenta reproduzir a falha, compara o comportamento observado com o esperado, consulta evidências técnicas quando necessário e comunica se a correção foi confirmada, refutada ou permaneceu inconclusiva. |
 
-**Decisões de design influenciadas por P01:**
+**Decisões de design influenciadas por P03:**
 
-- {{...}}
-
-> Repita para P02, P03... Cada integrante deve produzir ao menos uma persona.
+- **Contexto preservado no encaminhamento:** o diagnóstico compartilhado deve manter incidente, serviço, ambiente, período, hipótese e evidências examinadas, evitando que a QA reinicie a investigação do zero.
+- **Separação entre hipótese e verificação:** a interface deve diferenciar evidência observada, hipótese gerada pelo LLM e conclusão registrada por uma pessoa, sem apresentar a hipótese como correção confirmada.
+- **Cobertura e limitações visíveis:** dados ausentes, acesso restrito, instrumentação parcial e janela temporal analisada devem permanecer explícitos para que a ausência de novos erros não seja interpretada automaticamente como sucesso.
+- **Aprofundamento progressivo:** a QA deve partir de um resumo compreensível e acessar logs, traces e componentes do subgrafo sob demanda, sem exigir domínio avançado de infraestrutura para entender o incidente.
+- **Resultado verificável:** o fluxo deve permitir registrar o resultado da verificação como confirmado, refutado ou inconclusivo e associá-lo às evidências consultadas; essa necessidade ainda deve ser validada com participantes representativos.
 
 ### Síntese das personas
 
-Explique diferenças entre os perfis e qual persona é prioritária. Evite personas duplicadas que só mudam nome/foto.
+A P03 — Mariana complementa os perfis já produzidos pela equipe sem duplicar suas responsabilidades. O SRE permanece como persona primária e realiza a triagem e o diagnóstico inicial; o desenvolvedor sênior investiga o código e implementa a correção; a analista de QA verifica se o comportamento esperado foi restabelecido e procura regressões antes da liberação.
+
+Por ser secundária, P03 não amplia automaticamente o recorte para um módulo completo de gestão de testes. Sua contribuição principal é orientar a continuidade do contexto entre diagnóstico, correção e verificação, além de impedir que uma hipótese do LLM ou a ausência de telemetria seja confundida com confirmação humana. As características e os comportamentos atribuídos a Mariana permanecem como hipóteses de uma proto-persona e precisam ser investigados com profissionais representativos.
 
 ## 2. Mapa de empatia — equipe
 
