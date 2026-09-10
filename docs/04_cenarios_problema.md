@@ -1,70 +1,82 @@
 # Entrega 4 — Cenários de análise/problema
 
-**Data:** {{dd/mm/aaaa}}  
-**Status:** ⬜ não iniciada  
+**Data:** 10/09/2026  
+**Status:** 🟨 em andamento  
 **Responsabilidade:** 1 solução completa por integrante
 
 ## Objetivo da atividade
 
-Descrever situações atuais em que o usuário tenta alcançar um objetivo e encontra dificuldades. O cenário de análise/problema deve tornar visível **o contexto, os atores, as ações e as rupturas**, sem antecipar a interface que será projetada.
+Descrever situações atuais em que o usuário tenta alcançar um objetivo e encontra dificuldades. Os cenários abaixo representam situações de investigação de incidentes em sistemas distribuídos, mantendo o foco no problema e no processo atual, sem antecipar a interface que será projetada.
 
-> **Regra central:** cenário de problema é a “história do problema”. Se o texto já diz “o sistema mostra”, “o aplicativo resolve” ou descreve botões/telas futuras, provavelmente está misturando problema com solução.
+> **Observação:** os cenários são baseados principalmente nas informações levantadas na Entrega 1. Quando detalhes específicos não foram observados diretamente pela equipe, eles são tratados como hipóteses a validar, e não como fatos.
 
-Sempre que possível, o cenário deve aprofundar uma **situação concreta já registrada na Entrega 1**.
+---
 
-### Quando o TCC não possuía interface
+# Cenário C03 — Avaliação de uma hipótese antes de encaminhar a correção
 
-O cenário continua sendo uma história de **problema/atividade humana**, não uma história do futuro sistema. Descreva como o profissional realiza hoje uma atividade semelhante ou como lida atualmente com dados, resultados, configurações, logs, decisões e limitações que o tema do TCC pretende apoiar.
+**Autor(a):** Théo Zago Zimmermann — 22.123.035-2  
+**Persona(s) relacionada(s):** P01 — SRE de plantão / P02 — Desenvolvedor  
+**Necessidade relacionada:** Avaliar criticamente uma explicação provável antes de comunicar ou encaminhar uma ação de correção.  
+**Situação concreta da Entrega 1 relacionada:** Seções 3.1, 4.3 e 4.4 — formular diagnóstico fundamentado a partir de telemetria e conhecimento do domínio.  
+**Hipóteses ainda presentes:** H03, H04
 
-Exemplo: em vez de “o DBA abre o novo dashboard e executa o algoritmo”, descreva “o DBA precisa investigar uma consulta lenta, reúne informações em ferramentas distintas, compara planos manualmente e tem dificuldade para estimar o impacto de uma mudança”.
+## 1. Cenário inicial
 
-A interface da disciplina aparecerá somente depois, nos cenários de interação.
+Durante uma investigação, o SRE identifica um conjunto de serviços que apresenta comportamento anormal. Os dados indicam uma possível relação entre eventos ocorridos em diferentes componentes.
 
-Se o integrante escolher um novo problema/situação, explique por que ele passou a ser relevante e indique a evidência que motivou sua inclusão.
+O profissional precisa interpretar essas informações e construir uma explicação plausível para o incidente. Entretanto, os dados disponíveis não necessariamente determinam uma única causa.
 
-## Cenário C01 — {{título}}
+O SRE pode considerar diferentes possibilidades e consultar os registros associados a cada uma delas. Para decidir qual hipótese deve ser comunicada à equipe de desenvolvimento, ele precisa avaliar se existem evidências suficientes para sustentá-la.
 
-**Autor(a):** {{nome — matrícula}}  
-**Persona(s) relacionada(s):** {{P01}}  
-**Necessidade relacionada:** {{R01}}  
-**Situação concreta da Entrega 1 relacionada:** {{seção 4.4 / H01 / outra ou “nova situação justificada”}}  
-**Hipóteses ainda presentes:** {{H01, H02 ou —}}
+**[H] H03:** hipóteses diagnósticas acompanhadas das evidências que as sustentam podem ser mais úteis do que uma conclusão textual isolada, pois permitem ao profissional avaliar criticamente o resultado.
 
-### 1. Cenário inicial
+Uma interpretação incorreta pode fazer com que o desenvolvedor investigue ou corrija o componente errado.
 
-{{narrativa}}
-
-### 2. Questões de refinamento
-
-Use os tipos de questões/taxonomia definidos na aula. As perguntas devem revelar informações **ainda ausentes** do cenário, não repetir o que já foi respondido.
+## 2. Questões de refinamento
 
 | # | Questão | Por que precisa ser respondida | Fonte/forma de obter resposta |
 |---|---|---|---|
-| Q1 | {{...}} | {{...}} | {{...}} |
+| Q1 | Que evidências fazem o SRE considerar uma hipótese confiável o suficiente para compartilhá-la? | Define critérios de confiança e comunicação. | Entrevista com SREs. |
+| Q2 | O profissional costuma considerar mais de uma causa possível para o mesmo incidente? | Verifica se a atividade é de escolha entre hipóteses ou apenas confirmação. | Entrevista/observação. |
+| Q3 | Como o diagnóstico inicial é comunicado ao desenvolvedor? | Identifica informações necessárias para colaboração entre papéis. | Entrevista/observação. |
+| Q4 | O desenvolvedor consegue verificar as evidências apresentadas pelo SRE? | Investiga a necessidade de rastreabilidade da explicação. | Entrevista/teste contextual. |
+| Q5 | Quais informações poderiam levar o profissional a rejeitar uma hipótese? | Identifica mecanismos de validação e recuperação de uma interpretação incorreta. | Entrevista/estudo de incidentes. |
 
-### 3. Cenário refinado
+## 3. Cenário refinado
 
-Reescreva o cenário incorporando as respostas. Marque o conteúdo novo de forma consistente (por exemplo, `**[NOVO: ...]**`).
+O SRE identifica um conjunto de eventos relacionados ao incidente e observa que determinados componentes apresentaram comportamento anormal.
 
-{{narrativa refinada}}
+**[NOVO: Em vez de considerar automaticamente o primeiro componente que apresenta erro como a origem do incidente, o profissional compara a ordem temporal e as relações entre os componentes envolvidos.]**
 
-### 4. Elementos extraídos
+Ele formula uma ou mais explicações possíveis e verifica se os traces, logs e métricas disponíveis sustentam essas explicações.
+
+**[NOVO: Uma hipótese é considerada mais útil quando o profissional consegue relacioná-la a evidências observáveis e explicar por que determinado componente é considerado provável origem ou parte relevante da propagação.]**
+
+Quando a evidência é insuficiente ou contraditória, **[NOVO: o SRE pode precisar ampliar a investigação, consultar outro profissional ou revisar a hipótese inicial.]**
+
+Depois de chegar a uma interpretação que considera suficientemente fundamentada, ele comunica o diagnóstico inicial ao desenvolvedor responsável, incluindo as evidências utilizadas na análise.
+
+## 4. Elementos extraídos
 
 | Elemento | Evidência no cenário |
 |---|---|
-| Ator(es) | {{...}} |
-| Objetivo(s) | {{...}} |
-| Contexto | {{...}} |
-| Recursos/informações | {{...}} |
-| Ações | {{...}} |
-| Problemas/rupturas | {{...}} |
-| Consequências | {{...}} |
+| **Ator(es)** | SRE de plantão e desenvolvedor responsável. |
+| **Objetivo(s)** | Avaliar hipóteses e comunicar um diagnóstico inicial fundamentado. |
+| **Contexto** | Incidente com múltiplos componentes e possibilidade de diferentes causas. |
+| **Recursos/informações** | Traces, logs, métricas, relações temporais e estruturais entre serviços. |
+| **Ações** | Comparar eventos, formular hipóteses, verificar evidências, rejeitar/aceitar interpretações e comunicar diagnóstico. |
+| **Problemas/rupturas** | Dados podem ser insuficientes ou ambíguos; uma hipótese pode ser confundida com certeza. |
+| **Consequências** | Encaminhamento incorreto, investigação desnecessária e correção do componente errado. |
 
-### 5. Implicações para as próximas entregas
+## 5. Implicações para as próximas entregas
 
-Quais tarefas merecem análise? Quais informações precisam ser coletadas? **Não desenhe a solução ainda.**
+- Investigar como profissionais avaliam a confiabilidade de um diagnóstico.
+- Investigar como evidências devem ser associadas a uma hipótese.
+- Modelar a tarefa de **formular, verificar e comunicar um diagnóstico inicial**.
+- Considerar a necessidade de diferenciar hipótese de certeza.
+- Investigar mecanismos de revisão quando novas evidências contradizem a interpretação inicial.
 
-> Repita para C02, C03... com autoria individual.
+
 
 ## Checklist
 
