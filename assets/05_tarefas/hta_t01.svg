@@ -1,82 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title desc">
-  <title id="title">HTA da tarefa T01</title>
-  <desc id="desc">Decomposição hierárquica da avaliação de uma hipótese diagnóstica e das evidências que a sustentam.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="455" viewBox="0 0 1000 455" role="img" aria-labelledby="title">
+  <title id="title">HTA - Avaliar hipótese diagnóstica</title>
   <defs>
-    <style>
-      .title{font:700 30px Arial,sans-serif;fill:#172b4d}.subtitle{font:400 17px Arial,sans-serif;fill:#44546f}
-      .node{fill:#fff;stroke:#315b8a;stroke-width:2}.root{fill:#e8f1fb;stroke:#204d7a;stroke-width:3}.major{fill:#eef6ff}
-      .label{font:600 16px Arial,sans-serif;fill:#172b4d}.small{font:400 14px Arial,sans-serif;fill:#172b4d}.plan{font:400 15px Arial,sans-serif;fill:#172b4d}
-      .edge{fill:none;stroke:#6b7f99;stroke-width:2}.return{fill:none;stroke:#b45f06;stroke-width:2.5;stroke-dasharray:8 6}
-      .note{fill:#fff8e7;stroke:#c98b2e;stroke-width:2}.tag{font:700 14px Arial,sans-serif;fill:#8a4b08}
-    </style>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#b45f06"/></marker>
+    <style>text{font:16px Arial,sans-serif;fill:#222}rect{fill:white;stroke:#333;stroke-width:1.5}.line{fill:none;stroke:#333;stroke-width:1.5}</style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#333"/></marker>
   </defs>
-  <rect width="1600" height="1080" fill="#ffffff"/>
-  <text class="title" x="800" y="46" text-anchor="middle">HTA — T01 Avaliar hipótese diagnóstica e evidências</text>
-  <text class="subtitle" x="800" y="75" text-anchor="middle">Autor: Gabriel Lovato — 22.123.004-8</text>
-
-  <rect class="node root" x="520" y="105" width="560" height="82" rx="10"/>
-  <text class="label" x="800" y="137" text-anchor="middle"><tspan x="800">0. Avaliar uma hipótese diagnóstica</tspan><tspan x="800" dy="23">e decidir se ela é sustentada</tspan></text>
-  <path class="edge" d="M800 187 V225 M145 225 H1455 M145 225 V260 M440 225 V260 M740 225 V260 M1040 225 V260 M1455 225 V260"/>
-
-  <rect class="node major" x="30" y="260" width="230" height="72" rx="9"/>
-  <text class="label" x="145" y="288" text-anchor="middle"><tspan x="145">1. Compreender</tspan><tspan x="145" dy="21">a hipótese</tspan></text>
-  <rect class="node major" x="325" y="260" width="230" height="72" rx="9"/>
-  <text class="label" x="440" y="288" text-anchor="middle"><tspan x="440">2. Inspecionar</tspan><tspan x="440" dy="21">as evidências</tspan></text>
-  <rect class="node major" x="625" y="260" width="230" height="72" rx="9"/>
-  <text class="label" x="740" y="288" text-anchor="middle"><tspan x="740">3. Confrontar com</tspan><tspan x="740" dy="21">o contexto operacional</tspan></text>
-  <rect class="node major" x="925" y="260" width="230" height="72" rx="9"/>
-  <text class="label" x="1040" y="288" text-anchor="middle"><tspan x="1040">4. Decidir o resultado</tspan><tspan x="1040" dy="21">da avaliação</tspan></text>
-  <rect class="node major" x="1340" y="260" width="230" height="72" rx="9"/>
-  <text class="label" x="1455" y="288" text-anchor="middle"><tspan x="1455">5. Registrar e</tspan><tspan x="1455" dy="21">compartilhar</tspan></text>
-
-  <path class="edge" d="M145 332 V375 M440 332 V375 M740 332 V375 M1040 332 V375 M1455 332 V375"/>
-  <rect class="node" x="30" y="375" width="230" height="72" rx="8"/>
-  <text class="small" x="145" y="402" text-anchor="middle"><tspan x="145">1.1 Identificar causa</tspan><tspan x="145" dy="20">e serviço apontados</tspan></text>
-  <path class="edge" d="M145 447 V475"/>
-  <rect class="node" x="30" y="475" width="230" height="72" rx="8"/>
-  <text class="small" x="145" y="502" text-anchor="middle"><tspan x="145">1.2 Identificar impacto,</tspan><tspan x="145" dy="20">propagação e incerteza</tspan></text>
-
-  <rect class="node" x="325" y="375" width="230" height="72" rx="8"/>
-  <text class="small" x="440" y="402" text-anchor="middle"><tspan x="440">2.1 Examinar caminho</tspan><tspan x="440" dy="20">destacado no subgrafo</tspan></text>
-  <path class="edge" d="M440 447 V475"/>
-  <rect class="node" x="325" y="475" width="230" height="72" rx="8"/>
-  <text class="small" x="440" y="502" text-anchor="middle"><tspan x="440">2.2 Aprofundar spans,</tspan><tspan x="440" dy="20">logs e metadados</tspan></text>
-  <path class="edge" d="M440 547 V575"/>
-  <rect class="node" x="325" y="575" width="230" height="72" rx="8"/>
-  <text class="small" x="440" y="602" text-anchor="middle"><tspan x="440">2.3 Marcar suporte,</tspan><tspan x="440" dy="20">ausências e contradições</tspan></text>
-
-  <rect class="node" x="625" y="375" width="230" height="72" rx="8"/>
-  <text class="small" x="740" y="402" text-anchor="middle"><tspan x="740">3.1 Comparar horários,</tspan><tspan x="740" dy="20">arquitetura e mudanças</tspan></text>
-  <path class="edge" d="M740 447 V475"/>
-  <rect class="node" x="625" y="475" width="230" height="72" rx="8"/>
-  <text class="small" x="740" y="502" text-anchor="middle"><tspan x="740">3.2 Verificar ordem</tspan><tspan x="740" dy="20">causal dos eventos</tspan></text>
-  <path class="edge" d="M740 547 V575"/>
-  <rect class="node" x="625" y="575" width="230" height="72" rx="8"/>
-  <text class="small" x="740" y="602" text-anchor="middle"><tspan x="740">3.3 Consultar telemetria</tspan><tspan x="740" dy="20">adicional se necessário</tspan></text>
-
-  <rect class="node" x="925" y="375" width="230" height="72" rx="8"/>
-  <text class="small" x="1040" y="402" text-anchor="middle"><tspan x="1040">4.1 Classificar como</tspan><tspan x="1040" dy="20">sustentada</tspan></text>
-  <path class="edge" d="M1040 447 V475"/>
-  <rect class="node" x="925" y="475" width="230" height="72" rx="8"/>
-  <text class="small" x="1040" y="502" text-anchor="middle"><tspan x="1040">4.2 Classificar como</tspan><tspan x="1040" dy="20">parcial e refinar</tspan></text>
-  <path class="edge" d="M1040 547 V575"/>
-  <rect class="node" x="925" y="575" width="230" height="72" rx="8"/>
-  <text class="small" x="1040" y="602" text-anchor="middle"><tspan x="1040">4.3 Classificar como</tspan><tspan x="1040" dy="20">não sustentada</tspan></text>
-
-  <rect class="node" x="1340" y="375" width="230" height="72" rx="8"/>
-  <text class="small" x="1455" y="402" text-anchor="middle"><tspan x="1455">5.1 Registrar decisão,</tspan><tspan x="1455" dy="20">justificativa e incertezas</tspan></text>
-  <path class="edge" d="M1455 447 V475"/>
-  <rect class="node" x="1340" y="475" width="230" height="72" rx="8"/>
-  <text class="small" x="1455" y="502" text-anchor="middle"><tspan x="1455">5.2 Compartilhar a</tspan><tspan x="1455" dy="20">avaliação com a equipe</tspan></text>
-
-  <path class="return" d="M925 611 H885 V700 H440 V655" marker-end="url(#arrow)"/>
-  <text class="tag" x="650" y="724" text-anchor="middle">se houver lacuna relevante: retornar à inspeção ou ao contexto</text>
-
-  <rect class="note" x="80" y="790" width="1440" height="205" rx="10"/>
-  <text class="label" x="110" y="828">Planos</text>
-  <text class="plan" x="110" y="861">Plano 0: 1 &gt; 2 &gt; 3 &gt; 4; se houver lacunas, retornar a 2 ou 3; depois executar 5.</text>
-  <text class="plan" x="110" y="895">Plano 2: examinar o subgrafo; repetir o aprofundamento e a marcação para cada evidência relevante.</text>
-  <text class="plan" x="110" y="929">Plano 3: comparar contexto e ordem causal; consultar telemetria adicional somente se necessário.</text>
-  <text class="plan" x="110" y="963">Plano 4: escolher 4.1, 4.2 ou 4.3; registrar e compartilhar a justificativa em 5.</text>
+  <rect width="1000" height="455" style="stroke:none"/>
+  <text x="25" y="30">HTA - Avaliação de hipótese diagnóstica</text>
+  <rect x="320" y="55" width="360" height="65"/>
+  <text x="500" y="81" text-anchor="middle"><tspan x="500">0. Avaliar a hipótese diagnóstica</tspan><tspan x="500" dy="24">1&gt;2&gt;3&gt;4&gt;5</tspan></text>
+  <path class="line" d="M500 120 V150 M100 150 H900"/>
+  <g marker-end="url(#arrow)" class="line"><path d="M100 150 V180"/><path d="M300 150 V180"/><path d="M500 150 V180"/><path d="M700 150 V180"/><path d="M900 150 V180"/></g>
+  <rect x="15" y="180" width="170" height="65"/>
+  <text x="100" y="207" text-anchor="middle"><tspan x="100">1. Entender</tspan><tspan x="100" dy="22">a hipótese</tspan></text>
+  <path class="line" d="M15 253 H185"/>
+  <rect x="215" y="180" width="170" height="65"/>
+  <text x="300" y="204" text-anchor="middle"><tspan x="300">2. Conferir evidências</tspan><tspan x="300" dy="24">2.1&gt;2.2</tspan></text>
+  <rect x="415" y="180" width="170" height="65"/>
+  <text x="500" y="207" text-anchor="middle"><tspan x="500">3. Comparar</tspan><tspan x="500" dy="22">com o contexto</tspan></text>
+  <path class="line" d="M415 253 H585"/>
+  <rect x="615" y="180" width="170" height="65"/>
+  <text x="700" y="207" text-anchor="middle"><tspan x="700">4. Classificar</tspan><tspan x="700" dy="22">a hipótese</tspan></text>
+  <path class="line" d="M615 253 H785"/>
+  <rect x="815" y="180" width="170" height="65"/>
+  <text x="900" y="207" text-anchor="middle"><tspan x="900">5. Registrar</tspan><tspan x="900" dy="22">a decisão</tspan></text>
+  <path class="line" d="M815 253 H985"/>
+  <path class="line" d="M300 245 V285 M185 285 H415"/>
+  <g marker-end="url(#arrow)" class="line"><path d="M185 285 V315"/><path d="M415 285 V315"/></g>
+  <rect x="85" y="315" width="200" height="60"/>
+  <text x="185" y="341" text-anchor="middle"><tspan x="185">2.1 Examinar</tspan><tspan x="185" dy="22">o subgrafo</tspan></text>
+  <path class="line" d="M85 383 H285"/>
+  <rect x="315" y="315" width="200" height="60"/>
+  <text x="415" y="341" text-anchor="middle"><tspan x="415">2.2 Consultar</tspan><tspan x="415" dy="22">spans e logs</tspan></text>
+  <path class="line" d="M315 383 H515"/>
+  <text x="25" y="430" style="font-size:14px">Linha abaixo da caixa: operação. Se faltar evidência, repetir a conferência.</text>
 </svg>
