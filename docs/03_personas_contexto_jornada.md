@@ -17,6 +17,7 @@ Representar grupos de usuários de forma útil para decisões de design. Persona
 | Usuário: Desenvolvedor | F | Entregas 1 e 2 | incorporar como persona P02 |
 | Usuário: SRE | F — escolha do perfil prioritário | Entrega 1, seção 7.2 | incorporar como proto-persona primária P01, produzida por Théo |
 | Usuário: QA / atividade A03 | F — identificação do perfil e da atividade | Entrega 1, seções 2.1 e 3.2 | incorporar como proto-persona P03; validar características e comportamentos |
+| Especialista em Observabilidade / Platform Engineer | H | Desdobramento dos papéis técnicos e das necessidades de telemetria da Entrega 1, proposto por Sitta | incorporar como proto-persona secundária P04; validar responsabilidades e diferenças em relação ao SRE |
 | H02 (Quantidade inicial de detalhes) | ? | Análises da Entrega 2 sugerem aprofundamento progressivo | manter como lacuna, também relevante para P03 |
 | H04 (Colaboração e restrições de acesso) | H | Entrega 1, seção 5.4 | manter como hipótese relacionada ao encaminhamento de evidências para P03 |
 
@@ -115,6 +116,40 @@ Representar grupos de usuários de forma útil para decisões de design. Persona
 - **Aprofundamento progressivo:** a QA deve partir de um resumo compreensível e acessar logs, traces e componentes do subgrafo sob demanda, sem exigir domínio avançado de infraestrutura para entender o incidente.
 - **Resultado verificável:** o fluxo deve permitir registrar o resultado da verificação como confirmado, refutado ou inconclusivo e associá-lo às evidências consultadas; essa necessidade ainda deve ser validada com participantes representativos.
 
+### Persona P04 — Camila Nunes
+
+**Autor(a):** João Vitor Sitta Giopatto — 22.123.054-3
+
+**Tipo:** secundária
+
+**Base de evidências:** proto-persona a validar, construída a partir da Entrega 1 e das análises de interfaces profissionais de observabilidade da Entrega 2
+
+**Hipóteses da Entrega 1 relacionadas:** H01, H02, H03
+
+| Campo | Descrição |
+|---|---|
+| Faixa etária / contexto relevante | [H] Adulta em contexto profissional de tecnologia. A idade específica não é relevante para o uso da solução. |
+| Ocupação/papel | [H] Especialista em Observabilidade / Platform Engineer, responsável por acompanhar a qualidade da telemetria, organizar mecanismos de monitoramento e apoiar equipes na investigação de comportamentos anômalos. |
+| Conhecimento do domínio | [H] Possui conhecimento elevado sobre observabilidade, arquitetura distribuída e relações entre serviços, mas seu foco principal está na infraestrutura de observabilidade e não na implementação do código de negócio. |
+| Experiência tecnológica | [H] Alta familiaridade com logs, métricas, traces, mapas de dependência, dashboards e ferramentas de monitoramento. |
+| Objetivos | [H] Identificar quais evidências de observabilidade são relevantes para um incidente, compreender como os sinais se relacionam entre os serviços e fornecer um contexto técnico organizado para as equipes responsáveis pelo diagnóstico e pela correção. |
+| Necessidades | [H] Visualizar relações entre componentes, reduzir o volume inicial de telemetria analisada, acessar as evidências que sustentam uma hipótese e manter o contexto do incidente disponível para aprofundamento. |
+| Dores/frustrações | [H] Grande volume de telemetria, dificuldade de correlacionar sinais heterogêneos, necessidade de navegar manualmente entre serviços e risco de perder evidências relevantes ao aplicar filtros excessivamente agressivos. |
+| Motivadores | [H] Reduzir o tempo gasto na organização das evidências, melhorar a qualidade do contexto entregue às demais equipes e tornar a investigação mais rastreável. |
+| Restrições/acessibilidade | [H] Pode ter acesso diferenciado a ambientes e dados de produção, além de lidar com dados sensíveis, limitações de instrumentação e diferentes níveis de granularidade da telemetria. |
+| Ambiente típico de uso | [H] Computador de trabalho com plataforma de observabilidade, dashboards, terminal, documentação técnica e canais de comunicação com SREs e desenvolvedores. |
+| Comportamentos relevantes | [H] Investiga anomalias a partir de sinais de observabilidade, compara serviços relacionados, verifica a qualidade dos dados disponíveis, procura evidências estruturais e questiona resultados que não estejam suficientemente sustentados pela telemetria. |
+
+**Decisões de design influenciadas por P04:**
+
+- **Evidência antes da interpretação:** a interface deve permitir acessar os elementos do trace utilizados para construir uma hipótese, evitando que o resultado do LLM apareça como uma conclusão independente dos dados.
+- **Visão estrutural:** o subgrafo deve destacar relações entre serviços e spans relevantes, pois a persona trabalha diretamente com a organização da telemetria.
+- **Filtragem reversível:** o usuário deve conseguir compreender o que foi removido da visualização e retornar ao contexto original quando necessário.
+- **Aprofundamento progressivo:** o fluxo deve começar por uma visão reduzida e permitir consultar logs, traces e componentes específicos sob demanda.
+- **Estado da análise:** o processamento do pipeline deve possuir feedback compreensível, permitindo diferenciar dados originais, resultado do filtro estrutural e interpretação posterior.
+- **Limitações visíveis:** ausência de telemetria, instrumentação parcial e outras limitações devem permanecer explícitas para evitar conclusões indevidas.
+- **Compartilhamento de contexto:** o resultado da investigação deve poder ser comunicado a SREs e desenvolvedores sem perder o serviço, período, evidências e hipótese analisados.
+
 ### Síntese das personas
 
 A P01 — Rafael Mendes (SRE),  é a persona prioritária porque realiza diretamente a investigação de incidentes que constitui o recorte de IHC. Seu foco está na triagem e no diagnóstico inicial, enquanto o **Desenvolvedor (P02 — Lucas, secundária)** atua na resolução técnica. A atuação de Lucas depende do acionamento inicial do SRE, portanto, a interface precisa servir como ponte comunicativa, oferecendo tanto abstrações de alto nível para o SRE, quanto dados detalhados (spans, metadados) para Lucas confirmar a falha em seu código.
@@ -122,6 +157,10 @@ A P01 — Rafael Mendes (SRE),  é a persona prioritária porque realiza diretam
 A P03 — Mariana complementa os perfis já produzidos pela equipe sem duplicar suas responsabilidades. O SRE permanece como persona primária e realiza a triagem e o diagnóstico inicial; o desenvolvedor sênior investiga o código e implementa a correção; a analista de QA verifica se o comportamento esperado foi restabelecido e procura regressões antes da liberação.
 
 Por ser secundária, P03 não amplia automaticamente o recorte para um módulo completo de gestão de testes. Sua contribuição principal é orientar a continuidade do contexto entre diagnóstico, correção e verificação, além de impedir que uma hipótese do LLM ou a ausência de telemetria seja confundida com confirmação humana. As características e os comportamentos atribuídos a Mariana permanecem como hipóteses de uma proto-persona e precisam ser investigados com profissionais representativos.
+
+P04 não substitui o SRE nem duplica o papel do desenvolvedor ou da QA. Seu diferencial é a responsabilidade hipotética sobre a telemetria e sua estruturação para investigação. A contribuição do TCC poderia produzir valor para esse perfil ao reduzir o espaço de análise por meio da filtragem estrutural do trace e ao organizar uma etapa posterior de interpretação semântica.
+
+P04 é relevante como persona secundária porque ajuda a avaliar se a apresentação do subgrafo e das evidências é compreensível e tecnicamente rastreável.
 
 ## 2. Mapa de empatia — equipe
 
@@ -177,7 +216,7 @@ Quais necessidades e objetivos devem obrigatoriamente aparecer nos cenários e n
 
 ## Checklist
 
-- [ ] Existe pelo menos uma persona por integrante.
+- [x] Existe pelo menos uma persona por integrante.
 - [ ] As personas não são apenas diferenças demográficas superficiais.
 - [ ] Está claro o que é dado real e o que é hipótese/proto-persona.
 - [ ] A persona não “validou por ficção” uma hipótese da Entrega 1; afirmações continuam marcadas como hipótese quando não há evidência.
