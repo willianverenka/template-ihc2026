@@ -1,7 +1,7 @@
 # Entrega 4 — Cenários de análise/problema
 
-**Data:** {{dd/mm/aaaa}}  
-**Status:** ⬜ não iniciada  
+**Data:** 16/09/2026  
+**Status:** 🟨 em andamento  
 **Responsabilidade:** 1 solução completa por integrante
 
 ## Objetivo da atividade
@@ -22,17 +22,19 @@ A interface da disciplina aparecerá somente depois, nos cenários de interaçã
 
 Se o integrante escolher um novo problema/situação, explique por que ele passou a ser relevante e indique a evidência que motivou sua inclusão.
 
-## Cenário C01 — {{título}}
+## Cenário C04 — Investigação de uma falha propagada entre microsserviços
 
-**Autor(a):** {{nome — matrícula}}  
-**Persona(s) relacionada(s):** {{P01}}  
-**Necessidade relacionada:** {{R01}}  
-**Situação concreta da Entrega 1 relacionada:** {{seção 4.4 / H01 / outra ou “nova situação justificada”}}  
-**Hipóteses ainda presentes:** {{H01, H02 ou —}}
+**Autor(a):** João Sitta Giopatto — 22.123.054-3  
+**Persona(s) relacionada(s):** P04 - Especialista em Observabilidade
+**Necessidade relacionada:** Identificar evidências relevantes de observabilidade, compreender as relações entre serviços e organizar um contexto técnico suficiente para apoiar a investigação de um incidente.  
+**Situação concreta da Entrega 1 relacionada:**  Consulta e filtragem manual de logs, métricas e traces; mapas de serviços e navegação entre sinais de observabilidade; dificuldade de estabelecer relações entre sintomas e origem do problema. 
+**Hipóteses ainda presentes:** H01, H02, H03
 
 ### 1. Cenário inicial
 
-{{narrativa}}
+Especialista em Observabilidade recebe informações sobre uma falha em um sistema de microsserviços e precisa investigar sua origem. Para isso, consulta logs, métricas e traces em diferentes ferramentas, tentando identificar quais serviços e componentes estão relacionados ao problema.
+
+O grande volume de dados e a necessidade de correlacionar manualmente essas informações dificultam a identificação das evidências mais relevantes e a compreensão de como a falha se propagou.
 
 ### 2. Questões de refinamento
 
@@ -40,7 +42,10 @@ Use os tipos de questões/taxonomia definidos na aula. As perguntas devem revela
 
 | # | Questão | Por que precisa ser respondida | Fonte/forma de obter resposta |
 |---|---|---|---|
-| Q1 | {{...}} | {{...}} | {{...}} |
+| Q1 | Quais dados são mais relevantes para iniciar a investigação? | Identifica as principais evidências utilizadas | Entrevista com profissionais. |
+| Q2 | Como o profissional relaciona os diferentes serviços envolvidos? | Entende como a propagação da falha é analisada | Entrevista e observação. |
+| Q3 | Quais dificuldades surgem com o grande volume de telemetria? | Identifica problemas de seleção e interpretação das informações | Entrevista e observação. |
+| Q1 | O que acontece quando os dados disponíveis são insuficientes? | Identifica como o profissional lida com limitações da telemetria | Entrevista com profissionais. |
 
 ### 3. Cenário refinado
 
