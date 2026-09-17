@@ -19,10 +19,10 @@ Leia obrigatoriamente o [Guia para definir o escopo de IHC a partir do tema do T
 
 **Título do projeto de IHC:** {{TÍTULO DO PROJETO}}  
 **TCC/projeto de origem:** {{TÍTULO ORIGINAL DO TCC}}  
-**Orientador(a):** {{NOME}}  
+**Orientador(a):** Leonardo Anjoletto  
 **Disciplina:** Interação Humano-Computador  
-**Instituição:** {{INSTITUIÇÃO}}  
-**Semestre:** {{ANO/SEMESTRE}}
+**Instituição:** FEI  
+**Semestre:** 2026/8
 
 ### Equipe
 
