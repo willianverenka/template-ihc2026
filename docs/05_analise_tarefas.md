@@ -2,176 +2,174 @@
 
 **Data:** 17/09/2026
 
-**Autor:** Gabriel Lovato — 22.123.004-8
-
-**Responsabilidade:** cada integrante modela pelo menos 1 HTA, 1 GOMS e 1 CTT. As três técnicas podem abordar a mesma funcionalidade ou funcionalidades distintas, conforme a orientação da disciplina.
+**Autor:** Théo Zago Zimmermann — 22.123.035-2
 
 ## Objetivo da atividade
 
-Analisar como o usuário avalia uma hipótese sobre a causa de uma falha em um sistema distribuído. O HTA mostra a divisão da tarefa, o GOMS descreve maneiras de realizá-la e o CTT representa a relação entre as etapas.
+Analisar como um SRE de plantão formula um diagnóstico inicial sobre um incidente em um sistema distribuído. O HTA organiza os objetivos e as etapas, o GOMS descreve os métodos usados pelo profissional e o CTT representa as relações entre as ações do usuário e as respostas do sistema.
+
+Esta contribuição apresenta uma única tarefa, analisada pelas três técnicas, sem diagramas ou imagens.
 
 ## 1. Tarefa escolhida
 
-| ID | Tarefa | Persona | Cenário relacionado | Autor |
+| ID | Tarefa | Perfil do usuário | Cenário relacionado | Autor |
 |---|---|---|---|---|
-| T01 | Avaliar uma hipótese diagnóstica e decidir se ela é sustentada pelas evidências | P01 — Lucas, desenvolvedor backend | C01 — Falha no checkout após um deploy | Gabriel Lovato |
+| T01 | Formular um diagnóstico inicial fundamentado sobre um incidente | SRE de plantão | C01 citado na entrega original: investigação de um incidente sob pressão de tempo | Théo Zago Zimmermann |
 
-O TCC utiliza um pipeline em dois estágios: primeiro seleciona evidências em um grafo de observabilidade e depois usa um modelo de linguagem (LLM) para gerar hipóteses sobre a falha. Escolhi avaliar essas hipóteses porque uma explicação pode parecer correta sem corresponder ao que aconteceu no sistema.
+O projeto propõe um pipeline em dois estágios. Primeiro, ele seleciona informações relevantes em um grafo de observabilidade. Depois, um modelo de linguagem gera hipóteses sobre a falha. A tarefa escolhida trata de como o SRE utiliza esses resultados, junto de logs, métricas e traces, para entender a provável origem do incidente e seu impacto.
 
-No cenário C01, Lucas precisa separar a falha inicial dos erros que surgiram nos outros serviços. A tarefa T01 aborda uma parte desse trabalho: conferir uma explicação recebida antes de usá-la para orientar uma correção. Ela também se relaciona com H03, da Entrega 1, sobre apresentar as hipóteses junto das evidências que as sustentam.
+Escolhi essa tarefa porque, durante um incidente, não basta receber uma explicação pronta. O profissional precisa entender quais serviços foram afetados, conferir os indícios disponíveis e comunicar uma hipótese que ajude a equipe a decidir os próximos passos.
 
-A tarefa começa com a hipótese e suas evidências disponíveis. Termina quando Lucas registra sua avaliação e o motivo da decisão. A geração da hipótese, o treinamento dos modelos e a implementação do pipeline não fazem parte da tarefa humana analisada aqui.
+Na entrega original, a tarefa está relacionada à atividade A02, “Classificar a saúde do sistema”, e ao cenário C01 do SRE de plantão. Esses identificadores são mantidos como referência ao material do autor, sem associá-los automaticamente aos cenários de outros integrantes.
 
-Esta é uma modelagem proposta para a interface da disciplina, baseada nas entregas anteriores. Não foi realizada uma observação de usuários para confirmar o fluxo. A frequência de uso e os critérios de avaliação ainda precisam ser investigados. A tarefa foi considerada crítica porque uma interpretação errada pode direcionar a correção ao serviço errado.
+### Recorte da análise
 
-## 2. HTA — Avaliar uma hipótese diagnóstica
+A tarefa começa quando o SRE recebe ou identifica um alerta e termina quando registra e comunica um diagnóstico inicial com a origem provável, o impacto observado e as dúvidas restantes. Corrigir a falha ou comprovar definitivamente sua causa não faz parte desse recorte.
 
-**Autor:** Gabriel Lovato — 22.123.004-8
+O usuário trabalha sob pressão de tempo e pode encontrar informações incompletas ou contraditórias. A frequência foi considerada alta na entrega original, mas essa estimativa ainda precisa ser confirmada com usuários. A criticidade é alta porque um diagnóstico equivocado pode direcionar a equipe para o componente errado.
 
-### Descrição
+Esta é uma proposta de interação baseada no contexto do projeto. O fluxo não foi validado por observação de SREs, e as hipóteses produzidas pelo pipeline não são tratadas como causas confirmadas.
 
-Lucas lê a hipótese, confere os registros associados e compara a explicação com o contexto do incidente. Depois, decide se há suporte para a hipótese e registra uma justificativa. Se faltar informação, ele volta à conferência das evidências.
-
-### Diagrama
-
-![HTA da tarefa T01](../assets/05_tarefas/hta_t01.svg)
-
-*Figura 1 — HTA da avaliação de uma hipótese diagnóstica. Fonte: elaboração do autor, com notação baseada no material de aula.*
-
-As caixas representam objetivos e operações. O plano dentro da caixa indica a ordem das etapas. A linha abaixo da caixa marca uma operação: neste modelo, a decomposição para nesse nível, embora a operação ainda possa envolver várias ações.
-
-### Tabela detalhada
-
-| ID | Objetivo/operação | Plano, entrada e retorno | Problema e recomendação |
-|---|---|---|---|
-| 0 | Avaliar a hipótese diagnóstica | **Plano:** 1 > 2 > 3 > 4 > 5. **Entrada:** hipótese e evidências do incidente. **Retorno:** avaliação registrada com justificativa. | O texto gerado pode passar uma certeza que os dados não sustentam. Manter clara a diferença entre hipótese e causa confirmada. |
-| 1 | Entender a hipótese | Identificar a causa apontada, o serviço envolvido e o impacto descrito. **Entrada:** explicação produzida pelo pipeline. **Retorno:** Lucas entende o que precisa verificar. | Uma explicação genérica dificulta a conferência. Apresentar a causa provável de forma direta, sem esconder as incertezas. |
-| 2 | Conferir as evidências | **Plano:** 2.1 > 2.2; repetir quando necessário. **Entrada:** subgrafo e registros relacionados. **Retorno:** evidências favoráveis, contraditórias ou insuficientes identificadas. | A explicação pode citar dados sem deixar claro onde encontrá-los. Relacionar a hipótese aos registros utilizados. |
-| 2.1 | Examinar o subgrafo | Observar os serviços envolvidos e o caminho da requisição com falha. **Retorno:** identificação das dependências relevantes. | Muitas conexões podem dificultar a leitura. Destacar o caminho relacionado ao incidente. |
-| 2.2 | Consultar spans e logs | Conferir horários, mensagens de erro e detalhes das chamadas. Um span representa uma operação dentro do trace de uma requisição. **Retorno:** registros que ajudam a verificar a explicação. | Dados importantes podem ficar misturados com informações sem relação com a falha. Permitir aprofundamento nos registros dos componentes selecionados. |
-| 3 | Comparar com o contexto | Comparar os registros com a arquitetura, o período do incidente e as mudanças recentes. **Retorno:** avaliação da compatibilidade entre os dados e a causa apontada. | Um erro após o deploy não significa, por si só, que o deploy foi a causa. Conferir também a ordem dos eventos e as dependências. |
-| 4 | Classificar a hipótese | Escolher entre sustentada, parcialmente sustentada ou não sustentada. Se faltar informação importante, retornar a 2 ou 3 antes de concluir. **Retorno:** decisão sobre a hipótese. | Uma classificação apenas de certo ou errado pode esconder que parte da explicação é útil. Permitir registrar suporte parcial e limitações. |
-| 5 | Registrar a decisão | Informar a classificação, a justificativa e as dúvidas restantes. **Retorno:** decisão disponível para consulta e repasse à equipe. | Sem justificativa, outra pessoa não consegue conferir o motivo da decisão. Registrar a avaliação junto da hipótese original. |
-
-A classificação “sustentada” indica que a hipótese é compatível com as evidências consultadas, não que a causa foi comprovada. Essas categorias são uma proposta e ainda precisam ser validadas com desenvolvedores e SREs.
-
-## 3. GOMS — Avaliar uma hipótese diagnóstica
-
-**Autor:** Gabriel Lovato — 22.123.004-8
+## 2. HTA — Formular um diagnóstico inicial
 
 ### Objetivo principal
 
-**GOAL 0:** decidir se a hipótese diagnóstica tem suporte nos dados e registrar a avaliação.
+**0 — Formular um diagnóstico inicial fundamentado sobre o incidente.**
 
-### GOAL 1 — Conferir as evidências da hipótese
-
-**METHOD 1.A — Partir dos registros citados na explicação**
-
-1. Ler a hipótese e identificar a causa apontada.
-2. Abrir as evidências associadas à explicação.
-3. Selecionar os spans e logs dos serviços citados.
-4. Ler as mensagens e comparar os horários.
-5. Identificar quais registros apoiam ou contradizem a hipótese.
-
-**Regra de seleção:** usar 1.A quando a explicação indicar os registros que devem ser conferidos.
-
-**METHOD 1.B — Partir do subgrafo**
-
-1. Examinar o caminho da requisição no subgrafo.
-2. Selecionar o componente relacionado à causa apontada.
-3. Acessar seus spans e logs.
-4. Conferir as chamadas anteriores e posteriores ao erro.
-5. Comparar os registros encontrados com a explicação da hipótese.
-
-**Regra de seleção:** usar 1.B quando Lucas precisar localizar as evidências pelo componente e suas dependências, em vez de partir de uma referência direta ao registro.
-
-Os dois métodos atendem ao mesmo subobjetivo. A diferença está no ponto de partida para encontrar as evidências.
-
-### GOAL 2 — Avaliar o suporte da hipótese
-
-1. Comparar as evidências com o contexto do incidente.
-2. Verificar se a sequência dos eventos é compatível com a causa apontada.
-3. Identificar contradições e informações ausentes.
-4. Decidir se a hipótese é sustentada, parcialmente sustentada ou não sustentada.
-
-Se faltar uma evidência importante, Lucas retorna ao GOAL 1 e consulta mais registros. A ausência de informação não deve ser tratada como confirmação da hipótese.
-
-### GOAL 3 — Registrar a avaliação
-
-1. Selecionar a classificação da hipótese.
-2. Escrever a justificativa e as dúvidas restantes.
-3. Salvar a avaliação.
-4. Conferir se o registro foi concluído.
-
-### Operadores utilizados
-
-| Tipo | Operadores | Exemplo |
-|---|---|---|
-| Cognitivos | Ler, interpretar, comparar e decidir | Comparar um timeout com a sequência das chamadas e avaliar se ele explica os outros erros. |
-| Interação | Abrir, selecionar, navegar, digitar e salvar | Selecionar um componente, consultar seus registros e escrever a justificativa. |
-
-O modelo considera ações da interação proposta, sem definir a posição de botões ou campos. Não foi feita uma estimativa de tempo com KLM, pois a interface ainda não está definida e o tempo de interpretação depende do incidente.
-
-## 4. CTT — Avaliar uma hipótese diagnóstica
-
-**Autor:** Gabriel Lovato — 22.123.004-8
-
-### Descrição
-
-O CTT mostra a sequência principal da avaliação. Lucas interpreta a hipótese, confere as evidências, faz a classificação e registra a decisão.
-
-A conferência foi dividida em examinar o subgrafo e consultar spans e logs. Essas consultas não precisam seguir uma ordem fixa: Lucas pode alternar entre elas conforme encontra novos indícios. Quando classifica a hipótese, ele também considera o contexto operacional descrito no HTA.
+O SRE delimita o problema, examina os componentes afetados, relaciona as evidências às hipóteses e comunica sua interpretação inicial.
 
 ### Diagrama
 
-![CTT da tarefa T01](../assets/05_tarefas/ctt_t01.svg)
+![HTA T01](../assets/05_tarefas/hta_t01.svg)
 
-*Figura 2 — CTT da avaliação de uma hipótese diagnóstica. Fonte: elaboração do autor, com símbolos e operadores baseados no material de aula.*
+### Decomposição da tarefa
 
-### Tipos de tarefa representados
+| ID | Objetivo ou operação | Como é realizado | Resultado esperado |
+|---|---|---|---|
+| 0 | Formular um diagnóstico inicial | Executar 1, 2, 3 e 4, retornando à investigação quando necessário. | Diagnóstico inicial registrado, com evidências e limitações. |
+| 1 | Delimitar o incidente | Identificar o serviço afetado, o período e o sintoma observado no alerta. | Um recorte inicial para a investigação. |
+| 2 | Examinar os componentes e as evidências | Executar 2.1 e 2.2, repetindo a consulta para os componentes relevantes. | Serviços envolvidos e sinais da falha identificados. |
+| 2.1 | Inspecionar o subgrafo | Observar as dependências entre os serviços e o caminho relacionado à falha. | Uma visão dos componentes afetados e da possível propagação do problema. |
+| 2.2 | Consultar logs, métricas e traces | Conferir erros, alterações nas métricas e a sequência das chamadas no período selecionado. | Registros que ajudam a explicar o incidente. |
+| 3 | Relacionar as hipóteses às evidências | Executar 3.1 e 3.2; voltar a 1 ou 2 se o recorte ou os dados forem insuficientes. | Uma interpretação sobre a provável origem e o impacto. |
+| 3.1 | Comparar as hipóteses com os registros | Verificar se o serviço apontado e a ordem dos eventos fazem sentido diante dos dados. | Indícios favoráveis, contradições e lacunas identificados. |
+| 3.2 | Definir a explicação inicial | Escolher a hipótese mais compatível com os dados e indicar o que ainda não foi esclarecido. | Uma hipótese de trabalho, sem afirmar uma certeza que não existe. |
+| 4 | Registrar e comunicar o diagnóstico | Informar o sintoma, a origem provável, o impacto observado, as evidências e as dúvidas restantes. | Um resumo que a equipe possa consultar e utilizar na continuidade da investigação. |
 
-| Tipo | Símbolo | Tarefa no modelo |
+### Planos
+
+- **Plano 0:** realizar 1 → 2 → 3 → 4. Se a análise em 3 revelar uma lacuna importante, retornar a 2. Se o problema estiver fora do recorte escolhido, retornar a 1.
+- **Plano 2:** realizar 2.1 → 2.2. Repetir a consulta para outros componentes quando as dependências ou os registros indicarem essa necessidade.
+- **Plano 3:** realizar 3.1 → 3.2. Comparar mais de uma hipótese quando houver explicações concorrentes. Se nenhuma tiver suporte suficiente, registrar essa limitação.
+
+O diagnóstico inicial não exige resolver todas as dúvidas. Se houver urgência e os dados continuarem insuficientes, o SRE comunica o que foi observado e o que ainda precisa ser investigado, sem apresentar uma hipótese fraca como causa confirmada.
+
+### Dificuldades identificadas
+
+O principal risco é confundir um serviço que apresentou erros com o serviço que iniciou a falha. Outro problema é aceitar uma hipótese apenas porque o texto parece convincente. Por isso, a interface deve facilitar a consulta aos registros e à sequência dos eventos, mantendo as evidências próximas da explicação.
+
+## 3. GOMS — Formular um diagnóstico inicial
+
+### Objetivo principal
+
+**GOAL 0:** identificar uma provável origem e o impacto do incidente, registrando e comunicando um diagnóstico inicial baseado nas evidências disponíveis.
+
+O objetivo é dividido em delimitar o incidente, reunir evidências, interpretar os resultados e comunicar a conclusão inicial.
+
+### METHOD 1 — Investigar a partir dos resultados disponíveis
+
+1. Ler o alerta e identificar o serviço, o período e o sintoma.
+2. Selecionar o recorte do incidente.
+3. Consultar o subgrafo e as hipóteses apresentados pelo pipeline.
+4. Abrir os registros relacionados aos componentes apontados.
+5. Comparar as hipóteses com os logs, as métricas e os traces.
+6. Avaliar qual explicação tem mais suporte e qual impacto foi observado.
+7. Registrar e comunicar o diagnóstico inicial, incluindo as evidências e as incertezas.
+
+**Regra de seleção:** usar o Método 1 quando os resultados disponíveis cobrirem o recorte do incidente e permitirem localizar os registros relevantes. Se a comparação revelar lacunas importantes, passar ao Método 2.
+
+### METHOD 2 — Ampliar a investigação antes de concluir
+
+1. Identificar quais informações estão ausentes ou quais registros contradizem a explicação inicial.
+2. Ajustar o período ou incluir componentes relacionados ao serviço afetado.
+3. Solicitar uma nova análise para o recorte ajustado.
+4. Consultar os novos resultados e os registros adicionais.
+5. Comparar novamente as hipóteses com a sequência dos eventos e as dependências entre os serviços.
+6. Avaliar se os novos dados permitem formular uma explicação inicial; repetir a busca se necessário e viável diante da urgência.
+7. Registrar e comunicar a origem provável, o impacto e as limitações. Se não houver suporte para apontar uma origem, comunicar os fatos observados e deixar essa parte em aberto.
+
+**Regra de seleção:** usar o Método 2 quando o alerta ou os resultados iniciais forem incompletos, quando houver conflito entre as evidências e a hipótese ou quando o recorte deixar de fora um componente relevante.
+
+Os dois métodos atendem ao mesmo objetivo. O primeiro aproveita o material já disponível; o segundo amplia a investigação antes da comunicação. A troca de método depende do que o SRE encontra, não apenas da quantidade de dados exibidos.
+
+### Operadores utilizados
+
+| Tipo | Operadores | Exemplo na tarefa |
 |---|---|---|
-| Abstrata | Nuvem | Avaliar a hipótese e conferir evidências, que agrupam outras tarefas. |
-| Usuário | Pessoa | Interpretar a hipótese e classificá-la, atividades de análise do profissional. |
-| Interação | Pessoa e computador | Examinar o subgrafo, consultar spans e logs e registrar a decisão. |
+| Perceptivos e cognitivos | Ler, identificar, interpretar, comparar e decidir | Comparar o início dos erros com as chamadas entre os serviços e escolher uma hipótese de trabalho. |
+| Interação | Selecionar, abrir, filtrar, solicitar, digitar e salvar | Ajustar o período, consultar um trace e registrar o diagnóstico. |
 
-Não foi incluída uma tarefa isolada de sistema porque o recorte começa com a hipótese e os dados já disponíveis. O processamento do pipeline ocorre antes dessa avaliação.
+Não foi feita uma estimativa de tempo com KLM. A interface ainda não está definida, e o esforço de interpretação varia conforme o incidente e a experiência do profissional. O GOMS foi usado para organizar os métodos e as escolhas, não para afirmar quanto tempo o diagnóstico levará.
 
-### Relações entre tarefas
+## 4. CTT — Formular um diagnóstico inicial
 
-| Operador | Significado | Uso no diagrama |
+### Organização das tarefas
+
+O CTT diferencia as ações feitas pelo SRE das respostas automáticas do sistema. Neste recorte, o processamento do pipeline faz parte do fluxo, pois ocorre depois da seleção do incidente e pode ser repetido quando o usuário altera o período ou os componentes analisados.
+
+### Diagrama
+
+![CTT T03](../assets/05_tarefas/ctt_t03.svg)
+
+| ID | Tarefa | Tipo | Papel no fluxo |
+|---|---|---|---|
+| A0 | Formular um diagnóstico inicial | Abstrata | Agrupa a tarefa completa. |
+| I1 | Selecionar o serviço e o período do incidente | Interação | Define o recorte da análise a partir do alerta. |
+| S1 | Processar o recorte e apresentar os resultados | Sistema | Executa o pipeline e disponibiliza o subgrafo, as hipóteses e as referências às evidências. |
+| A1 | Analisar os resultados | Abstrata | Agrupa I2, S2 e U1; pode ser repetida para diferentes evidências. |
+| I2 | Selecionar componentes e solicitar seus registros | Interação | Permite consultar detalhes dos serviços e das chamadas relevantes. |
+| S2 | Exibir os registros solicitados | Sistema | Apresenta logs, métricas e traces, ou informa que não há dados para a consulta. |
+| U1 | Interpretar as evidências e avaliar as hipóteses | Usuário | Relaciona os dados à origem provável e ao impacto do incidente. |
+| I3 | Ajustar o recorte da investigação | Interação | Altera o período ou os componentes quando faltam informações importantes. |
+| I4 | Registrar e compartilhar o diagnóstico inicial | Interação | Comunica a interpretação do SRE, as evidências e as limitações. |
+
+As tarefas abstratas agrupam etapas. As tarefas de usuário representam o raciocínio do profissional, sem uma ação direta na interface. As de interação envolvem o uso da interface, enquanto as de sistema são respostas automáticas da aplicação.
+
+### Relações temporais
+
+| Relação | Significado | Aplicação |
 |---|---|---|
-| `>>` | Ativação: a próxima tarefa começa quando a anterior termina. | Interpretar a hipótese antes de conferir suas evidências; conferir antes de classificar. |
-| `[]>>` | Ativação com passagem de informação. | A classificação produzida é usada no registro da decisão. |
-| `|||` | Concorrência: as tarefas podem ocorrer em qualquer ordem ou ao mesmo tempo. | Examinar o subgrafo e consultar spans e logs. No uso individual, Lucas pode alternar entre essas consultas. |
-| `*` | Repetição. | Repetir a conferência quando faltar informação para avaliar a hipótese. |
+| `I1 []>> S1` | Ativação com passagem de informação | O serviço e o período selecionados são usados no processamento. |
+| `S1 []>> A1` | Ativação com passagem de informação | Os resultados do pipeline ficam disponíveis para a análise do SRE. |
+| `I2 []>> S2` | Ativação com passagem de informação | A seleção de componentes e registros define os detalhes apresentados. |
+| `S2 []>> U1` | Ativação com passagem de informação | Os registros exibidos são utilizados na interpretação. |
+| `A1*` | Repetição | O SRE repete a análise ao consultar outras evidências. |
+| `I3 []>> S1` | Ativação com passagem de informação | Um recorte ajustado gera uma nova execução do pipeline. |
+| `A1 []>> I4` | Ativação com passagem de informação | A interpretação resultante da análise é utilizada no diagnóstico registrado. |
 
-O diagrama mantém apenas as etapas principais. A escolha entre sustentar, refinar ou rejeitar está reunida na tarefa “Classificar a hipótese”.
+Dentro de A1, a sequência básica é **I2 → S2 → U1**. O fluxo principal é **I1 → S1 → A1 → I4**, com repetição de A1 quando o SRE precisa consultar mais registros.
 
-## 5. Síntese da contribuição individual
+Após interpretar as evidências, o usuário decide se já pode comunicar uma conclusão inicial. Quando é necessário ampliar a investigação, realiza I3, aguarda S1 e volta a A1. Essa é uma condição de retorno do fluxo, não uma etapa obrigatória em toda análise.
 
-A análise mostra que gerar uma explicação não encerra o diagnóstico. Lucas precisa conferir de onde ela veio e se os registros fazem sentido para o incidente. A filtragem pode reduzir o volume de dados, mas ainda é necessário conseguir consultar os detalhes e reconhecer contradições.
+Se o tempo disponível não permitir novas consultas, o usuário pode concluir com um diagnóstico limitado aos fatos observados. O registro deve deixar claro que a origem da falha ainda não foi determinada.
 
-Para o protótipo, os pontos principais são relacionar a hipótese às evidências, permitir a consulta ao subgrafo e aos registros e registrar a decisão com uma justificativa. No teste de usabilidade, uma tarefa possível é apresentar uma hipótese com uma evidência contraditória e observar se o participante identifica o conflito antes de aceitá-la.
+## 5. Síntese e implicações para a interface
 
-O HTA, o GOMS e o CTT ajudam a organizar essa interação, mas não validam a precisão do pipeline. Também não confirmam H03: ainda é necessário investigar se a apresentação das evidências realmente ajuda o usuário a avaliar a hipótese.
+As três técnicas mostram aspectos diferentes da mesma tarefa. O HTA ajuda a separar a investigação em objetivos menores. O GOMS mostra como o SRE escolhe entre usar os resultados disponíveis e ampliar a busca. O CTT evidencia a dependência entre as escolhas do usuário, o processamento e a interpretação dos dados.
 
-## Referências
+A principal dificuldade não é apenas encontrar um erro, mas relacionar os sinais dos diferentes serviços e chegar a uma explicação inicial útil. A filtragem do grafo pode reduzir a quantidade de informação, mas o usuário ainda precisa conferir os detalhes e perceber quando a hipótese não corresponde aos registros.
 
-- **CC8122 — HTA.** Material de aula disponibilizado na disciplina, consultado em 17/09/2026. Referência utilizada para a hierarquia, os planos e a marcação das operações.
-- **CC8122 — GOMS e CTT.** Material de aula disponibilizado na disciplina, consultado em 17/09/2026. Referência utilizada para objetivos, métodos, operadores, regras de seleção e notação do CTT.
-- **BARBOSA, Simone D. J.; SILVA, Bruno S.** Interação Humano-Computador. 2010. Obra indicada nos materiais de aula.
-- Documentos do projeto: [Entrega 1](01_conhecendo_o_problema.md), [persona P01](03_personas_contexto_jornada.md) e [cenário C01](04_cenarios_problema.md).
+Para a interface proposta, considero importantes estes pontos:
 
-## Checklist
+- Apresentar o serviço, o período e o sintoma investigados, para evitar uma análise fora do recorte.
+- Permitir entender as dependências entre os componentes e consultar seus registros sem perder o contexto.
+- Mostrar as hipóteses junto das evidências utilizadas, sem tratá-las como respostas definitivas.
+- Permitir ajustar o recorte e informar quando a consulta não retorna dados.
+- Registrar separadamente os fatos observados, a origem provável e as dúvidas restantes.
+- Facilitar o compartilhamento do diagnóstico com a equipe, respeitando as permissões de acesso aos dados.
 
-- [x] A contribuição de Gabriel contém 1 HTA, 1 GOMS e 1 CTT para a tarefa T01.
-- [x] Os modelos identificam o autor, a tarefa e sua relação com P01 e C01.
-- [x] O HTA apresenta diagrama, planos e tabela detalhada.
-- [x] O GOMS diferencia objetivos, métodos, operadores e regras de seleção.
-- [x] O CTT identifica tipos de tarefa e relações temporais.
-- [x] Os diagramas possuem fonte editável em SVG e explicação no texto.
-- [x] A tarefa representa a avaliação feita pela pessoa, não a implementação do pipeline.
-- [ ] Consolidar as contribuições dos demais integrantes.
-- [ ] Registrar T01 na matriz de rastreabilidade da equipe.
+Um teste de usabilidade possível é apresentar um incidente com uma hipótese inicial incompleta e observar se o participante identifica a lacuna, consulta os registros necessários e comunica o diagnóstico com suas limitações. Isso ajudaria a avaliar a interação, mas não comprovaria a precisão técnica do pipeline.
+
+## Referência da reescrita
+
+Entrega individual de Théo Zago Zimmermann: “Entrega 5 — Análise de tarefas: HTA, GOMS e CTT”, datada de 10/09/2026. O tema e o recorte foram mantidos, com reorganização das explicações e dos modelos em formato textual.
