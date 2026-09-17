@@ -1,154 +1,177 @@
 # Entrega 5 — Análise de tarefas: HTA, GOMS e CTT
 
-**Data:** 10/09/2026
+**Data:** 17/09/2026
 
-**Status:** 🟨 em andamento
+**Autor:** Gabriel Lovato — 22.123.004-8
 
 **Responsabilidade:** cada integrante modela pelo menos 1 HTA, 1 GOMS e 1 CTT. As três técnicas podem abordar a mesma funcionalidade ou funcionalidades distintas, conforme a orientação da disciplina.
 
 ## Objetivo da atividade
 
-Modelar tarefas importantes sob perspectivas complementares: decomposição hierárquica (HTA), estrutura de metas/métodos/operações (GOMS) e relações temporais entre tarefas (CTT). O diagrama deve ser acompanhado de interpretação textual.
+Analisar como o usuário avalia uma hipótese sobre a causa de uma falha em um sistema distribuído. O HTA mostra a divisão da tarefa, o GOMS descreve maneiras de realizá-la e o CTT representa a relação entre as etapas.
 
-## Para projetos cujo TCC não previa interface
+## 1. Tarefa escolhida
 
-Modele **tarefas humanas relacionadas ao uso da contribuição técnica**, e não a implementação interna do algoritmo. Exemplos de boas tarefas para análise:
-
-- investigar uma consulta de baixo desempenho;
-- configurar uma análise e selecionar parâmetros;
-- submeter um dataset e verificar sua validade;
-- acompanhar uma execução demorada;
-- comparar dois resultados/modelos;
-- interpretar uma recomendação e decidir se a aceita;
-- localizar uma execução anterior usando busca/filtros;
-- gerar e compartilhar um relatório;
-- administrar papéis/permissões quando isso for parte do trabalho real;
-- revisar um alerta e registrar uma decisão.
-
-Um CRUD pode gerar tarefas relevantes, mas “cadastrar usuário” só merece modelagem se tiver significado no domínio (papéis, validações, riscos, permissões, dependências).
-
-## Seleção das tarefas
-
-| ID | Tarefa | Persona/cenário de origem | Frequência/criticidade | Autor responsável |
+| ID | Tarefa | Persona | Cenário relacionado | Autor |
 |---|---|---|---|---|
-| T01 | Avaliar uma hipótese diagnóstica e decidir se ela é sustentada pelas evidências | P01 / C01 / H03 | Recorrente durante diagnósticos; criticidade alta por influenciar a ação corretiva | Gabriel Lovato |
+| T01 | Avaliar uma hipótese diagnóstica e decidir se ela é sustentada pelas evidências | P01 — Lucas, desenvolvedor backend | C01 — Falha no checkout após um deploy | Gabriel Lovato |
 
-> Priorize tarefas necessárias para que o usuário alcance objetivos centrais. Não desperdice a modelagem em ações triviais isoladas, como “clicar em login”, se o objetivo relevante é maior. Da mesma forma, não modele o funcionamento interno do algoritmo como se fosse uma tarefa humana.
+O TCC utiliza um pipeline em dois estágios: primeiro seleciona evidências em um grafo de observabilidade e depois usa um modelo de linguagem (LLM) para gerar hipóteses sobre a falha. Escolhi avaliar essas hipóteses porque uma explicação pode parecer correta sem corresponder ao que aconteceu no sistema.
 
----
+No cenário C01, Lucas precisa separar a falha inicial dos erros que surgiram nos outros serviços. A tarefa T01 aborda uma parte desse trabalho: conferir uma explicação recebida antes de usá-la para orientar uma correção. Ela também se relaciona com H03, da Entrega 1, sobre apresentar as hipóteses junto das evidências que as sustentam.
 
-## HTA — T01 Avaliar uma hipótese diagnóstica e suas evidências
+A tarefa começa com a hipótese e suas evidências disponíveis. Termina quando Lucas registra sua avaliação e o motivo da decisão. A geração da hipótese, o treinamento dos modelos e a implementação do pipeline não fazem parte da tarefa humana analisada aqui.
 
-**Autor(a):** Gabriel Lovato — 22.123.004-8
+Esta é uma modelagem proposta para a interface da disciplina, baseada nas entregas anteriores. Não foi realizada uma observação de usuários para confirmar o fluxo. A frequência de uso e os critérios de avaliação ainda precisam ser investigados. A tarefa foi considerada crítica porque uma interpretação errada pode direcionar a correção ao serviço errado.
 
-### Descrição da tarefa
+## 2. HTA — Avaliar uma hipótese diagnóstica
 
-O objetivo de Lucas é avaliar criticamente uma hipótese diagnóstica produzida pelo pipeline do TCC e decidir se ela pode orientar a ação corretiva. A tarefa começa quando uma hipótese apresenta uma causa provável e termina quando Lucas a classifica como sustentada, parcialmente sustentada ou não sustentada, registrando sua justificativa. Para isso, ele precisa compreender a afirmação, inspecionar as evidências estruturais associadas, confrontá-las com o contexto operacional e preservar contradições e incertezas. Essa tarefa deriva diretamente de H03 e não pressupõe que a resposta do LLM esteja correta.
-
-### Diagrama
-
-![HTA T01](../assets/05_tarefas/hta_t01.svg)
-
-*Figura 1 — HTA da tarefa T01. Fonte: elaboração do autor.*
-
-### Decomposição e planos
-
-| ID | Objetivo/operação | Plano/ordem | Problema ou decisão de design observada |
-|---|---|---|---|
-| 0 | Avaliar uma hipótese diagnóstica e decidir se ela é sustentada | Plano 0: executar 1 > 2 > 3 > 4; se houver lacunas relevantes, retornar a 2 ou 3; depois executar 5. | A conclusão do LLM não pode ser aceita automaticamente; o usuário precisa conseguir revisar o raciocínio. |
-| 1 | Compreender a hipótese apresentada | Plano 1: executar 1.1 > 1.2. | Termos vagos ou excesso de confiança podem induzir uma interpretação incorreta. |
-| 1.1 | Identificar a causa e o serviço apontados | — | A afirmação principal precisa ser distinguível das explicações secundárias. |
-| 1.2 | Identificar impacto, propagação e grau de incerteza | — | A ausência de limites e incertezas pode fazer a hipótese parecer conclusiva. |
-| 2 | Inspecionar as evidências associadas | Plano 2: executar 2.1; repetir 2.2 e 2.3 para cada componente relevante. | H03 indica que a utilidade da hipótese depende da possibilidade de inspecionar o que a sustenta. |
-| 2.1 | Examinar o caminho destacado no subgrafo | — | O usuário precisa compreender quais relações foram consideradas relevantes. |
-| 2.2 | Aprofundar spans, logs e metadados citados | — | Detalhes em excesso podem reproduzir a sobrecarga registrada em H02. |
-| 2.3 | Marcar evidências favoráveis, ausentes ou contraditórias | — | Contradições não devem desaparecer sob uma explicação textual convincente. |
-| 3 | Confrontar a hipótese com o contexto operacional | Plano 3: executar 3.1 > 3.2; executar 3.3 somente se permanecer uma lacuna importante. | A correlação estrutural ou temporal, isoladamente, não prova causalidade. |
-| 3.1 | Comparar horários, arquitetura e mudanças recentes | — | Um deploy coincidente pode ser relevante ou apenas uma correlação enganosa. |
-| 3.2 | Verificar se a ordem dos eventos é compatível com a causa alegada | — | Um efeito posterior não deve ser tratado como evento originador. |
-| 3.3 | Consultar telemetria adicional quando necessário | — | A revisão precisa permitir buscar evidência fora do conjunto inicialmente filtrado. |
-| 4 | Decidir o resultado da avaliação | Plano 4: escolher 4.1, 4.2 ou 4.3 de acordo com a suficiência e a consistência das evidências. | A decisão não deve ser reduzida a aceitar ou rejeitar quando apenas parte da hipótese é sustentada. |
-| 4.1 | Classificar como sustentada | — | Aplicável quando a causa alegada é compatível com as evidências relevantes. |
-| 4.2 | Classificar como parcialmente sustentada e refiná-la | — | Preserva elementos úteis sem aceitar trechos não comprovados. |
-| 4.3 | Classificar como não sustentada | — | Evita que uma explicação plausível, mas contraditória, oriente a correção. |
-| 5 | Registrar e comunicar a decisão | Plano 5: executar 5.1 > 5.2. | A justificativa deve permitir revisão posterior por SREs e desenvolvedores. |
-| 5.1 | Registrar classificação, justificativa e incertezas | — | Sem justificativa, a decisão humana perde rastreabilidade. |
-| 5.2 | Compartilhar a avaliação com a equipe envolvida | — | O destinatário precisa distinguir a hipótese original da conclusão revisada. |
-
-**Verificação do HTA:**
-
-- O objetivo 0 representa uma meta do usuário?
-- As subtarefas são necessárias e suficientes?
-- Os **planos** indicam ordem, alternativa, repetição ou condição?
-- A decomposição parou em nível útil para projeto de interação?
-
----
-
-## GOMS — T01 Avaliar uma hipótese diagnóstica e suas evidências
-
-**Autor(a):** Gabriel Lovato — 22.123.004-8
-
-### Goal
-
-`G0: decidir se uma hipótese diagnóstica é sustentada pelas evidências do incidente.`
-
-### Métodos, operadores e regras de seleção
-
-- **Method M1 — revisão guiada pelas evidências citadas:** ler a hipótese; identificar a causa alegada; localizar os nós e spans citados; examinar cada evidência; verificar a ordem dos eventos; comparar evidências favoráveis e contraditórias; classificar a hipótese; registrar a justificativa.
-  - **Operators:** perceber; ler; localizar; selecionar; navegar; inspecionar; comparar; interpretar; decidir; registrar.
-- **Method M2 — revisão orientada pelo subgrafo:** examinar o caminho anômalo; identificar o primeiro componente com desvio relevante; consultar a hipótese associada; aprofundar os spans desse componente; comparar o caminho observado com a explicação; classificar a hipótese; registrar a justificativa.
-  - **Operators:** examinar; reconhecer; selecionar; seguir relações; ler; comparar; interpretar; decidir; registrar.
-- **Method M3 — revisão diante de contradição:** identificar a evidência contraditória; ampliar o período ou o conjunto de serviços; consultar telemetria adicional; reavaliar a ordem causal; refinar ou rejeitar a hipótese; registrar a divergência e as incertezas restantes.
-  - **Operators:** reconhecer conflito; definir critérios; ajustar escopo; buscar; comparar; julgar; editar; decidir; registrar.
-- **Selection Rule SR1:** usar M1 quando a hipótese trouxer evidências estruturais explicitamente relacionadas; usar M2 quando Lucas preferir partir do caminho anômalo para conferir a explicação; usar M3 quando uma evidência relevante contrariar ou não estiver coberta pela hipótese.
-- **Selection Rule SR2:** classificar como sustentada quando a causa alegada for compatível com as evidências relevantes; como parcialmente sustentada quando somente parte da explicação resistir à revisão; e como não sustentada quando houver contradição importante ou ausência de suporte.
-
-> Não chame qualquer passo de “método”. Em GOMS, métodos são sequências alternativas capazes de atingir uma meta; regras de seleção explicam quando escolher entre eles.
-
----
-
-## CTT — T01 Avaliar uma hipótese diagnóstica e suas evidências
-
-**Autor(a):** Gabriel Lovato — 22.123.004-8
+**Autor:** Gabriel Lovato — 22.123.004-8
 
 ### Descrição
 
-A modelagem CTT representa a revisão humana de uma hipótese gerada pelo pipeline. Depois de acessar e interpretar a afirmação principal, Lucas inspeciona de forma intercalada o subgrafo, os spans e os logs relacionados. Ele confronta essas evidências com o contexto operacional. Caso encontre uma lacuna ou contradição importante, amplia a evidência consultada e repete a comparação. Quando possui base suficiente, escolhe entre sustentar, refinar ou rejeitar a hipótese, registra a justificativa e compartilha a avaliação.
+Lucas lê a hipótese, confere os registros associados e compara a explicação com o contexto do incidente. Depois, decide se há suporte para a hipótese e registra uma justificativa. Se faltar informação, ele volta à conferência das evidências.
 
 ### Diagrama
 
-![CTT T01](../assets/05_tarefas/ctt_t01.svg)
+![HTA da tarefa T01](../assets/05_tarefas/hta_t01.svg)
 
-*Figura 2 — CTT da tarefa T01. Fonte: elaboração do autor.*
+*Figura 1 — HTA da avaliação de uma hipótese diagnóstica. Fonte: elaboração do autor, com notação baseada no material de aula.*
 
-### Legenda e relações temporais usadas
+As caixas representam objetivos e operações. O plano dentro da caixa indica a ordem das etapas. A linha abaixo da caixa marca uma operação: neste modelo, a decomposição para nesse nível, embora a operação ainda possa envolver várias ações.
 
-| Operador/relação | Significado no diagrama | Exemplo no modelo |
+### Tabela detalhada
+
+| ID | Objetivo/operação | Plano, entrada e retorno | Problema e recomendação |
+|---|---|---|---|
+| 0 | Avaliar a hipótese diagnóstica | **Plano:** 1 > 2 > 3 > 4 > 5. **Entrada:** hipótese e evidências do incidente. **Retorno:** avaliação registrada com justificativa. | O texto gerado pode passar uma certeza que os dados não sustentam. Manter clara a diferença entre hipótese e causa confirmada. |
+| 1 | Entender a hipótese | Identificar a causa apontada, o serviço envolvido e o impacto descrito. **Entrada:** explicação produzida pelo pipeline. **Retorno:** Lucas entende o que precisa verificar. | Uma explicação genérica dificulta a conferência. Apresentar a causa provável de forma direta, sem esconder as incertezas. |
+| 2 | Conferir as evidências | **Plano:** 2.1 > 2.2; repetir quando necessário. **Entrada:** subgrafo e registros relacionados. **Retorno:** evidências favoráveis, contraditórias ou insuficientes identificadas. | A explicação pode citar dados sem deixar claro onde encontrá-los. Relacionar a hipótese aos registros utilizados. |
+| 2.1 | Examinar o subgrafo | Observar os serviços envolvidos e o caminho da requisição com falha. **Retorno:** identificação das dependências relevantes. | Muitas conexões podem dificultar a leitura. Destacar o caminho relacionado ao incidente. |
+| 2.2 | Consultar spans e logs | Conferir horários, mensagens de erro e detalhes das chamadas. Um span representa uma operação dentro do trace de uma requisição. **Retorno:** registros que ajudam a verificar a explicação. | Dados importantes podem ficar misturados com informações sem relação com a falha. Permitir aprofundamento nos registros dos componentes selecionados. |
+| 3 | Comparar com o contexto | Comparar os registros com a arquitetura, o período do incidente e as mudanças recentes. **Retorno:** avaliação da compatibilidade entre os dados e a causa apontada. | Um erro após o deploy não significa, por si só, que o deploy foi a causa. Conferir também a ordem dos eventos e as dependências. |
+| 4 | Classificar a hipótese | Escolher entre sustentada, parcialmente sustentada ou não sustentada. Se faltar informação importante, retornar a 2 ou 3 antes de concluir. **Retorno:** decisão sobre a hipótese. | Uma classificação apenas de certo ou errado pode esconder que parte da explicação é útil. Permitir registrar suporte parcial e limitações. |
+| 5 | Registrar a decisão | Informar a classificação, a justificativa e as dúvidas restantes. **Retorno:** decisão disponível para consulta e repasse à equipe. | Sem justificativa, outra pessoa não consegue conferir o motivo da decisão. Registrar a avaliação junto da hipótese original. |
+
+A classificação “sustentada” indica que a hipótese é compatível com as evidências consultadas, não que a causa foi comprovada. Essas categorias são uma proposta e ainda precisam ser validadas com desenvolvedores e SREs.
+
+## 3. GOMS — Avaliar uma hipótese diagnóstica
+
+**Autor:** Gabriel Lovato — 22.123.004-8
+
+### Objetivo principal
+
+**GOAL 0:** decidir se a hipótese diagnóstica tem suporte nos dados e registrar a avaliação.
+
+### GOAL 1 — Conferir as evidências da hipótese
+
+**METHOD 1.A — Partir dos registros citados na explicação**
+
+1. Ler a hipótese e identificar a causa apontada.
+2. Abrir as evidências associadas à explicação.
+3. Selecionar os spans e logs dos serviços citados.
+4. Ler as mensagens e comparar os horários.
+5. Identificar quais registros apoiam ou contradizem a hipótese.
+
+**Regra de seleção:** usar 1.A quando a explicação indicar os registros que devem ser conferidos.
+
+**METHOD 1.B — Partir do subgrafo**
+
+1. Examinar o caminho da requisição no subgrafo.
+2. Selecionar o componente relacionado à causa apontada.
+3. Acessar seus spans e logs.
+4. Conferir as chamadas anteriores e posteriores ao erro.
+5. Comparar os registros encontrados com a explicação da hipótese.
+
+**Regra de seleção:** usar 1.B quando Lucas precisar localizar as evidências pelo componente e suas dependências, em vez de partir de uma referência direta ao registro.
+
+Os dois métodos atendem ao mesmo subobjetivo. A diferença está no ponto de partida para encontrar as evidências.
+
+### GOAL 2 — Avaliar o suporte da hipótese
+
+1. Comparar as evidências com o contexto do incidente.
+2. Verificar se a sequência dos eventos é compatível com a causa apontada.
+3. Identificar contradições e informações ausentes.
+4. Decidir se a hipótese é sustentada, parcialmente sustentada ou não sustentada.
+
+Se faltar uma evidência importante, Lucas retorna ao GOAL 1 e consulta mais registros. A ausência de informação não deve ser tratada como confirmação da hipótese.
+
+### GOAL 3 — Registrar a avaliação
+
+1. Selecionar a classificação da hipótese.
+2. Escrever a justificativa e as dúvidas restantes.
+3. Salvar a avaliação.
+4. Conferir se o registro foi concluído.
+
+### Operadores utilizados
+
+| Tipo | Operadores | Exemplo |
 |---|---|---|
-| `>>` (habilitação) | A tarefa da esquerda deve terminar antes do início da tarefa da direita. | Interpretar a hipótese `>>` inspecionar suas evidências. |
-| `|||` (intercalação) | As tarefas podem progredir de forma alternada, sem exigir uma ordem fixa. | Examinar o subgrafo `|||` aprofundar spans `|||` consultar logs. |
-| `[]` (escolha) | Apenas um dos caminhos é seguido de acordo com a condição encontrada. | Sustentar `[]` refinar `[]` rejeitar a hipótese. |
-| `*` (iteração) | A tarefa pode ser repetida enquanto a condição de saída não for atingida. | Ampliar e comparar evidências enquanto houver lacunas relevantes. |
+| Cognitivos | Ler, interpretar, comparar e decidir | Comparar um timeout com a sequência das chamadas e avaliar se ele explica os outros erros. |
+| Interação | Abrir, selecionar, navegar, digitar e salvar | Selecionar um componente, consultar seus registros e escrever a justificativa. |
 
-Identifique, quando aplicável, tarefas de usuário, sistema, interação e tarefas abstratas. Verifique se concorrência, escolha, habilitação, desabilitação e repetição estão representadas corretamente segundo a notação adotada em aula.
+O modelo considera ações da interação proposta, sem definir a posição de botões ou campos. Não foi feita uma estimativa de tempo com KLM, pois a interface ainda não está definida e o tempo de interpretação depende do incidente.
 
----
+## 4. CTT — Avaliar uma hipótese diagnóstica
 
-## Síntese da contribuição individual
+**Autor:** Gabriel Lovato — 22.123.004-8
 
-As três modelagens mostram que a revisão de uma hipótese diagnóstica não equivale a simplesmente aceitá-la ou rejeitá-la. Lucas precisa localizar o suporte estrutural da afirmação, reconhecer contradições, buscar contexto adicional e registrar por que chegou à sua decisão. A categoria “parcialmente sustentada” é necessária para preservar partes úteis de uma explicação sem validar trechos sem evidência.
+### Descrição
 
-Para as próximas etapas, devem ser priorizadas a ligação entre afirmação e evidência, a comparação entre sinais favoráveis e contraditórios, a consulta progressiva de detalhes e o registro da decisão humana com suas incertezas. No protótipo e no teste de usabilidade, a T01 deve incluir uma hipótese plausível com pelo menos uma evidência ambígua, permitindo observar se o participante revisa criticamente o resultado em vez de confiar automaticamente no texto gerado.
+O CTT mostra a sequência principal da avaliação. Lucas interpreta a hipótese, confere as evidências, faz a classificação e registra a decisão.
+
+A conferência foi dividida em examinar o subgrafo e consultar spans e logs. Essas consultas não precisam seguir uma ordem fixa: Lucas pode alternar entre elas conforme encontra novos indícios. Quando classifica a hipótese, ele também considera o contexto operacional descrito no HTA.
+
+### Diagrama
+
+![CTT da tarefa T01](../assets/05_tarefas/ctt_t01.svg)
+
+*Figura 2 — CTT da avaliação de uma hipótese diagnóstica. Fonte: elaboração do autor, com símbolos e operadores baseados no material de aula.*
+
+### Tipos de tarefa representados
+
+| Tipo | Símbolo | Tarefa no modelo |
+|---|---|---|
+| Abstrata | Nuvem | Avaliar a hipótese e conferir evidências, que agrupam outras tarefas. |
+| Usuário | Pessoa | Interpretar a hipótese e classificá-la, atividades de análise do profissional. |
+| Interação | Pessoa e computador | Examinar o subgrafo, consultar spans e logs e registrar a decisão. |
+
+Não foi incluída uma tarefa isolada de sistema porque o recorte começa com a hipótese e os dados já disponíveis. O processamento do pipeline ocorre antes dessa avaliação.
+
+### Relações entre tarefas
+
+| Operador | Significado | Uso no diagrama |
+|---|---|---|
+| `>>` | Ativação: a próxima tarefa começa quando a anterior termina. | Interpretar a hipótese antes de conferir suas evidências; conferir antes de classificar. |
+| `[]>>` | Ativação com passagem de informação. | A classificação produzida é usada no registro da decisão. |
+| `|||` | Concorrência: as tarefas podem ocorrer em qualquer ordem ou ao mesmo tempo. | Examinar o subgrafo e consultar spans e logs. No uso individual, Lucas pode alternar entre essas consultas. |
+| `*` | Repetição. | Repetir a conferência quando faltar informação para avaliar a hipótese. |
+
+O diagrama mantém apenas as etapas principais. A escolha entre sustentar, refinar ou rejeitar está reunida na tarefa “Classificar a hipótese”.
+
+## 5. Síntese da contribuição individual
+
+A análise mostra que gerar uma explicação não encerra o diagnóstico. Lucas precisa conferir de onde ela veio e se os registros fazem sentido para o incidente. A filtragem pode reduzir o volume de dados, mas ainda é necessário conseguir consultar os detalhes e reconhecer contradições.
+
+Para o protótipo, os pontos principais são relacionar a hipótese às evidências, permitir a consulta ao subgrafo e aos registros e registrar a decisão com uma justificativa. No teste de usabilidade, uma tarefa possível é apresentar uma hipótese com uma evidência contraditória e observar se o participante identifica o conflito antes de aceitá-la.
+
+O HTA, o GOMS e o CTT ajudam a organizar essa interação, mas não validam a precisão do pipeline. Também não confirmam H03: ainda é necessário investigar se a apresentação das evidências realmente ajuda o usuário a avaliar a hipótese.
+
+## Referências
+
+- **CC8122 — HTA.** Material de aula disponibilizado na disciplina, consultado em 17/09/2026. Referência utilizada para a hierarquia, os planos e a marcação das operações.
+- **CC8122 — GOMS e CTT.** Material de aula disponibilizado na disciplina, consultado em 17/09/2026. Referência utilizada para objetivos, métodos, operadores, regras de seleção e notação do CTT.
+- **BARBOSA, Simone D. J.; SILVA, Bruno S.** Interação Humano-Computador. 2010. Obra indicada nos materiais de aula.
+- Documentos do projeto: [Entrega 1](01_conhecendo_o_problema.md), [persona P01](03_personas_contexto_jornada.md) e [cenário C01](04_cenarios_problema.md).
 
 ## Checklist
 
-- [ ] Cada integrante produziu ao menos 1 HTA, 1 GOMS e 1 CTT. *(Pendente: este arquivo contém somente a contribuição individual de Gabriel.)*
-- [x] Cada artefato identifica autor e tarefa.
-- [x] Diagramas são legíveis e possuem fonte editável quando possível.
-- [x] HTA contém planos, não apenas árvore de tópicos.
-- [x] GOMS distingue Goals, Operators, Methods e Selection Rules.
-- [x] CTT usa operadores temporais e tipos de tarefa coerentes.
-- [x] Há texto explicando cada diagrama.
-- [ ] Tarefas estão ligadas a cenários/personas na rastreabilidade. *(T01 ainda precisa ser consolidada pela equipe na matriz.)*
-- [x] Em TCC técnico, as tarefas descrevem o que a pessoa faz com a contribuição/resultados, não passos internos do código.
-- [x] CRUDs, relatórios, filtros e atividades administrativas foram escolhidos por relevância ao objetivo do usuário.
+- [x] A contribuição de Gabriel contém 1 HTA, 1 GOMS e 1 CTT para a tarefa T01.
+- [x] Os modelos identificam o autor, a tarefa e sua relação com P01 e C01.
+- [x] O HTA apresenta diagrama, planos e tabela detalhada.
+- [x] O GOMS diferencia objetivos, métodos, operadores e regras de seleção.
+- [x] O CTT identifica tipos de tarefa e relações temporais.
+- [x] Os diagramas possuem fonte editável em SVG e explicação no texto.
+- [x] A tarefa representa a avaliação feita pela pessoa, não a implementação do pipeline.
+- [ ] Consolidar as contribuições dos demais integrantes.
+- [ ] Registrar T01 na matriz de rastreabilidade da equipe.
