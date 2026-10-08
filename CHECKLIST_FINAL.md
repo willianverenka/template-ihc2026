@@ -55,6 +55,15 @@ Integração da contribuição de Gabriel Lovato em [C01](docs/04_cenarios_probl
 - [x] Referência de Lucas alinhada a P02 e necessidade R01 vinculada ao cenário na matriz.
 - [x] Aprovação do texto diferenciada da validação de campo das hipóteses, ainda pendente.
 
+### Verificação parcial — Entrega 4, C03 (08/10/2026)
+
+Integração da contribuição de Théo Zago Zimmermann em [C03](docs/04_cenarios_problema/c03.md).
+
+- [x] Autoria e narrativas preservadas a partir do commit de Théo.
+- [x] Arquivo individual acessível pelo índice da Entrega 4, com navegação de retorno.
+- [x] Caráter hipotético e aprofundamentos do refinamento identificados em notas breves.
+- [x] C03 vinculado a P01/P02, R03 e às hipóteses H03/H04 na matriz.
+
 ## Justificativa das telas e padrões
 
 - [ ] Cada tela importante possui relação com uma tarefa/objetivo rastreável.

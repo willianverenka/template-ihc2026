@@ -16,6 +16,7 @@ Cada integrante apresenta sua solução completa em um arquivo na pasta [`04_cen
 |---|---|---|---|---|
 | C01 | Investigação de falha no checkout após um deploy | Gabriel Lovato — 22.123.004-8 | 🟩 concluída | [Abrir C01](04_cenarios_problema/c01.md) |
 | C02 | O teste passou, mas a correção ainda é incerta | Willian Verenka Oliveira Silva — 22.124.081-5 | 🟨 em andamento | [Abrir C02](04_cenarios_problema/c02.md) |
+| C03 | Dificuldade em distinguir a causa de um incidente de seus efeitos | Théo Zago Zimmermann — 22.123.035-2 | 🟦 revisada após feedback | [Abrir C03](04_cenarios_problema/c03.md) |
 
 ## Organização dos arquivos
 
