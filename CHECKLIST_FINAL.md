@@ -46,6 +46,15 @@ Esta verificação cobre a contribuição de Willian em [C02](docs/04_cenarios_p
 - [ ] Confirmar a taxonomia das questões conforme a aula.
 - [ ] Consolidar os cenários individuais e verificar a distinção entre os problemas cobertos.
 
+### Verificação parcial — Entrega 4, C01 (08/10/2026)
+
+Integração da contribuição de Gabriel Lovato em [C01](docs/04_cenarios_problema/c01.md), com aprovação técnica informada por Willian.
+
+- [x] Autoria e narrativas preservadas a partir da branch de Gabriel.
+- [x] Arquivo individual acessível pelo índice da Entrega 4, com navegação de retorno.
+- [x] Referência de Lucas alinhada a P02 e necessidade R01 vinculada ao cenário na matriz.
+- [x] Aprovação do texto diferenciada da validação de campo das hipóteses, ainda pendente.
+
 ## Justificativa das telas e padrões
 
 - [ ] Cada tela importante possui relação com uma tarefa/objetivo rastreável.
