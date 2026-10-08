@@ -33,6 +33,19 @@
 - [ ] Metas de usabilidade são verificáveis.
 - [ ] Em projetos técnicos, resultados do algoritmo/modelo foram traduzidos para linguagem e decisões compreensíveis ao perfil de usuário escolhido.
 
+### Verificação parcial — Entrega 4, C02 (17/09/2026)
+
+Esta verificação cobre a contribuição de Willian em [C02](docs/04_cenarios_problema/c02.md#cenário-c02--o-teste-passou-mas-a-correção-ainda-é-incerta). Os itens globais acima permanecem pendentes de revisão do conjunto de entregas.
+
+- [x] Autoria e vínculo com A03/P03 identificados.
+- [x] Solução individual completa em arquivo próprio, acessível pelo índice da Entrega 4 e com navegação de retorno.
+- [x] Narrativa apresenta contexto, tentativa atual, dificuldade e consequência, sem antecipar a interface.
+- [x] Detalhes não observados e refinamento analítico estão identificados como hipóteses.
+- [x] Necessidade R02 e hipóteses H04, H05 e H06 registradas na matriz de rastreabilidade.
+- [x] P03 permanece como persona secundária; gestão e execução de testes não foram incorporadas ao recorte de IHC.
+- [ ] Confirmar a taxonomia das questões conforme a aula.
+- [ ] Consolidar os cenários individuais e verificar a distinção entre os problemas cobertos.
+
 ## Justificativa das telas e padrões
 
 - [ ] Cada tela importante possui relação com uma tarefa/objetivo rastreável.

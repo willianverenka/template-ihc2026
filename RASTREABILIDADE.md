@@ -21,21 +21,24 @@ Para projetos cujo TCC não previa interface, esta matriz é especialmente impor
 
 > Se o escopo de IHC mudar ao longo do semestre, preserve a decisão anterior no histórico e registre **qual evidência motivou a mudança**.
 
-## 2. Registro de hipóteses e lacunas da Entrega 1
+## 2. Registro de hipóteses e lacunas
 
-Use esta tabela para itens importantes marcados como `[H]` ou `[?]`. Preserve o histórico: não apague uma hipótese refutada.
+Use esta tabela para itens importantes marcados como `[H]` ou `[?]`, indicando a entrega de origem. Preserve o histórico: não apague uma hipótese refutada.
 
 | ID | Afirmação / dúvida inicial | Tipo | Por que importa | Como/onde investigar | Evidência obtida | Estado atual | Impacto no projeto |
 |---|---|---|---|---|---|---|---|
 | H01 | {{...}} | H / ? | {{...}} | Entrega 2 / 3 / 7 / outra | {{link/fonte ou PENDENTE}} | aberta / sustentada / refutada / refinada | {{...}} |
 | H02 | {{...}} | H / ? | {{...}} | {{...}} | {{...}} | aberta | {{...}} |
+| H04 | [H] A investigação pode ocorrer sob pressão de tempo e envolver colaboração entre SRE, desenvolvedores e gestores; políticas de acesso e dados sensíveis podem limitar a consulta e o compartilhamento de evidências. Origem: Entrega 1, seção 5.4. | H | Contextualiza as dependências entre profissionais e as restrições de acesso discutidas em C02. | Entrega 7; questões Q3, Q4 e Q6 de C02. | PENDENTE — hipótese documental, sem validação de campo registrada. | aberta | Investigar a continuidade do contexto até a verificação por P03. |
+| H05 | [H] Um repasse sem condições de reprodução e evidências relacionáveis ao incidente pode obrigar a QA a reconstruir parte da investigação antes de verificar uma correção. Origem: Entrega 4, C02, a partir das dores e necessidades de P03. | H | Pode explicar retrabalho e demora na verificação. | Entrega 7; questões Q1 e Q3 de C02. | PENDENTE — refinamento analítico da proto-persona, sem coleta de campo. | aberta | Investigar quais informações precisam acompanhar o diagnóstico compartilhado. |
+| H06 | [H] Diferenças entre ambientes e limites de acesso ou cobertura da telemetria podem dificultar que a QA diferencie um teste sem erro de evidência suficiente de correção da falha original. Origem: Entrega 4, C02, a partir das restrições e dores de P03. | H | Pode explicar uma conclusão inconclusiva ou uma confirmação prematura. | Entrega 7; questões Q2, Q4 e Q5 de C02. | PENDENTE — refinamento analítico da proto-persona, sem coleta de campo. | aberta | Investigar a compreensão dos limites das evidências; não pressupor confirmação automática da correção. |
 
 ## 3. Rastreabilidade entre contribuição técnica, necessidades e artefatos
 
 | ID | Capacidade do TCC utilizada | Necessidade/problema | Persona | Cenário problema | Objetivo/tarefa | HTA/GOMS/CTT | Cenário de interação / signos | MoLIC | Tela(s) Figma | Heurística / problema | Tarefa no teste | Decisão/melhoria |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | R01 | {{ex.: recomendação de otimização}} | {{...}} | {{P01}} | {{C01}} | {{T01}} | {{links}} | {{...}} | {{M01}} | {{F01...}} | {{V01 ou —}} | {{UT01}} | {{...}} |
-| R02 |  |  |  |  |  |  |  |  |  |  |  |  |
+| R02 | Seleção de evidências de observabilidade e geração de hipóteses diagnósticas; uso por P03 ainda a investigar. | Recuperar contexto e avaliar a suficiência das evidências de um incidente para verificar sua correção; H04, H05 e H06. | [P03 — Mariana](docs/03_personas_contexto_jornada.md#persona-p03--mariana-a-analista-de-qa) | [C02 — O teste passou, mas a correção ainda é incerta](docs/04_cenarios_problema/c02.md#cenário-c02--o-teste-passou-mas-a-correção-ainda-é-incerta) | A03 — classificar se a falha foi resolvida; tarefa da Entrega 5: PENDENTE. | PENDENTE | PENDENTE | PENDENTE | PENDENTE | PENDENTE | PENDENTE | Investigar a preservação do contexto e os limites das evidências no repasse à QA; manter P03 como persona secundária. |
 
 ## 4. Rastreabilidade de padrões de interface
 
@@ -52,6 +55,7 @@ Use esta tabela quando o projeto incorporar padrões como dashboard, relatório,
 | Data | O que mudou | Evidência/feedback que motivou | Artefatos afetados | Responsável |
 |---|---|---|---|---|
 | {{...}} | {{...}} | {{...}} | {{...}} | {{...}} |
+| 17/09/2026 | C02 detalha uma necessidade já prevista em A03/P03 e explicita H05 e H06; mantém o recorte de apoio à compreensão e comunicação do incidente. Não inclui gestão ou execução de testes no escopo. | Orientação para descrever as dificuldades anteriores à solução; base documental em P03 e H04, ainda sem validação de campo. | Entrega 4 (C02), R02 e registro de hipóteses; checklist final. | Willian Verenka Oliveira Silva |
 
 ## Como usar
 
