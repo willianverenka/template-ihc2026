@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1140" viewBox="0 0 1440 1140" role="img" aria-labelledby="title desc">
+<title id="title">HTA T02 — Emitir um parecer sobre a verificação da correção</title><desc id="desc">Decomposição hierárquica em recuperar contexto, avaliar alcance, tratar lacunas, definir parecer e comunicar; planos incluem retornos e conclusão inconclusiva.</desc>
+<style>text{font-family:Arial,sans-serif;fill:#172b3a}.line{fill:none;stroke:#526777;stroke-width:1.7}.box{fill:#fff;stroke:#526777;stroke-width:1.5}.title{font-size:27px;font-weight:bold}.small{font-size:16px}.label{font-size:18px}.op{font-size:25px;font-family:monospace}</style>
+<rect width="1440" height="1140" fill="#fff"/>
+<text x="35" y="44" text-anchor="start" font-size="26" font-weight="bold"><tspan x="35" dy="0">HTA · T02 — Emitir um parecer fundamentado sobre a verificação da correção</tspan></text>
+<text x="35" y="73" text-anchor="start" font-size="17" font-weight="normal"><tspan x="35" dy="0">Willian Verenka Oliveira Silva · P03 / C02 · Proposta de interação — 08/10/2026</tspan></text>
+<rect x="465" y="104" width="510" height="78" rx="5" fill="#edf5f8" stroke="#526777" stroke-width="1.5"/>
+<text x="720.0" y="137.5" text-anchor="middle" font-size="18" font-weight="bold"><tspan x="720.0" dy="0">0. Emitir parecer sobre a verificação</tspan><tspan x="720.0" dy="23">Conclusão, evidências e limites</tspan></text>
+<path class="line" d="M720 182 V220 M158 220 H1282"/>
+<path class="line" d="M158 220 V252"/>
+<rect x="35" y="252" width="246" height="76" rx="5" fill="#edf5f8" stroke="#526777" stroke-width="1.5"/>
+<text x="158.0" y="284.5" text-anchor="middle" font-size="18" font-weight="bold"><tspan x="158.0" dy="0">1. Recuperar</tspan><tspan x="158.0" dy="23">o contexto</tspan></text>
+<path class="line" d="M158 328 V361 H30 V498"/>
+<path class="line" d="M30 408 H42"/>
+<rect x="42" y="375" width="240" height="66" rx="5" fill="#fff" stroke="#526777" stroke-width="1.5"/>
+<text x="162.0" y="402.5" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="162.0" dy="0">1.1 Identificar incidente,</tspan><tspan x="162.0" dy="23">serviço, período e ambiente</tspan></text>
+<path class="line" d="M42 448 H282"/>
+<path class="line" d="M30 498 H42"/>
+<rect x="42" y="465" width="240" height="66" rx="5" fill="#fff" stroke="#526777" stroke-width="1.5"/>
+<text x="162.0" y="492.5" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="162.0" dy="0">1.2 Consultar diagnóstico,</tspan><tspan x="162.0" dy="23">evidências e origem</tspan></text>
+<path class="line" d="M42 538 H282"/>
+<path class="line" d="M439 220 V252"/>
+<rect x="316" y="252" width="246" height="76" rx="5" fill="#edf5f8" stroke="#526777" stroke-width="1.5"/>
+<text x="439.0" y="284.5" text-anchor="middle" font-size="18" font-weight="bold"><tspan x="439.0" dy="0">2. Avaliar o alcance</tspan><tspan x="439.0" dy="23">da verificação</tspan></text>
+<path class="line" d="M439 328 V361 H311 V588"/>
+<path class="line" d="M311 408 H323"/>
+<rect x="323" y="375" width="240" height="66" rx="5" fill="#fff" stroke="#526777" stroke-width="1.5"/>
+<text x="443.0" y="402.5" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="443.0" dy="0">2.1 Relacionar condições</tspan><tspan x="443.0" dy="23">do incidente e verificação</tspan></text>
+<path class="line" d="M323 448 H563"/>
+<path class="line" d="M311 498 H323"/>
+<rect x="323" y="465" width="240" height="66" rx="5" fill="#fff" stroke="#526777" stroke-width="1.5"/>
+<text x="443.0" y="492.5" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="443.0" dy="0">2.2 Examinar cobertura</tspan><tspan x="443.0" dy="23">e limites de acesso</tspan></text>
+<path class="line" d="M323 538 H563"/>
+<path class="line" d="M311 588 H323"/>
+<rect x="323" y="555" width="240" height="66" rx="5" fill="#fff" stroke="#526777" stroke-width="1.5"/>
+<text x="443.0" y="582.5" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="443.0" dy="0">2.3 Confrontar resultados</tspan><tspan x="443.0" dy="23">com o critério conhecido</tspan></text>
+<path class="line" d="M323 628 H563"/>
+<path class="line" d="M720 220 V252"/>
+<rect x="597" y="252" width="246" height="76" rx="5" fill="#edf5f8" stroke="#526777" stroke-width="1.5"/>
+<text x="720.0" y="284.5" text-anchor="middle" font-size="18" font-weight="bold"><tspan x="720.0" dy="0">3. Tratar lacunas</tspan><tspan x="720.0" dy="23">quando necessário</tspan></text>
+<path class="line" d="M720 328 V361 H592 V498"/>
+<path class="line" d="M592 408 H604"/>
+<rect x="604" y="375" width="240" height="66" rx="5" fill="#fff" stroke="#526777" stroke-width="1.5"/>
+<text x="724.0" y="402.5" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="724.0" dy="0">3.1 Especificar lacuna</tspan><tspan x="724.0" dy="23">e quem pode esclarecê-la</tspan></text>
+<path class="line" d="M604 448 H844"/>
+<path class="line" d="M592 498 H604"/>
+<rect x="604" y="465" width="240" height="66" rx="5" fill="#fff" stroke="#526777" stroke-width="1.5"/>
+<text x="724.0" y="492.5" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="724.0" dy="0">3.2 Consultar complemento</tspan><tspan x="724.0" dy="23">autorizado, se disponível</tspan></text>
+<path class="line" d="M604 538 H844"/>
+<path class="line" d="M1001 220 V252"/>
+<rect x="878" y="252" width="246" height="76" rx="5" fill="#edf5f8" stroke="#526777" stroke-width="1.5"/>
+<text x="1001.0" y="284.5" text-anchor="middle" font-size="18" font-weight="bold"><tspan x="1001.0" dy="0">4. Definir parecer</tspan><tspan x="1001.0" dy="23">e limites</tspan></text>
+<path class="line" d="M878 335 H1124"/>
+<path class="line" d="M1282 220 V252"/>
+<rect x="1159" y="252" width="246" height="76" rx="5" fill="#edf5f8" stroke="#526777" stroke-width="1.5"/>
+<text x="1282.0" y="284.5" text-anchor="middle" font-size="18" font-weight="bold"><tspan x="1282.0" dy="0">5. Registrar</tspan><tspan x="1282.0" dy="23">e comunicar</tspan></text>
+<path class="line" d="M1282 328 V361 H1154 V498"/>
+<path class="line" d="M1154 408 H1166"/>
+<rect x="1166" y="375" width="240" height="66" rx="5" fill="#fff" stroke="#526777" stroke-width="1.5"/>
+<text x="1286.0" y="402.5" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="1286.0" dy="0">5.1 Registrar conclusão,</tspan><tspan x="1286.0" dy="23">evidências e pendências</tspan></text>
+<path class="line" d="M1166 448 H1406"/>
+<path class="line" d="M1154 498 H1166"/>
+<rect x="1166" y="465" width="240" height="66" rx="5" fill="#fff" stroke="#526777" stroke-width="1.5"/>
+<text x="1286.0" y="492.5" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="1286.0" dy="0">5.2 Disponibilizar parecer</tspan><tspan x="1286.0" dy="23">e conferir confirmação</tspan></text>
+<path class="line" d="M1166 538 H1406"/>
+<rect x="35" y="691" width="1370" height="280" rx="8" fill="#f3f6f8"/>
+<text x="58" y="722" text-anchor="start" font-size="20" font-weight="bold"><tspan x="58" dy="0">Planos de execução</tspan></text>
+<text x="58" y="756" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">Plano 0: 1 → 2; se houver lacuna, 3. Com complemento, retornar a 2. Sem complemento viável, 4 (inconclusivo) → 5.</tspan></text>
+<text x="58" y="784" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">Sem lacuna impeditiva: 1 → 2 → 4 → 5. O parecer não implica liberação automática da versão.</tspan></text>
+<text x="58" y="812" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">Plano 1: 1.1 → 1.2. Se faltar identificação da ocorrência, explicitar a limitação e buscar esclarecimento em 3.</tspan></text>
+<text x="58" y="840" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">Plano 2: 2.1 → 2.2 → 2.3; repetir para as evidências necessárias, mantendo o vínculo com o incidente.</tspan></text>
+<text x="58" y="868" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">Plano 3: 3.1; depois 3.2, se houver complemento autorizado disponível. Não presumir resposta antes do prazo.</tspan></text>
+<text x="58" y="896" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">Plano 5: 5.1 → 5.2. Em falha, preservar o rascunho e retomar a tentativa; só concluir após confirmação.</tspan></text>
+<text x="58" y="924" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">Critério de parada da busca: não há fonte adicional viável no prazo. Comunicar a lacuna no parecer.</tspan></text>
+<text x="35" y="1012" text-anchor="start" font-size="17" font-weight="normal"><tspan x="35" dy="0">Leitura: as ligações mostram decomposição; as linhas sob as caixas marcam operações no nível adotado.</tspan></text>
+<text x="35" y="1044" text-anchor="start" font-size="17" font-weight="normal"><tspan x="35" dy="0">Os planos definem ordem, condições e retornos. A descrição completa está em docs/05_analise_tarefas/t02.md.</tspan></text>
+<text x="35" y="1083" text-anchor="start" font-size="16" font-weight="normal"><tspan x="35" dy="0">Fonte: elaboração do autor. SVG editável. Hipóteses H04, H05 e H06 permanecem abertas.</tspan></text>
+</svg>
