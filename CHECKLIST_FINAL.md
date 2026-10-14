@@ -64,21 +64,20 @@ Integração da contribuição de Théo Zago Zimmermann em [C03](docs/04_cenario
 - [x] Caráter hipotético e aprofundamentos do refinamento identificados em notas breves.
 - [x] C03 vinculado a P01/P02, R03 e às hipóteses H03/H04 na matriz.
 
-### Verificação parcial — Entrega 5 (08/10/2026)
+### Verificação parcial — Entrega 5 (08/10/2026; revisada em 14/10/2026)
 
 Esta verificação cobre a primeira versão de [T02 — Willian](docs/05_analise_tarefas/t02.md) e a integração de [T01 — Gabriel](docs/05_analise_tarefas/t01.md) e [T03 — Théo](docs/05_analise_tarefas/t03.md). A entrega da equipe permanece em andamento.
 
 - [x] Soluções individuais preservadas em arquivos próprios, acessíveis pelo índice da Entrega 5.
-- [x] T02 contém HTA, GOMS e CTT, com diagramas SVG editáveis e interpretação textual.
+- [x] Uma técnica por integrante: T01/HTA (Gabriel), T02/CTT (Willian), T03/GOMS (Théo); modelos excedentes preservados no histórico Git.
+- [x] T02 contém o CTT, com diagrama SVG editável e interpretação textual.
 - [x] T02 deriva de P03/C02, distingue dado, hipótese e decisão e mantém o recorte sem gestão/execução de testes.
 - [x] Parecer inconclusivo, limites de acesso e cobertura e falha de comunicação são considerados em T02.
 - [x] Autoria e origem das contribuições de Gabriel e Théo preservadas; Lucas corrigido para P02 e cenário de Théo para C03.
 - [x] Colisões resolvidas: T01/Gabriel, T02/Willian, T03/Théo; arquivos de diagramas separados.
-- [x] Placeholders de Théo preservados e explicitamente identificados como pendentes.
 - [x] R01–R03 vinculam as tarefas aos modelos existentes; etapas posteriores continuam PENDENTE.
-- [ ] Substituir e revisar os diagramas de T03.
 - [ ] Conferir os modelos com a notação da aula e revisar a contribuição de Willian.
-- [ ] Incorporar a contribuição de Sitta e concluir a síntese da equipe.
+- [ ] Incorporar a técnica de Sitta (a escolher) e concluir a síntese da equipe.
 
 ## Justificativa das telas e padrões
 

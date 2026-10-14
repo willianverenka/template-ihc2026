@@ -6,7 +6,7 @@
 
 **Status:** 🟨 em andamento
 
-**Responsabilidade:** cada integrante modela pelo menos 1 HTA, 1 GOMS e 1 CTT. As três técnicas podem abordar a mesma tarefa, conforme a orientação da disciplina.
+**Responsabilidade:** cada integrante modela uma única técnica (HTA, GOMS ou CTT) sobre uma tarefa própria, conforme orientação da disciplina. Distribuição: Gabriel — HTA (T01); Willian — CTT (T02); Théo — GOMS (T03); Sitta — técnica a escolher, sobre tarefa própria derivada de P04.
 
 **Consolidação:** Willian Verenka Oliveira Silva — 22.124.081-5. A autoria dos modelos individuais está identificada em cada arquivo.
 
@@ -20,28 +20,30 @@ As entradas são a contribuição técnica e as atividades da [Entrega 1](01_con
 
 ## Soluções individuais e seleção de tarefas
 
-| ID | Tarefa | Persona / cenário | Autor(a) | Situação |
-|---|---|---|---|---|
-| [T01](05_analise_tarefas/t01.md) | Avaliar uma hipótese diagnóstica e decidir se as evidências a sustentam | P02 — Lucas / C01 | Gabriel Lovato — 22.123.004-8 | 🟨 em andamento — modelos e diagramas integrados; revisão conjunta pendente |
-| [T02](05_analise_tarefas/t02.md) | Emitir um parecer fundamentado sobre a verificação da correção | P03 — Mariana / C02 | Willian Verenka Oliveira Silva — 22.124.081-5 | 🟨 em andamento — primeira versão com HTA, GOMS, CTT e diagramas |
-| [T03](05_analise_tarefas/t03.md) | Formular um diagnóstico inicial fundamentado sobre um incidente | P01 — Rafael Mendes / C03 | Théo Zago Zimmermann — 22.123.035-2 | 🟨 em andamento — modelos textuais; diagramas ainda são placeholders |
-| PENDENTE | Tarefa ainda não incorporada | P04 — Camila; vínculo com cenário PENDENTE nesta entrega | João Vitor Sitta — 22.123.054-3 | ⬜ não iniciada nesta consolidação — contribuição ainda não incorporada |
+| ID | Tarefa | Persona / cenário | Técnica | Autor(a) | Situação |
+|---|---|---|---|---|---|
+| [T01](05_analise_tarefas/t01.md) | Avaliar uma hipótese diagnóstica e decidir se as evidências a sustentam | P02 — Lucas / C01 | HTA | Gabriel Lovato — 22.123.004-8 | 🟨 em andamento — diagrama, planos e tabela integrados; revisão conjunta pendente |
+| [T02](05_analise_tarefas/t02.md) | Emitir um parecer fundamentado sobre a verificação da correção | P03 — Mariana / C02 | CTT | Willian Verenka Oliveira Silva — 22.124.081-5 | 🟨 em andamento — primeira versão com diagrama e interpretação |
+| [T03](05_analise_tarefas/t03.md) | Formular um diagnóstico inicial fundamentado sobre um incidente | P01 — Rafael Mendes / C03 | GOMS | Théo Zago Zimmermann — 22.123.035-2 | 🟨 em andamento — modelo textual; revisão conjunta pendente |
+| PENDENTE | Tarefa ainda não incorporada | P04 — Camila; vínculo com cenário PENDENTE nesta entrega | A escolher | João Vitor Sitta — 22.123.054-3 | ⬜ não iniciada nesta consolidação — contribuição ainda não incorporada |
 
 [?] A frequência das tarefas precisa ser investigada. [H] T01 e T03 são críticas pelo risco de orientar a investigação para o componente errado; T02, pelo risco de concluir que uma correção foi verificada sem evidência suficiente. Essa criticidade é uma interpretação do projeto, não uma medida obtida com participantes.
 
 ## Modelos e arquivos
 
-| Tarefa | HTA | GOMS | CTT |
+| Tarefa | Técnica | Modelo | Diagrama |
 |---|---|---|---|
-| T01 | [Diagrama](../assets/05_tarefas/hta_t01.svg) e planos no [texto individual](05_analise_tarefas/t01.md#2-hta--avaliar-uma-hipótese-diagnóstica) | [Modelo textual](05_analise_tarefas/t01.md#3-goms--avaliar-uma-hipótese-diagnóstica) | [Diagrama](../assets/05_tarefas/ctt_t01.svg) e [interpretação](05_analise_tarefas/t01.md#4-ctt--avaliar-uma-hipótese-diagnóstica) |
-| T02 | [Diagrama](../assets/05_tarefas/hta_t02.svg) e [planos](05_analise_tarefas/t02.md#3-hta--recuperar-avaliar-e-comunicar) | [Modelo textual](05_analise_tarefas/t02.md#4-goms--métodos-para-produzir-o-mesmo-parecer) | [Diagrama](../assets/05_tarefas/ctt_t02.svg) e [interpretação](05_analise_tarefas/t02.md#5-ctt--dependências-entre-consulta-julgamento-e-comunicação) |
-| T03 | [Placeholder preservado](../assets/05_tarefas/hta_t03.svg); [modelo textual](05_analise_tarefas/t03.md#2-hta--formular-um-diagnóstico-inicial) | [Modelo textual](05_analise_tarefas/t03.md#3-goms--formular-um-diagnóstico-inicial) | [Placeholder preservado](../assets/05_tarefas/ctt_t03.svg); [modelo textual](05_analise_tarefas/t03.md#4-ctt--formular-um-diagnóstico-inicial) |
+| T01 | HTA | [Planos e tabela detalhada](05_analise_tarefas/t01.md#2-hta--avaliar-uma-hipótese-diagnóstica) | [hta_t01.svg](../assets/05_tarefas/hta_t01.svg) |
+| T02 | CTT | [Tarefas, expressão e relações temporais](05_analise_tarefas/t02.md#3-ctt--dependências-entre-consulta-julgamento-e-comunicação) | [ctt_t02.svg](../assets/05_tarefas/ctt_t02.svg) |
+| T03 | GOMS | [Métodos, operadores e regras de seleção](05_analise_tarefas/t03.md#2-goms--formular-um-diagnóstico-inicial) | Não se aplica: modelo textual |
 
-Os SVGs dos diagramas são também suas fontes editáveis. Os placeholders de T03 não contam como diagramas concluídos e foram mantidos a pedido de Willian para ajuste posterior.
+Os SVGs dos diagramas são também suas fontes editáveis. Os modelos que excediam a regra de uma técnica por integrante saíram da entrega em 14/10/2026 e continuam no histórico Git (veja o [histórico de consolidação](#histórico-de-consolidação)).
 
 ## Síntese inicial da equipe
 
 T03 acompanha a formulação do diagnóstico pelo SRE. T01 aprofunda a avaliação de uma hipótese pelo desenvolvedor antes de orientar uma correção. T02 acompanha o repasse à QA, que precisa distinguir o resultado observado de um teste da conclusão sobre a falha original. Há sobreposição na consulta a evidências, mas os objetivos e os critérios de conclusão são diferentes.
+
+Como cada tarefa é analisada por uma técnica diferente, os modelos mostram aspectos complementares do recorte: a decomposição e os planos (HTA de T01), as dependências entre ações do usuário e respostas do sistema (CTT de T02) e a escolha entre métodos (GOMS de T03). Não são três visões da mesma tarefa.
 
 Essa relação é uma proposta de continuidade entre os papéis, não uma sequência obrigatória validada com usuários. A revisão conjunta deve verificar a sobreposição entre T01 e T03 e integrar a contribuição ainda pendente de Sitta.
 
@@ -66,25 +68,28 @@ Essa relação é uma proposta de continuidade entre os papéis, não uma sequê
 | Théo, branch `Entrega2_Théo` | T01; C01 citado no texto da Entrega 5 | T03; C03 | Eliminar colisão de tarefa e vincular ao cenário individual já integrado. |
 | Théo, branch `Entrega2_Théo` | `hta_t01.svg`; `ctt_t03.svg` | `hta_t03.svg`; `ctt_t03.svg` | Separar o HTA do arquivo de Gabriel e manter os placeholders. |
 | Willian | Nova tarefa derivada de P03/C02 | T02; `hta_t02.svg`; `ctt_t02.svg` | Reservar identificadores próprios para o parecer da QA. |
+| Equipe, regra de uma técnica por integrante | HTA, GOMS e CTT em T01–T03 | T01/HTA; T02/CTT; T03/GOMS | Aplicar a orientação da disciplina; `ctt_t01.svg`, `hta_t02.svg`, `hta_t03.svg` e `ctt_t03.svg` excluídos. |
 
-IDs de etapas e métodos internos a um modelo são locais à tarefa: `T01/GOMS/1.A` e `T03/CTT/I1`, por exemplo. Não são novos IDs globais de atividade, MoLIC ou tela.
+IDs de etapas e métodos internos a um modelo são locais à tarefa: `T02/CTT/I1` e `T03/GOMS/METHOD 2`, por exemplo. Não são novos IDs globais de atividade, MoLIC ou tela.
 
 ## Histórico de consolidação
 
 | Data | Alteração | Responsável |
 |---|---|---|
 | 08/10/2026 | Primeira versão de T02, importação das contribuições T01/T03 com autoria preservada, correção P02/C03, resolução de colisões e síntese inicial. Placeholders de Théo mantidos por solicitação de Willian. | Willian Verenka Oliveira Silva |
+| 14/10/2026 | Integração ao histórico Git dos commits de origem de Gabriel e Théo. Aplicação da regra de uma técnica por integrante: T01 mantém o HTA, T02 o CTT e T03 o GOMS; os demais modelos e os placeholders de T03 saíram da entrega e permanecem nos commits de origem (2f91011 e a98ccf9) e no histórico da branch. | Willian Verenka Oliveira Silva |
 
 As referências e os commits de origem estão nos arquivos individuais. Orientações gerais: [Guia de uso](../GUIA_DE_USO.md), [Guia de escopo](../GUIA_ESCOPO_IHC.md) e [Bibliografia](../BIBLIOGRAFIA.md).
 
 ## Checklist da equipe
 
-- [ ] Cada integrante produziu ao menos 1 HTA, 1 GOMS e 1 CTT; falta incorporar a contribuição de Sitta.
+- [ ] Cada integrante produziu exatamente uma técnica (HTA, GOMS ou CTT) sobre uma tarefa própria; falta a contribuição de Sitta.
 - [x] Os três trabalhos incorporados identificam autor, tarefa e origem.
-- [x] Os HTAs textuais incorporados apresentam planos, além da decomposição.
-- [x] Os GOMS incorporados distinguem metas, operadores, métodos e regras de seleção.
-- [ ] Todos os diagramas são legíveis e correspondem ao texto; substituir os placeholders de T03.
-- [ ] Conferir a notação CTT dos três trabalhos com a orientação da aula.
+- [x] O HTA de T01 apresenta planos, além da decomposição.
+- [x] O GOMS de T03 distingue metas, operadores, métodos e regras de seleção.
+- [x] O CTT de T02 identifica categorias de tarefa e relações temporais.
+- [ ] Conferir a legibilidade dos diagramas (HTA de T01 e CTT de T02) e sua correspondência com o texto; o CTT de T02 já foi conferido.
+- [ ] Conferir a notação de cada técnica com o material da aula.
 - [x] As tarefas incorporadas estão vinculadas a personas/cenários em R01–R03.
 - [x] Modelagens tratam de tarefas humanas, sem incorporar etapas internas do algoritmo.
 - [x] Hipóteses, lacunas e limites do escopo permanecem explícitos.
