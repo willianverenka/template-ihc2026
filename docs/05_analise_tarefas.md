@@ -45,7 +45,7 @@ T03 acompanha a formulação do diagnóstico pelo SRE. T01 aprofunda a avaliaç�
 
 Como cada tarefa é analisada por uma técnica diferente, os modelos mostram aspectos complementares do recorte: a decomposição e os planos (HTA de T01), as dependências entre ações do usuário e respostas do sistema (CTT de T02) e a escolha entre métodos (GOMS de T03). Não são três visões da mesma tarefa.
 
-Essa relação é uma proposta de continuidade entre os papéis, não uma sequência obrigatória validada com usuários. A revisão conjunta deve verificar a sobreposição entre T01 e T03 e integrar a contribuição ainda pendente de Sitta.
+Essa relação é uma proposta de continuidade entre os papéis, não uma sequência obrigatória validada com usuários. A revisão conjunta deve verificar a sobreposição entre T01 e T03, conferir a notação de cada técnica com o material da aula e integrar a contribuição ainda pendente de Sitta.
 
 | Achado da modelagem | Decisão inicial de design | Origem | Avaliação proposta |
 |---|---|---|---|
@@ -78,20 +78,19 @@ IDs de etapas e métodos internos a um modelo são locais à tarefa: `T02/CTT/I1
 |---|---|---|
 | 08/10/2026 | Primeira versão de T02, importação das contribuições T01/T03 com autoria preservada, correção P02/C03, resolução de colisões e síntese inicial. Placeholders de Théo mantidos por solicitação de Willian. | Willian Verenka Oliveira Silva |
 | 14/10/2026 | Integração ao histórico Git dos commits de origem de Gabriel e Théo. Aplicação da regra de uma técnica por integrante: T01 mantém o HTA, T02 o CTT e T03 o GOMS; os demais modelos e os placeholders de T03 saíram da entrega e permanecem nos commits de origem (2f91011 e a98ccf9) e no histórico da branch. | Willian Verenka Oliveira Silva |
+| 14/10/2026 | Checklist restaurada ao texto do template da disciplina, apenas com marcação; checklists individuais de T01–T03 removidas. Pendências de revisão movidas para a síntese. | Willian Verenka Oliveira Silva |
 
 As referências e os commits de origem estão nos arquivos individuais. Orientações gerais: [Guia de uso](../GUIA_DE_USO.md), [Guia de escopo](../GUIA_ESCOPO_IHC.md) e [Bibliografia](../BIBLIOGRAFIA.md).
 
-## Checklist da equipe
+## Checklist
 
-- [ ] Cada integrante produziu exatamente uma técnica (HTA, GOMS ou CTT) sobre uma tarefa própria; falta a contribuição de Sitta.
-- [x] Os três trabalhos incorporados identificam autor, tarefa e origem.
-- [x] O HTA de T01 apresenta planos, além da decomposição.
-- [x] O GOMS de T03 distingue metas, operadores, métodos e regras de seleção.
-- [x] O CTT de T02 identifica categorias de tarefa e relações temporais.
-- [ ] Conferir a legibilidade dos diagramas (HTA de T01 e CTT de T02) e sua correspondência com o texto; o CTT de T02 já foi conferido.
-- [ ] Conferir a notação de cada técnica com o material da aula.
-- [x] As tarefas incorporadas estão vinculadas a personas/cenários em R01–R03.
-- [x] Modelagens tratam de tarefas humanas, sem incorporar etapas internas do algoritmo.
-- [x] Hipóteses, lacunas e limites do escopo permanecem explícitos.
-- [ ] Revisar a síntese com a equipe, incluindo a contribuição pendente e a sobreposição T01/T03.
-- [ ] Definir a cobertura final do protótipo e dos testes nas entregas correspondentes.
+- [ ] Cada integrante produziu ao menos 1 HTA, 1 GOMS e 1 CTT.
+- [x] Cada artefato identifica autor e tarefa.
+- [x] Diagramas são legíveis e possuem fonte editável quando possível.
+- [x] HTA contém planos, não apenas árvore de tópicos.
+- [x] GOMS distingue Goals, Operators, Methods e Selection Rules.
+- [ ] CTT usa operadores temporais e tipos de tarefa coerentes.
+- [x] Há texto explicando cada diagrama.
+- [x] Tarefas estão ligadas a cenários/personas na rastreabilidade.
+- [x] Em TCC técnico, as tarefas descrevem o que a pessoa faz com a contribuição/resultados, não passos internos do código.
+- [x] CRUDs, relatórios, filtros e atividades administrativas foram escolhidos por relevância ao objetivo do usuário.

@@ -28,7 +28,7 @@ Cada arquivo individual deve conter:
 - cenário inicial, questões de refinamento e cenário refinado com as alterações identificadas;
 - elementos extraídos, síntese e implicações para as próximas entregas;
 - rastreabilidade, hipóteses e lacunas, referências e histórico de revisões;
-- checklist individual e link de retorno a esta página.
+- link de retorno a esta página.
 
 ## Critério da atividade
 
@@ -39,11 +39,11 @@ Consulte o [guia de uso](../GUIA_DE_USO.md) para as convenções de autoria, evi
 ## Checklist
 
 - [ ] Há um cenário completo por integrante.
-- [ ] Cada cenário tem título, ator, objetivo, contexto e problema.
-- [ ] O cenário possui origem rastreável na Entrega 1 ou justifica claramente a inclusão de uma nova situação.
-- [ ] O texto descreve a situação atual, sem antecipar a solução.
-- [ ] Para TCC sem interface original, o cenário descreve uma prática humana plausível relacionada à contribuição técnica, e não “a falta de uma tela”.
+- [x] Cada cenário tem título, ator, objetivo, contexto e problema.
+- [x] O cenário possui origem rastreável na Entrega 1 ou justifica claramente a inclusão de uma nova situação.
+- [x] O texto descreve a situação atual, sem antecipar a solução.
+- [x] Para TCC sem interface original, o cenário descreve uma prática humana plausível relacionada à contribuição técnica, e não “a falta de uma tela”.
 - [ ] Questões de refinamento acrescentam informação nova.
-- [ ] O refinamento mostra claramente o que foi adicionado/alterado.
+- [x] O refinamento mostra claramente o que foi adicionado/alterado.
 - [ ] Cenários são diferentes o suficiente para cobrir objetivos/problemas relevantes.
-- [ ] Cada cenário está ligado a persona/necessidade na matriz de rastreabilidade.
+- [x] Cada cenário está ligado a persona/necessidade na matriz de rastreabilidade.
