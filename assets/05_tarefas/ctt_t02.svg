@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1140" viewBox="0 0 1440 1140" role="img" aria-labelledby="title desc">
-<title id="title">CTT T02 — Consulta, julgamento e comunicação do parecer</title><desc id="desc">Tarefa abstrata A0 decomposta em A1 iterativa, U2 e A2 iterativa, com habilitação e passagem de informação. A1 reúne I1, S1, U1; A2 reúne I2, S2, U3.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1340" viewBox="0 0 1440 1340" role="img" aria-labelledby="title desc">
+<title id="title">CTT T02 — Consulta, julgamento e comunicação do parecer</title><desc id="desc">Tarefa abstrata A0 decomposta em A1 iterativa, U2 e A2. U2 desabilita A1 e habilita A2 com passagem de informação. A1 reúne I1, S1, U1. A2 reúne A3 iterativa, desabilitada por U4; A3 reúne I2, S2, U3.</desc>
 <style>text{font-family:Arial,sans-serif;fill:#172b3a}.line{fill:none;stroke:#526777;stroke-width:1.7}.box{fill:#fff;stroke:#526777;stroke-width:1.5}.title{font-size:27px;font-weight:bold}.small{font-size:16px}.label{font-size:18px}.op{font-size:25px;font-family:monospace}</style>
-<rect width="1440" height="1140" fill="#fff"/>
+<rect width="1440" height="1340" fill="#fff"/>
 <defs>
 <g id="abstract"><path d="M-31 -12 C-45 -28 -22 -43 -10 -31 C0 -48 28 -39 27 -24 C48 -26 50 2 32 8 C38 27 10 36 0 22 C-16 39 -40 19 -31 5 C-49 6 -49 -11 -31 -12 Z" fill="#edf5f8" stroke="#526777" stroke-width="1.7"/></g>
 <g id="user"><circle cx="0" cy="-21" r="12" fill="#fff" stroke="#526777" stroke-width="1.7"/><path d="M-24 31 V5 Q-22 -7 0 -7 Q22 -7 24 5 V31 Z M-13 7 V31 M13 7 V31" fill="#fff" stroke="#526777" stroke-width="1.7"/></g>
@@ -9,7 +9,7 @@
 <g id="interaction"><use href="#system" transform="translate(-21 0) scale(.75)"/><use href="#user" transform="translate(24 0) scale(.75)"/></g>
 </defs>
 <text x="35" y="44" text-anchor="start" font-size="26" font-weight="bold"><tspan x="35" dy="0">CTT · T02 — Do contexto recuperado ao parecer comunicado</tspan></text>
-<text x="35" y="73" text-anchor="start" font-size="17" font-weight="normal"><tspan x="35" dy="0">Willian Verenka Oliveira Silva · P03 / C02 · Proposta de interação — 08/10/2026</tspan></text>
+<text x="35" y="73" text-anchor="start" font-size="17" font-weight="normal"><tspan x="35" dy="0">Willian Verenka Oliveira Silva · P03 / C02 · Proposta de interação — 08/10/2026, revisada em 15/10/2026</tspan></text>
 <use href="#abstract" x="720" y="148"/>
 <text x="720" y="206" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="720" dy="0">A0 · abstrata</tspan></text>
 <text x="720" y="233" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="720" dy="0">Emitir parecer fundamentado</tspan></text>
@@ -24,20 +24,18 @@
 <text x="720" y="403" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="720" dy="0">U2 · usuário</tspan></text>
 <text x="720" y="430" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="720" dy="0">Definir parecer</tspan><tspan x="720" dy="23">e limites</tspan></text>
 <use href="#abstract" x="1140" y="345"/>
-<text x="1190" y="325" text-anchor="middle" font-size="30" font-weight="normal"><tspan x="1190" dy="0">*</tspan></text>
 <text x="1140" y="403" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="1140" dy="0">A2 · abstrata</tspan></text>
 <text x="1140" y="430" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="1140" dy="0">Registrar e comunicar</tspan><tspan x="1140" dy="23">com confirmação</tspan></text>
 <path class="line" d="M344 345 H679 M746 345 H1100"/>
 <rect x="475" y="326" width="70" height="40" fill="#fff"/>
-<text x="510" y="351" text-anchor="middle" font-size="25" font-weight="normal"><tspan x="510" dy="0">[]&gt;&gt;</tspan></text>
+<text x="510" y="351" text-anchor="middle" font-size="25" font-weight="normal"><tspan x="510" dy="0">[&gt;</tspan></text>
 <rect x="895" y="326" width="70" height="40" fill="#fff"/>
 <text x="930" y="351" text-anchor="middle" font-size="25" font-weight="normal"><tspan x="930" dy="0">[]&gt;&gt;</tspan></text>
 <path class="line" d="M300 463 L100 556"/>
 <path class="line" d="M300 463 L300 556"/>
 <path class="line" d="M300 463 L500 556"/>
-<path class="line" d="M1140 463 L940 556"/>
-<path class="line" d="M1140 463 L1140 556"/>
-<path class="line" d="M1140 463 L1340 556"/>
+<path class="line" d="M1140 463 L1000 556"/>
+<path class="line" d="M1140 463 L1290 556"/>
 <use href="#interaction" x="100" y="596"/>
 <text x="100" y="654" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="100" dy="0">I1 · interação</tspan></text>
 <text x="100" y="681" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="100" dy="0">Solicitar contexto</tspan><tspan x="100" dy="23">ou evidência</tspan></text>
@@ -47,32 +45,45 @@
 <use href="#user" x="500" y="596"/>
 <text x="500" y="654" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="500" dy="0">U1 · usuário</tspan></text>
 <text x="500" y="681" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="500" dy="0">Comparar condições,</tspan><tspan x="500" dy="23">cobertura e critério</tspan></text>
-<use href="#interaction" x="940" y="596"/>
-<text x="940" y="654" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="940" dy="0">I2 · interação</tspan></text>
-<text x="940" y="681" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="940" dy="0">Registrar parecer,</tspan><tspan x="940" dy="23">fontes e destinatário</tspan></text>
-<use href="#system" x="1140" y="596"/>
-<text x="1140" y="654" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="1140" dy="0">S2 · sistema</tspan></text>
-<text x="1140" y="681" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="1140" dy="0">Processar e informar</tspan><tspan x="1140" dy="23">sucesso ou falha</tspan></text>
-<use href="#user" x="1340" y="596"/>
-<text x="1340" y="654" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="1340" dy="0">U3 · usuário</tspan></text>
-<text x="1340" y="681" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="1340" dy="0">Conferir retorno</tspan><tspan x="1340" dy="23">da comunicação</tspan></text>
-<path class="line" d="M145 596 H265 M332 596 H474 M985 596 H1105 M1172 596 H1314"/>
+<use href="#abstract" x="1000" y="596"/>
+<text x="1050" y="576" text-anchor="middle" font-size="30" font-weight="normal"><tspan x="1050" dy="0">*</tspan></text>
+<text x="1000" y="654" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="1000" dy="0">A3 · abstrata</tspan></text>
+<text x="1000" y="681" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="1000" dy="0">Tentar registrar</tspan><tspan x="1000" dy="23">e comunicar</tspan></text>
+<use href="#user" x="1290" y="596"/>
+<text x="1290" y="654" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="1290" dy="0">U4 · usuário</tspan></text>
+<text x="1290" y="681" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="1290" dy="0">Reconhecer comunicação</tspan><tspan x="1290" dy="23">concluída</tspan></text>
+<path class="line" d="M145 596 H265 M332 596 H474 M1046 596 H1262"/>
 <rect x="165" y="577" width="70" height="40" fill="#fff"/>
 <text x="200" y="602" text-anchor="middle" font-size="25" font-weight="normal"><tspan x="200" dy="0">[]&gt;&gt;</tspan></text>
 <rect x="365" y="577" width="70" height="40" fill="#fff"/>
 <text x="400" y="602" text-anchor="middle" font-size="25" font-weight="normal"><tspan x="400" dy="0">[]&gt;&gt;</tspan></text>
-<rect x="1005" y="577" width="70" height="40" fill="#fff"/>
-<text x="1040" y="602" text-anchor="middle" font-size="25" font-weight="normal"><tspan x="1040" dy="0">[]&gt;&gt;</tspan></text>
-<rect x="1205" y="577" width="70" height="40" fill="#fff"/>
-<text x="1240" y="602" text-anchor="middle" font-size="25" font-weight="normal"><tspan x="1240" dy="0">[]&gt;&gt;</tspan></text>
-<rect x="35" y="753" width="1370" height="255" rx="8" fill="#f3f6f8"/>
-<text x="58" y="784" text-anchor="start" font-size="20" font-weight="bold"><tspan x="58" dy="0">Relações e condições</tspan></text>
-<text x="58" y="818" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">A0 = A1* []&gt;&gt; U2 []&gt;&gt; A2*       A1 = I1 []&gt;&gt; S1 []&gt;&gt; U1       A2 = I2 []&gt;&gt; S2 []&gt;&gt; U3</tspan></text>
-<text x="58" y="846" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">[]&gt;&gt; : habilitação com passagem de informação.    * : repetição da tarefa completa.</tspan></text>
-<text x="58" y="874" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">A1: consultar e comparar ao menos uma vez; repetir se houver complemento autorizado e viável no prazo.</tspan></text>
-<text x="58" y="902" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">U2: se persistir uma lacuna impeditiva, formular parecer inconclusivo e explicar o que falta.</tspan></text>
-<text x="58" y="930" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">A2: executar ao menos uma vez; repetir após falha recuperável, preservando o rascunho.</tspan></text>
-<text x="58" y="958" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">Conclusão de A0: U3 reconhece registro e disponibilidade confirmados. Falha persistente: tarefa incompleta.</tspan></text>
-<text x="35" y="1045" text-anchor="start" font-size="17" font-weight="normal"><tspan x="35" dy="0">Categorias: nuvem = abstrata; pessoa = usuário; computador = sistema; pessoa e computador = interação.</tspan></text>
-<text x="35" y="1080" text-anchor="start" font-size="16" font-weight="normal"><tspan x="35" dy="0">Fonte: elaboração do autor, com categorias e operadores CTT descritos em W3C, MBUI — Task Models (2014).</tspan></text>
+<rect x="1120" y="577" width="70" height="40" fill="#fff"/>
+<text x="1155" y="602" text-anchor="middle" font-size="25" font-weight="normal"><tspan x="1155" dy="0">[&gt;</tspan></text>
+<path class="line" d="M1000 714 L800 790"/>
+<path class="line" d="M1000 714 L1000 790"/>
+<path class="line" d="M1000 714 L1200 790"/>
+<use href="#interaction" x="800" y="830"/>
+<text x="800" y="888" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="800" dy="0">I2 · interação</tspan></text>
+<text x="800" y="915" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="800" dy="0">Registrar parecer,</tspan><tspan x="800" dy="23">fontes e destinatário</tspan></text>
+<use href="#system" x="1000" y="830"/>
+<text x="1000" y="888" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="1000" dy="0">S2 · sistema</tspan></text>
+<text x="1000" y="915" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="1000" dy="0">Processar e informar</tspan><tspan x="1000" dy="23">sucesso ou falha</tspan></text>
+<use href="#user" x="1200" y="830"/>
+<text x="1200" y="888" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="1200" dy="0">U3 · usuário</tspan></text>
+<text x="1200" y="915" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="1200" dy="0">Conferir retorno</tspan><tspan x="1200" dy="23">da tentativa</tspan></text>
+<path class="line" d="M845 830 H965 M1032 830 H1174"/>
+<rect x="865" y="811" width="70" height="40" fill="#fff"/>
+<text x="900" y="836" text-anchor="middle" font-size="25" font-weight="normal"><tspan x="900" dy="0">[]&gt;&gt;</tspan></text>
+<rect x="1065" y="811" width="70" height="40" fill="#fff"/>
+<text x="1100" y="836" text-anchor="middle" font-size="25" font-weight="normal"><tspan x="1100" dy="0">[]&gt;&gt;</tspan></text>
+<rect x="35" y="985" width="1370" height="255" rx="8" fill="#f3f6f8"/>
+<text x="58" y="1016" text-anchor="start" font-size="20" font-weight="bold"><tspan x="58" dy="0">Relações e condições</tspan></text>
+<text x="58" y="1050" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">A0 = (A1* [&gt; U2) []&gt;&gt; A2   ·   A1 = I1 []&gt;&gt; S1 []&gt;&gt; U1   ·   A2 = A3* [&gt; U4   ·   A3 = I2 []&gt;&gt; S2 []&gt;&gt; U3</tspan></text>
+<text x="58" y="1078" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">[]&gt;&gt; : habilitação com passagem de informação.    [&gt; : desabilitação (a tarefa à direita, ao iniciar, interrompe a da esquerda).    * : repetição.</tspan></text>
+<text x="58" y="1106" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">A1: consultar e comparar ao menos uma vez; repetir se houver complemento autorizado e viável no prazo.</tspan></text>
+<text x="58" y="1134" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">U2: ao iniciar, encerra A1; se persistir uma lacuna impeditiva, formular parecer inconclusivo e explicar o que falta.</tspan></text>
+<text x="58" y="1162" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">A3: tentar ao menos uma vez; repetir após falha recuperável, preservando o rascunho.</tspan></text>
+<text x="58" y="1190" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">U4: ao reconhecer registro e disponibilidade confirmados, encerra A3 e conclui A0. Falha persistente: tarefa incompleta.</tspan></text>
+<text x="35" y="1277" text-anchor="start" font-size="17" font-weight="normal"><tspan x="35" dy="0">Categorias: nuvem = abstrata; pessoa = usuário; computador = sistema; pessoa e computador = interação.</tspan></text>
+<text x="35" y="1312" text-anchor="start" font-size="16" font-weight="normal"><tspan x="35" dy="0">Fonte: elaboração do autor, com categorias e operadores CTT descritos em W3C, MBUI — Task Models (2014).</tspan></text>
 </svg>

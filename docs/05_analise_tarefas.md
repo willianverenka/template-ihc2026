@@ -4,6 +4,8 @@
 
 **Data:** 08/10/2026
 
+**Última revisão:** 15/10/2026
+
 **Status:** 🟨 em andamento
 
 **Responsabilidade:** cada integrante modela uma única técnica (HTA, GOMS ou CTT) sobre uma tarefa própria, conforme orientação da disciplina. Distribuição: Gabriel — HTA (T01); Willian — CTT (T02); Théo — GOMS (T03); Sitta — técnica a escolher, sobre tarefa própria derivada de P04.
@@ -79,6 +81,7 @@ IDs de etapas e métodos internos a um modelo são locais à tarefa: `T02/CTT/I1
 | 08/10/2026 | Primeira versão de T02, importação das contribuições T01/T03 com autoria preservada, correção P02/C03, resolução de colisões e síntese inicial. Placeholders de Théo mantidos por solicitação de Willian. | Willian Verenka Oliveira Silva |
 | 14/10/2026 | Integração ao histórico Git dos commits de origem de Gabriel e Théo. Aplicação da regra de uma técnica por integrante: T01 mantém o HTA, T02 o CTT e T03 o GOMS; os demais modelos e os placeholders de T03 saíram da entrega e permanecem nos commits de origem (2f91011 e a98ccf9) e no histórico da branch. | Willian Verenka Oliveira Silva |
 | 14/10/2026 | Checklist restaurada ao texto do template da disciplina, apenas com marcação; checklists individuais de T01–T03 removidas. Pendências de revisão movidas para a síntese. | Willian Verenka Oliveira Silva |
+| 15/10/2026 | CTT de T02 revisado: repetições encerradas por desabilitação (`[>`), com a nova tarefa A3 e o reconhecimento U4. | Willian Verenka Oliveira Silva |
 
 As referências e os commits de origem estão nos arquivos individuais. Orientações gerais: [Guia de uso](../GUIA_DE_USO.md), [Guia de escopo](../GUIA_ESCOPO_IHC.md) e [Bibliografia](../BIBLIOGRAFIA.md).
 
