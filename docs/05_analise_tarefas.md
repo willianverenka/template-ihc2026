@@ -2,7 +2,7 @@
 
 **Data:** 21/10/2026  
 **Status:** 🟨 em andamento  
-**Responsabilidade:** 1 HTA, 1 GOMS e 1 CTT individuais, derivados do cenário [C04](../04_cenarios_problema/c04.md)
+**Responsabilidade:** 1 HTA, 1 GOMS e 1 CTT
 
 [← Voltar à navegação da Entrega 5](../05_analise_tarefas.md)
 
