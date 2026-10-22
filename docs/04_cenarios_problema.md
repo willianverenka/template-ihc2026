@@ -1,8 +1,14 @@
-# Entrega 4 — Cenários de análise/problema
+# Entrega 4 — Cenário C04
 
-**Data:** 16/09/2026  
-**Status:** 🟨 em andamento  
-**Responsabilidade:** 1 solução completa por integrante
+**Data:** 16/09/2026
+
+**Status:** 🟦 revisada após feedback
+
+**Responsabilidade:** solução individual completa
+
+**Última revisão:** 21/10/2026
+
+[← Voltar à navegação da Entrega 4](../04_cenarios_problema.md)
 
 ## Objetivo da atividade
 
@@ -24,61 +30,107 @@ Se o integrante escolher um novo problema/situação, explique por que ele passo
 
 ## Cenário C04 — Investigação de uma falha propagada entre microsserviços
 
-**Autor(a):** João Sitta Giopatto — 22.123.054-3  
-**Persona(s) relacionada(s):** P04 - Especialista em Observabilidade
-**Necessidade relacionada:** Identificar evidências relevantes de observabilidade, compreender as relações entre serviços e organizar um contexto técnico suficiente para apoiar a investigação de um incidente.  
-**Situação concreta da Entrega 1 relacionada:**  Consulta e filtragem manual de logs, métricas e traces; mapas de serviços e navegação entre sinais de observabilidade; dificuldade de estabelecer relações entre sintomas e origem do problema. 
+**Autor(a):** João Sitta Giopatto — 22.123.054-3
+
+**Persona(s) relacionada(s):** [P04 — Especialista em Observabilidade](../03_personas_contexto_jornada.md)
+
+**Necessidade relacionada:** R04 — identificar evidências relevantes de observabilidade, compreender as relações entre serviços e organizar um contexto técnico suficiente para apoiar a investigação de um incidente.
+
+**Situação concreta da Entrega 1 relacionada:** consulta e filtragem manual de logs, métricas e traces; mapas de serviços e navegação entre sinais de observabilidade; dificuldade de estabelecer relações entre sintomas e origem do problema (seções 4.1 a 4.3).
+
 **Hipóteses ainda presentes:** H01, H02, H03
+
+> **[H] Base do cenário:** narrativa e refinamento hipotéticos, derivados das Entregas 1 e 3. Horários, durações e demais valores são ilustrativos e servem para tornar a situação concreta; as dificuldades, os critérios e as lacunas descritos ainda precisam ser confirmados em entrevistas e observações com profissionais.
 
 ### 1. Cenário inicial
 
-Especialista em Observabilidade recebe informações sobre uma falha em um sistema de microsserviços e precisa investigar sua origem. Para isso, consulta logs, métricas e traces em diferentes ferramentas, tentando identificar quais serviços e componentes estão relacionados ao problema.
+Às 14h20 de uma terça-feira, durante uma campanha promocional de uma plataforma de comércio eletrônico, o SRE de plantão recebe três alertas em menos de cinco minutos: o gateway de API registra aumento de erros 5xx na consulta de status de pedidos, o serviço de pedidos ultrapassa o limite de latência e a fila de notificações de pedidos começa a acumular mensagens. Clientes já abrem chamados porque o status de seus pedidos não carrega. Nenhuma implantação foi feita nas últimas horas.
 
-O grande volume de dados e a necessidade de correlacionar manualmente essas informações dificultam a identificação das evidências mais relevantes e a compreensão de como a falha se propagou.
+O SRE precisa decidir rapidamente quais equipes acionar e se reinicia o serviço de pedidos, medida que pode interromper requisições em andamento. Para isso, pede à especialista em observabilidade da empresa que informe quais serviços fazem parte do problema e por onde ele se espalhou.
+
+Ela abre métricas, logs e traces, cada um em uma ferramenta própria. O mapa de serviços indica que o serviço de pedidos depende do serviço de estoque, e os traces das requisições com erro mostram o serviço de pedidos esperando muito tempo por uma chamada, sem indicar com clareza qual. Passados alguns minutos, ela ainda não consegue dizer ao SRE quais serviços estão na cadeia da falha nem em que ordem foram atingidos.
+
+Sem essa resposta, o SRE precisa agir com o que tem. Se o contexto chegar incompleto ou atrasado, equipes podem ser acionadas para investigar serviços que não têm relação com o incidente, o reinício pode derrubar requisições em andamento e apagar o estado que serviria de evidência, e os clientes seguem sem consultar seus pedidos em pleno período de campanha.
 
 ### 2. Questões de refinamento
 
-Use os tipos de questões/taxonomia definidos na aula. As perguntas devem revelar informações **ainda ausentes** do cenário, não repetir o que já foi respondido.
+As categorias abaixo organizam as perguntas. A conferência com a taxonomia apresentada em aula está **PENDENTE**. As fontes indicadas ainda não foram consultadas.
 
 | # | Questão | Por que precisa ser respondida | Fonte/forma de obter resposta |
 |---|---|---|---|
-| Q1 | Quais dados são mais relevantes para iniciar a investigação? | Identifica as principais evidências utilizadas | Entrevista com profissionais. |
-| Q2 | Como o profissional relaciona os diferentes serviços envolvidos? | Entende como a propagação da falha é analisada | Entrevista e observação. |
-| Q3 | Quais dificuldades surgem com o grande volume de telemetria? | Identifica problemas de seleção e interpretação das informações | Entrevista e observação. |
-| Q1 | O que acontece quando os dados disponíveis são insuficientes? | Identifica como o profissional lida com limitações da telemetria | Entrevista com profissionais. |
+| Q1 | **[Contexto]** Quais decisões o SRE precisa tomar enquanto aguarda o retorno da especialista, e em quanto tempo? | A decisão pendente e o prazo determinam o que o retorno precisa conter e até quando uma resposta parcial ainda é útil. | Entrevista com SREs e especialistas em observabilidade. |
+| Q2 | **[Recursos]** Por onde a especialista começa e que dados usa para decidir em que serviços olhar primeiro? | Revela quais evidências são tratadas como mais relevantes para delimitar o incidente e quais são deixadas para depois. | Entrevista contextual; observação de uma investigação. |
+| Q3 | **[Ação]** Como ela confirma, durante o incidente, de quais serviços o serviço afetado depende? Em que medida o mapa de serviços é confiável? | Esclarece se a visão das relações entre serviços pode estar desatualizada e o que ela faz quando isso acontece. | Entrevista e observação; comparação com a documentação da arquitetura, se houver. |
+| Q4 | **[Ruptura]** Que lacunas da telemetria (identificadores ausentes, amostragem, serviços pouco instrumentados, filas) impedem ligar os sinais e como ela contorna cada uma? | Identifica onde a correlação deixa de ser possível e onde passa a depender de inferência. | Entrevista e observação; exemplos anonimizados de incidentes. |
+| Q5 | **[Critério de conclusão]** O que ela considera suficiente para entregar um retorno ao SRE, mesmo antes de ter certeza? | Sem esse critério, não se sabe quando a investigação cumpre seu objetivo nem como a confiança nas evidências é avaliada. | Entrevista semiestruturada; análise de relatos de incidentes anonimizados. |
+| Q6 | **[Consequência / Atores]** Como as equipes agem com base no retorno recebido e o que acontece quando ele é lido como mais firme do que era, ou chega tarde? | Dimensiona o custo de uma comunicação imprecisa e de um atraso, incluindo acionamento indevido de equipes e ações com efeitos colaterais. | Entrevista com SREs e desenvolvedores; estudo de incidentes passados anonimizados. |
 
 ### 3. Cenário refinado
 
-Reescreva o cenário incorporando as respostas. Marque o conteúdo novo de forma consistente (por exemplo, `**[NOVO: ...]**`).
+**Aprofundamentos em relação ao cenário inicial:** explicitação da decisão pendente, da defasagem do mapa de serviços, das lacunas de telemetria e dos efeitos de um retorno parcial sobre as equipes. Os trechos **[NOVO — Q...]** são acréscimos hipotéticos a confirmar após a coleta de dados.
 
-{{narrativa refinada}}
+Às 14h20, os alertas chegam ao SRE de plantão. **[NOVO — Q1]** Ele precisa decidir até cerca de 14h40 quais equipes chamar primeiro e se reinicia o serviço de pedidos, ciente de que o reinício pode descartar requisições em andamento e apagar o estado dos processos. Pede à especialista um primeiro retorno e avisa que decidirá em poucos minutos, com ou sem ele.
+
+**[NOVO — Q2/Q3]** A especialista parte das métricas de latência e erro para saber quais serviços saíram do normal e quando, e segue o mapa de serviços, que mostra pedidos dependendo de estoque. Gasta cerca de dez minutos nesse serviço até concluir que suas métricas estão normais. O que o mapa não mostra é que, havia poucas semanas, pedidos passou a consultar também um serviço de estimativa de frete. Ela só chega a essa relação quando um trace mostra o serviço de pedidos esperando até 30 segundos por uma chamada sem etapa associada.
+
+**[NOVO — Q4]** O serviço de frete quase não tem instrumentação, apenas uma métrica de CPU. Nos logs de pedidos há uma mensagem de timeout ao chamar o frete, mas sem o identificador da requisição presente nos traces, e só parte das requisições é registrada neles. O acúmulo na fila de notificações também não está encadeado ao status, e a relação só pode ser inferida pelo horário.
+
+**[NOVO — Q5]** Por volta das 14h45, ela consegue afirmar que gateway e pedidos estão afetados; que pedidos espera o frete, o que é provável, mas não verificado; que o acúmulo de notificações parece ser consequência, por coincidência de horário; e que estoque aparentemente não está envolvido. Precisa decidir sozinha como separar, na mensagem, o que foi observado, o que foi deduzido e o que ficou sem cobertura.
+
+**[NOVO — Q6]** O retorno chega depois que o SRE já reiniciou o serviço de pedidos (14h38) e acionou as equipes de pedidos e de estoque por precaução. Os erros sobem por alguns minutos, a informação das conexões pendentes se perde e a equipe de estoque gasta cerca de 30 minutos em um serviço saudável. A equipe de frete lê o “provável” como confirmado e o contesta ao ver apenas CPU normal. Os clientes ficam cerca de 55 minutos sem consultar o status, em plena campanha.
+
+A dificuldade não é a falta de dados, mas transformá-los, a tempo, em uma compreensão do que se propagou e do que ainda não se sabe.
 
 ### 4. Elementos extraídos
 
 | Elemento | Evidência no cenário |
 |---|---|
-| Ator(es) | {{...}} |
-| Objetivo(s) | {{...}} |
-| Contexto | {{...}} |
-| Recursos/informações | {{...}} |
-| Ações | {{...}} |
-| Problemas/rupturas | {{...}} |
-| Consequências | {{...}} |
+| **Ator(es)** | Especialista em observabilidade (P04); SRE de plantão; equipes de pedidos, estoque e frete. |
+| **Objetivo(s)** | Delimitar os serviços envolvidos e a propagação da falha, e dar ao SRE um retorno que indique o grau de certeza de cada parte. |
+| **Contexto** | Incidente em produção durante uma campanha, sem deploy recente, com alertas simultâneos e poucos minutos para decidir. |
+| **Recursos/informações** | Alertas, métricas, traces, logs, mapa de serviços e conhecimento da arquitetura. |
+| **Ações** | Delimitar serviços e horário, seguir o mapa, analisar o estoque, relacionar traces, logs e fila, e comunicar o retorno. |
+| **Problemas/rupturas** | Mapa sem a dependência do frete; frete pouco instrumentado; log sem identificador de requisição; traces amostrados; relações apenas inferidas. |
+| **Decisão prejudicada** | Quais equipes acionar e se reiniciar o serviço de pedidos, decidido antes de haver um retorno. |
+| **Consequências** | Reinício com mais erros e perda de estado; 30 minutos em serviço saudável; “provável” lido como confirmado; cerca de 55 minutos de indisponibilidade em campanha. |
+
+Os elementos acima são extraídos da narrativa hipotética e não constituem evidência empírica.
 
 ### 5. Implicações para as próximas entregas
 
-Quais tarefas merecem análise? Quais informações precisam ser coletadas? **Não desenhe a solução ainda.**
+As seguintes tarefas merecem ser detalhadas na Entrega 5:
 
-> Repita para C02, C03... com autoria individual.
+- delimitar serviços, sintomas e período de um incidente;
+- verificar as relações entre serviços em mais de uma fonte;
+- relacionar sinais quando faltam identificadores comuns;
+- reconhecer lacunas da telemetria;
+- comunicar o contexto reunido, separando observação, inferência e lacuna, a tempo de uma decisão.
+
+Na coleta de dados, é preciso investigar as decisões que o SRE toma durante um incidente e seus prazos, como a especialista confirma dependências quando o mapa pode estar defasado, com que frequência faltam identificadores ou instrumentação e como cada papel interpreta um retorno parcial. Isso deve permitir revisar H01, H02 e H03 sem tratá-las como fatos. A distinção entre causa e efeito é aprofundada em [C03](c03.md).
+
+### 6. Rastreabilidade e fontes
+
+- [Entrega 1](../01_conhecendo_o_problema.md): consulta e filtragem manual de telemetria, mapas de serviços e dificuldade de relacionar sintomas à origem; hipóteses H01 a H03.
+- [Entrega 3](../03_personas_contexto_jornada.md): P04 — Especialista em Observabilidade, objetivos, dores e colaboração com os demais papéis.
+- [Matriz de rastreabilidade](../../RASTREABILIDADE.md#3-rastreabilidade-entre-contribuição-técnica-necessidades-e-artefatos): vínculo entre C04, P04 e a necessidade correspondente (R04, **a registrar/confirmar**). Modelos e avaliações posteriores permanecem PENDENTE.
+
+### 7. Histórico de revisões
+
+| Data | Alteração | Responsável |
+|---|---|---|
+| 16/09/2026 | Versão inicial de C04: cenário inicial e questões preliminares. | João Sitta Giopatto |
+| 21/10/2026 | Reformulação após feedback: inclusão de um acontecimento específico, da decisão prejudicada e de consequências concretas; correção da numeração das questões e ampliação para Q1–Q6; preenchimento do refinamento, dos elementos extraídos, das implicações e do checklist; simplificação do refinamento, dos elementos e das implicações; organização em arquivo individual. | João Sitta Giopatto *(revisão pendente)* |
 
 ## Checklist
 
-- [ ] Há um cenário completo por integrante.
-- [ ] Cada cenário tem título, ator, objetivo, contexto e problema.
-- [ ] O cenário possui origem rastreável na Entrega 1 ou justifica claramente a inclusão de uma nova situação.
-- [ ] O texto descreve a situação atual, sem antecipar a solução.
-- [ ] Para TCC sem interface original, o cenário descreve uma prática humana plausível relacionada à contribuição técnica, e não “a falta de uma tela”.
-- [ ] Questões de refinamento acrescentam informação nova.
-- [ ] O refinamento mostra claramente o que foi adicionado/alterado.
-- [ ] Cenários são diferentes o suficiente para cobrir objetivos/problemas relevantes.
-- [ ] Cada cenário está ligado a persona/necessidade na matriz de rastreabilidade.
+Verificação individual de C04. Os itens coletivos estão no [índice da Entrega 4](../04_cenarios_problema.md#checklist).
+
+- [x] Cada cenário tem título, ator, objetivo, contexto e problema.
+- [x] O cenário possui origem rastreável na Entrega 1 ou justifica claramente a inclusão de uma nova situação.
+- [x] O texto descreve a situação atual, sem antecipar a solução.
+- [x] Para TCC sem interface original, o cenário descreve uma prática humana plausível relacionada à contribuição técnica, e não a falta de uma tela.
+- [x] O cenário apresenta um acontecimento específico, uma decisão prejudicada e consequências concretas.
+- [x] Questões de refinamento acrescentam informação nova.
+- [x] O refinamento mostra claramente o que foi adicionado ou alterado.
+- [ ] A taxonomia das questões foi conferida com a orientação da aula. **PENDENTE.**
+- [ ] C04 está ligado a P04 e à sua necessidade na matriz de rastreabilidade. **PENDENTE** (confirmar identificador R04).
