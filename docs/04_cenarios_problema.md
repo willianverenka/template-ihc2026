@@ -4,7 +4,7 @@
 
 **Data:** 17/09/2026
 
-**Status:** 🟨 em andamento
+**Status:** 🟩 concluída
 
 **Responsabilidade:** 1 solução completa por integrante.
 
@@ -15,8 +15,9 @@ Cada integrante apresenta sua solução completa em um arquivo na pasta [`04_cen
 | Cenário | Título | Autor(a) | Status | Entrega completa |
 |---|---|---|---|---|
 | C01 | Investigação de falha no checkout após um deploy | Gabriel Lovato — 22.123.004-8 | 🟩 concluída | [Abrir C01](04_cenarios_problema/c01.md) |
-| C02 | O teste passou, mas a correção ainda é incerta | Willian Verenka Oliveira Silva — 22.124.081-5 | 🟨 em andamento | [Abrir C02](04_cenarios_problema/c02.md) |
-| C03 | Dificuldade em distinguir a causa de um incidente de seus efeitos | Théo Zago Zimmermann — 22.123.035-2 | 🟦 revisada após feedback | [Abrir C03](04_cenarios_problema/c03.md) |
+| C02 | O teste passou, mas a correção ainda é incerta | Willian Verenka Oliveira Silva — 22.124.081-5 | 🟩 concluída | [Abrir C02](04_cenarios_problema/c02.md) |
+| C03 | Dificuldade em distinguir a causa de um incidente de seus efeitos | Théo Zago Zimmermann — 22.123.035-2 | 🟩 concluída | [Abrir C03](04_cenarios_problema/c03.md) |
+| C04 | Investigação de uma falha propagada entre microsserviços | João Sitta Giopatto — 22.123.054-3 | 🟩 concluída | [Abrir C04](04_cenarios_problema/c04.md) |
 
 ## Organização dos arquivos
 
@@ -24,11 +25,11 @@ Nomeie cada arquivo pelo identificador do cenário em letras minúsculas: `c01.m
 
 Cada arquivo individual deve conter:
 
-- identificação, autoria, data, status, objetivo e vínculo com as entregas anteriores;
-- cenário inicial, questões de refinamento e cenário refinado com as alterações identificadas;
-- elementos extraídos, síntese e implicações para as próximas entregas;
-- rastreabilidade, hipóteses e lacunas, referências e histórico de revisões;
-- link de retorno a esta página.
+- data, status, responsabilidade e link de retorno a esta página;
+- objetivo da atividade, conforme o template;
+- cabeçalho do cenário: autor(a), persona(s) relacionada(s), necessidade relacionada, situação concreta da Entrega 1 relacionada e hipóteses ainda presentes;
+- seções 1 a 5: cenário inicial, questões de refinamento, cenário refinado, elementos extraídos e implicações para as próximas entregas;
+- histórico de revisões, quando o cenário tiver sido revisado após feedback.
 
 ## Critério da atividade
 
@@ -38,12 +39,12 @@ Consulte o [guia de uso](../GUIA_DE_USO.md) para as convenções de autoria, evi
 
 ## Checklist
 
-- [ ] Há um cenário completo por integrante.
+- [x] Há um cenário completo por integrante.
 - [x] Cada cenário tem título, ator, objetivo, contexto e problema.
 - [x] O cenário possui origem rastreável na Entrega 1 ou justifica claramente a inclusão de uma nova situação.
 - [x] O texto descreve a situação atual, sem antecipar a solução.
 - [x] Para TCC sem interface original, o cenário descreve uma prática humana plausível relacionada à contribuição técnica, e não “a falta de uma tela”.
 - [ ] Questões de refinamento acrescentam informação nova.
-- [x] O refinamento mostra claramente o que foi adicionado/alterado.
-- [ ] Cenários são diferentes o suficiente para cobrir objetivos/problemas relevantes.
+- [ ] O refinamento mostra claramente o que foi adicionado/alterado.
+- [x] Cenários são diferentes o suficiente para cobrir objetivos/problemas relevantes.
 - [x] Cada cenário está ligado a persona/necessidade na matriz de rastreabilidade.
