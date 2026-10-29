@@ -1,79 +1,50 @@
 # Entrega 4 — Cenários de análise/problema
 
-**Data:** {{dd/mm/aaaa}}  
-**Status:** ⬜ não iniciada  
-**Responsabilidade:** 1 solução completa por integrante
+[← Início do projeto](../README.md) · [Entrega 3 — Personas](03_personas_contexto_jornada.md) · [Entrega 5 — Análise de tarefas](05_analise_tarefas.md)
 
-## Objetivo da atividade
+**Data:** 17/09/2026
 
-Descrever situações atuais em que o usuário tenta alcançar um objetivo e encontra dificuldades. O cenário de análise/problema deve tornar visível **o contexto, os atores, as ações e as rupturas**, sem antecipar a interface que será projetada.
+**Status:** 🟩 concluída
 
-> **Regra central:** cenário de problema é a “história do problema”. Se o texto já diz “o sistema mostra”, “o aplicativo resolve” ou descreve botões/telas futuras, provavelmente está misturando problema com solução.
+**Responsabilidade:** 1 solução completa por integrante.
 
-Sempre que possível, o cenário deve aprofundar uma **situação concreta já registrada na Entrega 1**.
+Cada integrante apresenta sua solução completa em um arquivo na pasta [`04_cenarios_problema/`](04_cenarios_problema/). Este documento reúne a navegação e o acompanhamento da entrega da equipe.
 
-### Quando o TCC não possuía interface
+## Soluções individuais
 
-O cenário continua sendo uma história de **problema/atividade humana**, não uma história do futuro sistema. Descreva como o profissional realiza hoje uma atividade semelhante ou como lida atualmente com dados, resultados, configurações, logs, decisões e limitações que o tema do TCC pretende apoiar.
+| Cenário | Título | Autor(a) | Status | Entrega completa |
+|---|---|---|---|---|
+| C01 | Investigação de falha no checkout após um deploy | Gabriel Lovato — 22.123.004-8 | 🟩 concluída | [Abrir C01](04_cenarios_problema/c01.md) |
+| C02 | O teste passou, mas a correção ainda é incerta | Willian Verenka Oliveira Silva — 22.124.081-5 | 🟩 concluída | [Abrir C02](04_cenarios_problema/c02.md) |
+| C03 | Dificuldade em distinguir a causa de um incidente de seus efeitos | Théo Zago Zimmermann — 22.123.035-2 | 🟩 concluída | [Abrir C03](04_cenarios_problema/c03.md) |
+| C04 | Investigação de uma falha propagada entre microsserviços | João Sitta Giopatto — 22.123.054-3 | 🟩 concluída | [Abrir C04](04_cenarios_problema/c04.md) |
 
-Exemplo: em vez de “o DBA abre o novo dashboard e executa o algoritmo”, descreva “o DBA precisa investigar uma consulta lenta, reúne informações em ferramentas distintas, compara planos manualmente e tem dificuldade para estimar o impacto de uma mudança”.
+## Organização dos arquivos
 
-A interface da disciplina aparecerá somente depois, nos cenários de interação.
+Nomeie cada arquivo pelo identificador do cenário em letras minúsculas: `c01.md`, `c02.md`, `c03.md` etc. Preserve os IDs já atribuídos e adicione a entrada na tabela quando a solução for incorporada a esta branch.
 
-Se o integrante escolher um novo problema/situação, explique por que ele passou a ser relevante e indique a evidência que motivou sua inclusão.
+Cada arquivo individual deve conter:
 
-## Cenário C01 — {{título}}
+- data, status, responsabilidade e link de retorno a esta página;
+- objetivo da atividade, conforme o template;
+- cabeçalho do cenário: autor(a), persona(s) relacionada(s), necessidade relacionada, situação concreta da Entrega 1 relacionada e hipóteses ainda presentes;
+- seções 1 a 5: cenário inicial, questões de refinamento, cenário refinado, elementos extraídos e implicações para as próximas entregas;
+- histórico de revisões, quando o cenário tiver sido revisado após feedback.
 
-**Autor(a):** {{nome — matrícula}}  
-**Persona(s) relacionada(s):** {{P01}}  
-**Necessidade relacionada:** {{R01}}  
-**Situação concreta da Entrega 1 relacionada:** {{seção 4.4 / H01 / outra ou “nova situação justificada”}}  
-**Hipóteses ainda presentes:** {{H01, H02 ou —}}
+## Critério da atividade
 
-### 1. Cenário inicial
+O cenário-problema descreve uma situação em que uma pessoa tenta alcançar um objetivo, encontra dificuldades e enfrenta consequências. As ações atuais ajudam a explicar o problema; a interface proposta será desenvolvida nas etapas posteriores. Identifique como `[H]` os detalhes ainda não validados e preserve o vínculo com as personas e com a [matriz de rastreabilidade](../RASTREABILIDADE.md).
 
-{{narrativa}}
-
-### 2. Questões de refinamento
-
-Use os tipos de questões/taxonomia definidos na aula. As perguntas devem revelar informações **ainda ausentes** do cenário, não repetir o que já foi respondido.
-
-| # | Questão | Por que precisa ser respondida | Fonte/forma de obter resposta |
-|---|---|---|---|
-| Q1 | {{...}} | {{...}} | {{...}} |
-
-### 3. Cenário refinado
-
-Reescreva o cenário incorporando as respostas. Marque o conteúdo novo de forma consistente (por exemplo, `**[NOVO: ...]**`).
-
-{{narrativa refinada}}
-
-### 4. Elementos extraídos
-
-| Elemento | Evidência no cenário |
-|---|---|
-| Ator(es) | {{...}} |
-| Objetivo(s) | {{...}} |
-| Contexto | {{...}} |
-| Recursos/informações | {{...}} |
-| Ações | {{...}} |
-| Problemas/rupturas | {{...}} |
-| Consequências | {{...}} |
-
-### 5. Implicações para as próximas entregas
-
-Quais tarefas merecem análise? Quais informações precisam ser coletadas? **Não desenhe a solução ainda.**
-
-> Repita para C02, C03... com autoria individual.
+Consulte o [guia de uso](../GUIA_DE_USO.md) para as convenções de autoria, evidência e revisão.
 
 ## Checklist
 
-- [ ] Há um cenário completo por integrante.
-- [ ] Cada cenário tem título, ator, objetivo, contexto e problema.
-- [ ] O cenário possui origem rastreável na Entrega 1 ou justifica claramente a inclusão de uma nova situação.
-- [ ] O texto descreve a situação atual, sem antecipar a solução.
-- [ ] Para TCC sem interface original, o cenário descreve uma prática humana plausível relacionada à contribuição técnica, e não “a falta de uma tela”.
+- [x] Há um cenário completo por integrante.
+- [x] Cada cenário tem título, ator, objetivo, contexto e problema.
+- [x] O cenário possui origem rastreável na Entrega 1 ou justifica claramente a inclusão de uma nova situação.
+- [x] O texto descreve a situação atual, sem antecipar a solução.
+- [x] Para TCC sem interface original, o cenário descreve uma prática humana plausível relacionada à contribuição técnica, e não “a falta de uma tela”.
 - [ ] Questões de refinamento acrescentam informação nova.
 - [ ] O refinamento mostra claramente o que foi adicionado/alterado.
-- [ ] Cenários são diferentes o suficiente para cobrir objetivos/problemas relevantes.
-- [ ] Cada cenário está ligado a persona/necessidade na matriz de rastreabilidade.
+- [x] Cenários são diferentes o suficiente para cobrir objetivos/problemas relevantes.
+- [x] Cada cenário está ligado a persona/necessidade na matriz de rastreabilidade.
