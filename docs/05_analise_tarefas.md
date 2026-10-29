@@ -26,7 +26,7 @@ As entradas são a contribuição técnica e as atividades da [Entrega 1](01_con
 |---|---|---|---|---|
 | [T01](05_analise_tarefas/t01.md) | Avaliar uma hipótese diagnóstica e decidir se as evidências a sustentam | P02 — Lucas / C01 | Gabriel Lovato — 22.123.004-8 | 🟨 em andamento — modelos e diagramas integrados; revisão conjunta pendente |
 | [T02](05_analise_tarefas/t02.md) | Emitir um parecer fundamentado sobre a verificação da correção | P03 — Mariana / C02 | Willian Verenka Oliveira Silva — 22.124.081-5 | 🟨 em andamento — HTA, GOMS e CTT integrados, com diagramas; revisão conjunta pendente |
-| [T03](05_analise_tarefas/t03.md) | Formular um diagnóstico inicial fundamentado sobre um incidente | P01 — Rafael Mendes / C03 | Théo Zago Zimmermann — 22.123.035-2 | 🟨 em andamento — modelos textuais; diagramas ainda são placeholders |
+| [T03](05_analise_tarefas/t03.md) | Formular um diagnóstico inicial fundamentado sobre um incidente | P01 — Rafael Mendes / C03 | Théo Zago Zimmermann — 22.123.035-2 | 🟨 em andamento — modelos e diagramas integrados |
 | [T04](05_analise_tarefas/t04.md#hta--t04-investigar-a-propagação-de-uma-falha-entre-serviços-e-entregar-um-retorno-ao-sre) | Investigar a propagação de uma falha entre serviços e entregar um retorno ao SRE | P04 — Camila / C04 | João Sitta Giopatto — 22.123.054-3 | 🟨 em andamento — HTA com diagrama em imagem externa |
 | [T05](05_analise_tarefas/t04.md#goms--t05-confirmar-de-quais-serviços-o-serviço-afetado-depende-durante-um-incidente) | Confirmar de quais serviços o serviço afetado depende durante um incidente | P04 — Camila / C04 | João Sitta Giopatto — 22.123.054-3 | 🟨 em andamento — GOMS textual |
 | [T06](05_analise_tarefas/t04.md#ctt--t06-comunicar-o-retorno-ao-sre-e-acompanhar-a-decisão) | Comunicar o retorno ao SRE e acompanhar a decisão | P04 — Camila / C04 | João Sitta Giopatto — 22.123.054-3 | 🟨 em andamento — CTT com diagrama em imagem externa |
@@ -39,12 +39,12 @@ As entradas são a contribuição técnica e as atividades da [Entrega 1](01_con
 |---|---|---|---|
 | T01 | [Diagrama](../assets/05_tarefas/hta_t01.svg) e planos no [texto individual](05_analise_tarefas/t01.md#2-hta--avaliar-uma-hipótese-diagnóstica) | [Modelo textual](05_analise_tarefas/t01.md#3-goms--avaliar-uma-hipótese-diagnóstica) | [Diagrama](../assets/05_tarefas/ctt_t01.svg) e [interpretação](05_analise_tarefas/t01.md#4-ctt--avaliar-uma-hipótese-diagnóstica) |
 | T02 | [Diagrama](../assets/05_tarefas/hta_t02.svg) e planos no [texto individual](05_analise_tarefas/t02.md#3-hta--recuperar-avaliar-e-comunicar) | [Modelo textual](05_analise_tarefas/t02.md#4-goms--métodos-para-produzir-o-mesmo-parecer) | [Diagrama](../assets/05_tarefas/ctt_t02.svg) e [interpretação](05_analise_tarefas/t02.md#5-ctt--dependências-entre-consulta-julgamento-e-comunicação) |
-| T03 | [Placeholder preservado](../assets/05_tarefas/hta_t03.svg); [modelo textual](05_analise_tarefas/t03.md#2-hta--formular-um-diagnóstico-inicial) | [Modelo textual](05_analise_tarefas/t03.md#3-goms--formular-um-diagnóstico-inicial) | [Placeholder preservado](../assets/05_tarefas/ctt_t03.svg); [modelo textual](05_analise_tarefas/t03.md#4-ctt--formular-um-diagnóstico-inicial) |
+| T03 | [Diagrama](../assets/05_tarefas/hta_t03.png) e planos no [texto individual](05_analise_tarefas/t03.md#2-hta--formular-um-diagnóstico-inicial) | [Modelo textual](05_analise_tarefas/t03.md#3-goms--formular-um-diagnóstico-inicial) | [Diagrama](../assets/05_tarefas/ctt_t03.png) e [interpretação](05_analise_tarefas/t03.md#4-ctt--formular-um-diagnóstico-inicial) |
 | T04 | Diagrama em imagem externa e [planos](05_analise_tarefas/t04.md#hta--t04-investigar-a-propagação-de-uma-falha-entre-serviços-e-entregar-um-retorno-ao-sre) | — | — |
 | T05 | — | [Modelo textual](05_analise_tarefas/t04.md#goms--t05-confirmar-de-quais-serviços-o-serviço-afetado-depende-durante-um-incidente) | — |
 | T06 | — | — | Diagrama em imagem externa e [legenda](05_analise_tarefas/t04.md#ctt--t06-comunicar-o-retorno-ao-sre-e-acompanhar-a-decisão) |
 
-Os SVGs dos diagramas são também suas fontes editáveis. Os placeholders de T03 não contam como diagramas concluídos e foram mantidos a pedido de Willian para ajuste posterior. Os diagramas de T04 e T06 são imagens anexadas no GitHub, sem arquivo no repositório.
+Os SVGs dos diagramas são também suas fontes editáveis. Os diagramas de T04 e T06 são imagens anexadas no GitHub, sem arquivo no repositório.
 
 ## Síntese inicial da equipe
 
@@ -89,6 +89,7 @@ IDs de etapas e métodos internos a um modelo são locais à tarefa: `T02/CTT/I1
 | 22/10/2026 | HTA e GOMS de T02 retomados da versão de 08/10 (commit 532bc38) e alinhados ao CTT revisado em 15/10, com `hta_t02.svg` refeito. | Willian Verenka Oliveira Silva |
 | 28/10/2026 | Incorporação da contribuição de Sitta (commit 73433ac) em `t04.md`: HTA de T04, GOMS de T05 e CTT de T06, renumerados de T10–T12. Removidas a checklist individual e a nota inicial. | Willian Verenka Oliveira Silva |
 | 28/10/2026 | Nomes dos operadores do CTT alinhados aos slides da disciplina em T01, T02 e T04, incluindo as legendas de `ctt_t01.svg` e `ctt_t02.svg`. Planos do HTA de T03 escritos com `>` no lugar de `→`. | Willian Verenka Oliveira Silva |
+| 28/10/2026 | Placeholders de T03 substituídos pelos diagramas de Théo (`hta_t03.png` e `ctt_t03.png`). | Willian Verenka Oliveira Silva |
 
 As referências e os commits de origem estão nos arquivos individuais. Orientações gerais: [Guia de uso](../GUIA_DE_USO.md), [Guia de escopo](../GUIA_ESCOPO_IHC.md) e [Bibliografia](../BIBLIOGRAFIA.md).
 
