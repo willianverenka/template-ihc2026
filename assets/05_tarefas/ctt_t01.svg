@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="530" viewBox="0 0 1000 530" role="img" aria-labelledby="title">
+  <title id="title">CTT - Avaliar hipótese diagnóstica</title>
+  <defs>
+    <style>text{font:16px Arial,sans-serif;fill:#222}.symbol{fill:white;stroke:#333;stroke-width:1.4}.line{fill:none;stroke:#555;stroke-width:1.2}.op{font:20px Arial,sans-serif}</style>
+    <g id="abstract"><path class="symbol" d="M-31 -8 C-40 -21 -26 -32 -16 -26 C-12 -40 6 -38 12 -28 C25 -34 39 -22 32 -11 C47 -2 38 17 25 15 C21 29 4 31 -4 20 C-17 31 -32 19 -28 9 C-43 11 -44 -5 -31 -8 Z"/></g>
+    <g id="user"><circle class="symbol" cx="0" cy="-22" r="12"/><path class="symbol" d="M-24 34 V3 Q-22 -9 0 -9 Q22 -9 24 3 V34 Z"/><path class="line" d="M-14 8 V34 M14 8 V34"/></g>
+    <g id="computer"><rect class="symbol" x="-29" y="-27" width="58" height="42" rx="10"/><rect class="symbol" x="-24" y="-22" width="48" height="32" rx="7"/><path class="symbol" d="M-22 22 H22 L28 30 H-28 Z"/></g>
+    <g id="interaction"><use href="#computer" transform="translate(-20 0) scale(.8)"/><use href="#user" transform="translate(25 0) scale(.8)"/><path class="line" d="M-3 -1 H8 M-3 -5 L-7 -1 L-3 3 M8 -5 L12 -1 L8 3"/></g>
+  </defs>
+  <rect width="1000" height="530" fill="white"/>
+  <text x="25" y="30">CTT - Avaliação de hipótese diagnóstica</text>
+  <path class="line" d="M500 136 L115 205 M500 136 L365 205 M500 136 L635 205 M500 136 L880 205"/>
+  <use href="#abstract" x="500" y="75"/>
+  <text x="500" y="124" text-anchor="middle">Avaliar hipótese diagnóstica</text>
+  <path class="line" d="M141 205 H330 M401 205 H610 M659 205 H838"/>
+  <rect x="222" y="189" width="36" height="28" fill="white"/><text class="op" x="240" y="210" text-anchor="middle">&gt;&gt;</text>
+  <rect x="492" y="189" width="36" height="28" fill="white"/><text class="op" x="510" y="210" text-anchor="middle">&gt;&gt;</text>
+  <rect x="727" y="189" width="52" height="28" fill="white"/><text class="op" x="753" y="210" text-anchor="middle">[]&gt;&gt;</text>
+  <use href="#user" x="115" y="205"/>
+  <text x="115" y="268" text-anchor="middle"><tspan x="115">Interpretar</tspan><tspan x="115" dy="22">a hipótese</tspan></text>
+  <use href="#abstract" x="365" y="205"/>
+  <text x="409" y="185" class="op">*</text>
+  <text x="365" y="260" text-anchor="middle"><tspan x="365">Conferir</tspan><tspan x="365" dy="22">evidências</tspan></text>
+  <use href="#user" x="635" y="205"/>
+  <text x="635" y="268" text-anchor="middle"><tspan x="635">Classificar</tspan><tspan x="635" dy="22">a hipótese</tspan></text>
+  <use href="#interaction" x="880" y="205"/>
+  <text x="880" y="268" text-anchor="middle"><tspan x="880">Registrar</tspan><tspan x="880" dy="22">a decisão</tspan></text>
+  <path class="line" d="M365 295 L255 380 M365 295 L475 380 M300 380 H430"/>
+  <rect x="346" y="363" width="39" height="28" fill="white"/><text class="op" x="365" y="386" text-anchor="middle">|||</text>
+  <use href="#interaction" x="255" y="380"/>
+  <text x="255" y="436" text-anchor="middle"><tspan x="255">Examinar</tspan><tspan x="255" dy="22">o subgrafo</tspan></text>
+  <use href="#interaction" x="475" y="380"/>
+  <text x="475" y="436" text-anchor="middle"><tspan x="475">Consultar</tspan><tspan x="475" dy="22">spans e logs</tspan></text>
+  <text x="25" y="507" style="font-size:14px">&gt;&gt; ativação; []&gt;&gt; ativação com passagem de informação; ||| concorrência; * repetição.</text>
+</svg>

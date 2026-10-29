@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1340" viewBox="0 0 1440 1340" role="img" aria-labelledby="title desc">
-<title id="title">CTT T02 — Consulta, julgamento e comunicação do parecer</title><desc id="desc">Tarefa abstrata A0 decomposta em A1 iterativa, U2 e A2. U2 desabilita A1 e habilita A2 com passagem de informação. A1 reúne I1, S1, U1. A2 reúne A3 iterativa, desabilitada por U4; A3 reúne I2, S2, U3.</desc>
+<title id="title">CTT T02 — Consulta, julgamento e comunicação do parecer</title><desc id="desc">Tarefa abstrata A0 decomposta em A1 iterativa, U2 e A2. U2 desativa A1 e ativa A2 com passagem de informação. A1 reúne I1, S1, U1. A2 reúne A3 iterativa, desativada por U4; A3 reúne I2, S2, U3.</desc>
 <style>text{font-family:Arial,sans-serif;fill:#172b3a}.line{fill:none;stroke:#526777;stroke-width:1.7}.box{fill:#fff;stroke:#526777;stroke-width:1.5}.title{font-size:27px;font-weight:bold}.small{font-size:16px}.label{font-size:18px}.op{font-size:25px;font-family:monospace}</style>
 <rect width="1440" height="1340" fill="#fff"/>
 <defs>
@@ -9,7 +9,7 @@
 <g id="interaction"><use href="#system" transform="translate(-21 0) scale(.75)"/><use href="#user" transform="translate(24 0) scale(.75)"/></g>
 </defs>
 <text x="35" y="44" text-anchor="start" font-size="26" font-weight="bold"><tspan x="35" dy="0">CTT · T02 — Do contexto recuperado ao parecer comunicado</tspan></text>
-<text x="35" y="73" text-anchor="start" font-size="17" font-weight="normal"><tspan x="35" dy="0">Willian Verenka Oliveira Silva · P03 / C02 · Proposta de interação — 08/10/2026, revisada em 15/10/2026</tspan></text>
+<text x="35" y="73" text-anchor="start" font-size="17" font-weight="normal"><tspan x="35" dy="0">Willian Verenka Oliveira Silva · P03 / C02 · Proposta de interação — 08/10/2026, revisada em 28/10/2026</tspan></text>
 <use href="#abstract" x="720" y="148"/>
 <text x="720" y="206" text-anchor="middle" font-size="16" font-weight="bold"><tspan x="720" dy="0">A0 · abstrata</tspan></text>
 <text x="720" y="233" text-anchor="middle" font-size="18" font-weight="normal"><tspan x="720" dy="0">Emitir parecer fundamentado</tspan></text>
@@ -79,7 +79,7 @@
 <rect x="35" y="985" width="1370" height="255" rx="8" fill="#f3f6f8"/>
 <text x="58" y="1016" text-anchor="start" font-size="20" font-weight="bold"><tspan x="58" dy="0">Relações e condições</tspan></text>
 <text x="58" y="1050" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">A0 = (A1* [&gt; U2) []&gt;&gt; A2   ·   A1 = I1 []&gt;&gt; S1 []&gt;&gt; U1   ·   A2 = A3* [&gt; U4   ·   A3 = I2 []&gt;&gt; S2 []&gt;&gt; U3</tspan></text>
-<text x="58" y="1078" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">[]&gt;&gt; : habilitação com passagem de informação.    [&gt; : desabilitação (a tarefa à direita, ao iniciar, interrompe a da esquerda).    * : repetição.</tspan></text>
+<text x="58" y="1078" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">[]&gt;&gt; : ativação com passagem de informação.    [&gt; : desativação (a tarefa à direita, ao iniciar, interrompe a da esquerda).    * : repetição.</tspan></text>
 <text x="58" y="1106" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">A1: consultar e comparar ao menos uma vez; repetir se houver complemento autorizado e viável no prazo.</tspan></text>
 <text x="58" y="1134" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">U2: ao iniciar, encerra A1; se persistir uma lacuna impeditiva, formular parecer inconclusivo e explicar o que falta.</tspan></text>
 <text x="58" y="1162" text-anchor="start" font-size="17" font-weight="normal"><tspan x="58" dy="0">A3: tentar ao menos uma vez; repetir após falha recuperável, preservando o rascunho.</tspan></text>
