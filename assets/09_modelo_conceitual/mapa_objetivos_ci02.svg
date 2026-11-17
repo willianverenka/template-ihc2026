@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="424" viewBox="0 0 1040 424" font-family="Arial, Helvetica, sans-serif">
+<rect width="1040" height="424" fill="#ffffff"/>
+<rect x="330" y="20" width="300" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="344" y="47" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O04</tspan> recuperar o contexto</text>
+<text x="344" y="68" font-size="15" fill="#1a1a1a">do incidente</text>
+<text x="344" y="92" font-size="14" fill="#4d4d4d">P02, P03 | CI01, CI02</text>
+<rect x="680" y="120" width="340" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="694" y="157" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O10</tspan> avaliar o alcance da verificação</text>
+<text x="694" y="192" font-size="14" fill="#4d4d4d">P03 | CI02</text>
+<path d="M630 162 H680" fill="none" stroke="#4d4d4d" stroke-width="1.5"/>
+<rect x="330" y="120" width="300" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="344" y="147" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O08</tspan> examinar hipóteses</text>
+<text x="344" y="168" font-size="15" fill="#1a1a1a">e evidências</text>
+<text x="344" y="192" font-size="14" fill="#4d4d4d">P01–P04 | CI01–CI04</text>
+<rect x="680" y="220" width="340" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="694" y="247" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O14</tspan> registrar o parecer sobre a</text>
+<text x="694" y="268" font-size="15" fill="#1a1a1a">verificação da correção</text>
+<text x="694" y="292" font-size="14" fill="#4d4d4d">P03 | CI02</text>
+<rect x="680" y="320" width="340" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="694" y="347" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O16</tspan> enviar o resultado</text>
+<text x="694" y="368" font-size="15" fill="#1a1a1a">aos destinatários</text>
+<text x="694" y="392" font-size="14" fill="#4d4d4d">P01–P04 | CI01–CI04</text>
+<path d="M630 312 H655 M655 262 V362 M655 262 H680 M655 362 H680" fill="none" stroke="#4d4d4d" stroke-width="1.5"/>
+<rect x="330" y="270" width="300" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="344" y="297" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O11</tspan> registrar e comunicar</text>
+<text x="344" y="318" font-size="15" fill="#1a1a1a">o resultado</text>
+<text x="344" y="342" font-size="14" fill="#4d4d4d">P01–P04 | CI01–CI04</text>
+<rect x="20" y="145" width="260" height="84" rx="10" fill="#dbe7f5" stroke="#1f4e79" stroke-width="2"/>
+<text x="34" y="172" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O01</tspan> investigar um incidente</text>
+<text x="34" y="193" font-size="15" fill="#1a1a1a">e comunicar o resultado</text>
+<text x="34" y="217" font-size="14" fill="#4d4d4d">P01–P04 | CI01–CI04</text>
+<path d="M280 187 H305 M305 62 V312 M305 62 H330 M305 162 H330 M305 312 H330" fill="none" stroke="#4d4d4d" stroke-width="1.5"/>
+</svg>
