@@ -35,7 +35,7 @@
 
 ## Justificativa das telas e padrões
 
-- [ ] Cada tela importante possui relação com uma tarefa/objetivo rastreável.
+- [x] Cada tela importante possui relação com uma tarefa/objetivo rastreável.
 - [ ] Dashboard, se existente, apoia uma decisão ou necessidade de acompanhamento concreta.
 - [ ] Relatórios apresentam informação necessária para uma tarefa, e não apenas “números porque existem”.
 - [ ] Histórico, busca, ordenação e filtros possuem volume/uso que justifique sua existência.
@@ -43,7 +43,7 @@
 - [ ] CRUDs representam entidades e tarefas relevantes; não foram criados apenas para aumentar o número de telas.
 - [ ] Gestão de usuários/perfis/permissões, se existente, considera papéis, prevenção de erros e consequências de alterações.
 - [ ] Telas de configuração não expõem complexidade técnica desnecessária sem justificativa.
-- [ ] Estados de carregamento, processamento, vazio, erro, sucesso e recuperação foram considerados quando pertinentes.
+- [x] Estados de carregamento, processamento, vazio, erro, sucesso e recuperação foram considerados quando pertinentes.
 - [ ] Comparações e visualizações ajudam o usuário a interpretar diferenças e tomar decisões.
 
 ## Avaliação
