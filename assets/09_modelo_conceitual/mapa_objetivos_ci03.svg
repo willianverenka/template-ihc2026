@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="624" viewBox="0 0 1040 624" font-family="Arial, Helvetica, sans-serif">
+<rect width="1040" height="624" fill="#ffffff"/>
+<rect x="330" y="20" width="300" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="344" y="57" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O02</tspan> delimitar o incidente</text>
+<text x="344" y="92" font-size="14" fill="#4d4d4d">P01, P04 | CI03, CI04</text>
+<rect x="330" y="120" width="300" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="344" y="157" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O03</tspan> acompanhar a análise</text>
+<text x="344" y="192" font-size="14" fill="#4d4d4d">P01, P04 | CI03, CI04</text>
+<rect x="330" y="220" width="300" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="344" y="257" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O05</tspan> inspecionar o subgrafo</text>
+<text x="344" y="292" font-size="14" fill="#4d4d4d">P01, P02, P04 | CI01, CI03, CI04</text>
+<rect x="680" y="320" width="340" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="694" y="357" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O09</tspan> comparar hipóteses concorrentes</text>
+<text x="694" y="392" font-size="14" fill="#4d4d4d">P01 | CI03</text>
+<path d="M630 362 H680" fill="none" stroke="#4d4d4d" stroke-width="1.5"/>
+<rect x="330" y="320" width="300" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="344" y="347" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O08</tspan> examinar hipóteses</text>
+<text x="344" y="368" font-size="15" fill="#1a1a1a">e evidências</text>
+<text x="344" y="392" font-size="14" fill="#4d4d4d">P01–P04 | CI01–CI04</text>
+<rect x="680" y="420" width="340" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="694" y="457" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O12</tspan> registrar o diagnóstico inicial</text>
+<text x="694" y="492" font-size="14" fill="#4d4d4d">P01 | CI03</text>
+<rect x="680" y="520" width="340" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="694" y="547" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O16</tspan> enviar o resultado</text>
+<text x="694" y="568" font-size="15" fill="#1a1a1a">aos destinatários</text>
+<text x="694" y="592" font-size="14" fill="#4d4d4d">P01–P04 | CI01–CI04</text>
+<path d="M630 512 H655 M655 462 V562 M655 462 H680 M655 562 H680" fill="none" stroke="#4d4d4d" stroke-width="1.5"/>
+<rect x="330" y="470" width="300" height="84" rx="10" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+<text x="344" y="497" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O11</tspan> registrar e comunicar</text>
+<text x="344" y="518" font-size="15" fill="#1a1a1a">o resultado</text>
+<text x="344" y="542" font-size="14" fill="#4d4d4d">P01–P04 | CI01–CI04</text>
+<rect x="20" y="245" width="260" height="84" rx="10" fill="#dbe7f5" stroke="#1f4e79" stroke-width="2"/>
+<text x="34" y="272" font-size="15" fill="#1a1a1a"><tspan font-weight="bold">O01</tspan> investigar um incidente</text>
+<text x="34" y="293" font-size="15" fill="#1a1a1a">e comunicar o resultado</text>
+<text x="34" y="317" font-size="14" fill="#4d4d4d">P01–P04 | CI01–CI04</text>
+<path d="M280 287 H305 M305 62 V512 M305 62 H330 M305 162 H330 M305 262 H330 M305 362 H330 M305 512 H330" fill="none" stroke="#4d4d4d" stroke-width="1.5"/>
+</svg>
