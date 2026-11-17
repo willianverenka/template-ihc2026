@@ -27,8 +27,8 @@
 - [ ] Público-alvo, personas e participantes de pesquisa/teste são coerentes com o escopo de IHC.
 - [ ] Cenários de problema descrevem o problema/atividade sem antecipar a solução.
 - [ ] Tarefas analisadas correspondem a objetivos importantes das personas.
-- [ ] Modelo conceitual, signos e MoLIC usam terminologia consistente.
-- [ ] MoLIC contém caminhos principais, alternativas e rupturas relevantes.
+- [x] Modelo conceitual, signos e MoLIC usam terminologia consistente.
+- [x] MoLIC contém caminhos principais, alternativas e rupturas relevantes.
 - [ ] O Figma cobre os fluxos modelados e não cria funcionalidades críticas sem rastreabilidade.
 - [x] Metas de usabilidade são verificáveis.
 - [x] Em projetos técnicos, resultados do algoritmo/modelo foram traduzidos para linguagem e decisões compreensíveis ao perfil de usuário escolhido.
