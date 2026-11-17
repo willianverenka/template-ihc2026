@@ -30,7 +30,7 @@
 - [ ] Modelo conceitual, signos e MoLIC usam terminologia consistente.
 - [ ] MoLIC contém caminhos principais, alternativas e rupturas relevantes.
 - [ ] O Figma cobre os fluxos modelados e não cria funcionalidades críticas sem rastreabilidade.
-- [ ] Metas de usabilidade são verificáveis.
+- [x] Metas de usabilidade são verificáveis.
 - [ ] Em projetos técnicos, resultados do algoritmo/modelo foram traduzidos para linguagem e decisões compreensíveis ao perfil de usuário escolhido.
 
 ## Justificativa das telas e padrões
