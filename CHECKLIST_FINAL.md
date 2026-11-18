@@ -48,10 +48,10 @@
 
 ## Avaliação
 
-- [ ] Cada avaliador heurístico percorreu todas as telas/estados relevantes.
-- [ ] As 10 heurísticas foram explicitamente verificadas por cada avaliador.
-- [ ] Violações têm evidência, localização, severidade justificada e recomendação.
-- [ ] Problemas duplicados entre avaliadores foram consolidados sem apagar a autoria da descoberta.
+- [x] Cada avaliador heurístico percorreu todas as telas/estados relevantes.
+- [x] As 10 heurísticas foram explicitamente verificadas por cada avaliador.
+- [x] Violações têm evidência, localização, severidade justificada e recomendação.
+- [x] Problemas duplicados entre avaliadores foram consolidados sem apagar a autoria da descoberta.
 - [ ] O número final de usuários observados atende ao exigido pela disciplina.
 - [ ] Participantes finais representam o público-alvo e não são membros da equipe.
 - [ ] Se o perfil profissional é difícil de recrutar, qualquer uso de participante aproximado/proxy foi justificado e registrado como limitação.
