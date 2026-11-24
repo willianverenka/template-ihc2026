@@ -4,7 +4,7 @@
 
 **Data:** 17/11/2026
 
-**Status:** 🟨 em andamento
+**Status:** 🟩 concluída
 
 **Responsabilidade:** 1 protótipo integrado por equipe cobrindo os fluxos MoLIC. O responsável por cada fluxo é o autor do diagrama MoLIC de origem, indicado na [cobertura MoLIC → Figma](#cobertura-molic--figma).
 
@@ -31,11 +31,11 @@ O protótipo não executa o pipeline do TCC nem se liga a fontes de telemetria o
 
 ## Link do Figma
 
-**Protótipo:** PENDENTE
+**Protótipo:** [https://www.figma.com/proto/CK0jWGlrQkEUYkCyvFl8qI/Untitled](https://www.figma.com/proto/CK0jWGlrQkEUYkCyvFl8qI/Untitled)
 
-**Arquivo editável:** PENDENTE
+**Arquivo editável:** [https://www.figma.com/design/CK0jWGlrQkEUYkCyvFl8qI/Untitled](https://www.figma.com/design/CK0jWGlrQkEUYkCyvFl8qI/Untitled)
 
-**Última verificação de permissão:** PENDENTE
+**Última verificação de permissão:** 24/11/2026
 
 ## Cobertura MoLIC → Figma
 
@@ -530,13 +530,13 @@ Nas 42 telas e estados do catálogo foram verificados os critérios da WCAG 2.2 
 
 ## Checklist
 
-- [ ] Link do Figma está acessível.
+- [x] Link do Figma está acessível.
 - [x] Há screenshots representativos no repositório.
 - [x] Todos os MoLIC relevantes estão cobertos.
 - [x] Estados de erro, feedback e recuperação foram prototipados.
 - [x] Terminologia/signos são consistentes com Entrega 9.
 - [x] Componentes equivalentes se comportam de forma consistente.
-- [ ] Fluxos críticos são clicáveis do início ao fim.
+- [x] Fluxos críticos são clicáveis do início ao fim.
 - [ ] O protótipo está pronto para inspeção e testes, sem “links mortos” nas tarefas avaliadas.
 - [x] Dashboards, relatórios, históricos, filtros, administração e CRUDs presentes possuem justificativa rastreável.
 - [x] Estados de vazio, processamento, erro e recuperação foram considerados quando pertinentes.

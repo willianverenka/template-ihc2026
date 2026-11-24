@@ -29,7 +29,7 @@
 - [ ] Tarefas analisadas correspondem a objetivos importantes das personas.
 - [x] Modelo conceitual, signos e MoLIC usam terminologia consistente.
 - [x] MoLIC contém caminhos principais, alternativas e rupturas relevantes.
-- [ ] O Figma cobre os fluxos modelados e não cria funcionalidades críticas sem rastreabilidade.
+- [x] O Figma cobre os fluxos modelados e não cria funcionalidades críticas sem rastreabilidade.
 - [x] Metas de usabilidade são verificáveis.
 - [x] Em projetos técnicos, resultados do algoritmo/modelo foram traduzidos para linguagem e decisões compreensíveis ao perfil de usuário escolhido.
 
