@@ -172,6 +172,46 @@ A meta é realizar de 3 a 5 sessões. Ficam excluídos os integrantes da equipe,
 - **Armazenamento:** gravações e fichas ficam na pasta restrita aos integrantes. O repositório GitHub recebe apenas fichas consolidadas, linhas do tempo anonimizadas e resultados agregados.
 - **Descarte:** gravações são excluídas após a codificação das sessões. Fichas e transcrições são excluídas ao final da disciplina, e os contatos usados no agendamento, após o fim das coletas.
 
+### A04 — João Vitor Sitta Giopatto
+
+**Autor(a):** João Vitor Sitta Giopatto — 22.123.054-3
+
+Esta solução prioriza dados que surgem da interação entre papéis: como o contexto de uma investigação passa de quem investiga para quem corrige e para quem verifica, onde as necessidades desses papéis convergem ou divergem e como restrições de acesso e lacunas da telemetria interferem nesse repasse. O instrumento correspondente é o grupo focal I04.
+
+#### Que dados coletar?
+
+| Dado/informação | Hipótese/lacuna relacionada | Por que é necessário | Qual decisão de design pode afetar |
+|---|---|---|---|
+| Como o contexto circula entre investigação, correção e verificação: meios, momentos e responsáveis | H04 | A colaboração foi suposta na Entrega 1 sem observação ou relato de profissionais. | Comunicação e compartilhamento do diagnóstico inicial. |
+| Informações que cada papel precisa receber para continuar o próprio trabalho | H04; necessidades de P02, P03 e P04 (Entrega 3) | As personas supõem necessidades diferentes por papel; o grupo permite confrontá-las diretamente. | Conteúdo mínimo do diagnóstico compartilhado. |
+| Divergências entre papéis sobre o nível de detalhe necessário | H02 | Um mesmo resumo pode ser suficiente para um papel e insuficiente para outro. | Composição da primeira visão e do aprofundamento por perfil. |
+| Regras de acesso à telemetria de produção e formas de lidar com dados sensíveis | H04; Entrega 1, seção 5.5 | Define quem pode ver e compartilhar cada tipo de dado. | Papéis/permissões e ocultação de dados, marcados como “talvez” na seção 8 da Entrega 1. |
+| Lacunas da telemetria (instrumentação parcial, amostragem) e como são comunicadas | H02; restrições de P04 | A ausência de dado pode ser confundida com ausência de erro por quem recebe a investigação. | Exibição da cobertura e das limitações da análise. |
+| Fatores que tornam confiável uma explicação recebida, conforme venha de uma pessoa ou de uma ferramenta | H03 | A credibilidade pode depender do papel de quem recebe a explicação. | Identificação da origem da hipótese e evidências exibidas. |
+| Necessidade de consultar a investigação depois do encerramento do incidente: quem consulta e para quê | Entrega 1, seções 5.5 e 8 (auditoria marcada como “talvez”) | A possibilidade foi mantida sem tarefa que a justifique. | Inclusão ou exclusão de registro/auditoria no recorte. |
+
+#### De quem coletar?
+
+| Perfil/stakeholder | Critério de inclusão | Relação com persona/público |
+|---|---|---|
+| SRE | Participou da investigação de incidentes em sistemas compostos por vários serviços nos últimos 12 meses. | P01. |
+| Especialista em observabilidade ou engenharia de plataforma | É responsável por telemetria ou monitoramento e participou de investigações nos últimos 12 meses. | P04. |
+| Desenvolvedor(a) backend | Mantém serviços em produção e participou da investigação ou da correção de um incidente nos últimos 12 meses. | P02. |
+| Analista de QA | Verificou a correção de falhas ocorridas em produção nos últimos 12 meses. | P03. |
+
+A meta é realizar uma ou duas sessões com 4 a 6 participantes cada, com pelo menos três papéis diferentes por sessão. Os participantes de uma sessão devem estar no mesmo nível hierárquico: não participam gestores junto de subordinados nem pessoas com relação direta de trabalho entre si. Gestores ficam fora do grupo para não inibir a discussão; sua perspectiva é coletada pelo questionário I01. Ficam excluídos os integrantes da equipe. [H] Reunir de 4 a 6 profissionais no mesmo horário pode ser difícil. Se menos de quatro confirmarem, a sessão será conduzida como entrevista em grupo e registrada dessa forma, e a alternativa será discutida com o docente. A amostra por conveniência, o número reduzido de sessões e o possível consenso induzido pela dinâmica do grupo serão registrados como limitações.
+
+#### Aspectos éticos
+
+- **Dados e riscos deste projeto:** no grupo focal, o que uma pessoa diz é ouvido pelas demais, e a equipe não consegue garantir que os participantes guardem sigilo. Participantes de empresas diferentes, inclusive concorrentes, podem expor práticas internas, falhas ou clientes. Críticas entre papéis (por exemplo, desenvolvedores comentando repasses de SREs) podem gerar desconforto, e a presença de alguém com relação hierárquica inibiria a discussão.
+- **Voluntariedade:** o participante pode deixar de responder qualquer pergunta ou sair da sessão a qualquer momento, sem justificativa. O moderador não conduz sessões com colegas da própria equipe de trabalho. Não há incentivo.
+- **Consentimento:** o termo, adaptado de `instrumentos/termo_consentimento_modelo.md`, inclui o compromisso de não divulgar fora da sessão o que os demais participantes disserem e informa que esse sigilo não pode ser garantido pela equipe. Por isso, recomenda-se não relatar nada que o participante não aceitaria ver conhecido por terceiros. A gravação de áudio só ocorre se todos consentirem; caso contrário, a sessão é registrada apenas por anotações.
+- **Minimização:** cada participante usa o primeiro nome ou um apelido escolhido por ele e pode manter a câmera desligada. Empresa e cargo exato não são perguntados. O estímulo da atividade é fictício, sem dados reais, e o grupo é orientado a não citar empresas, clientes, pessoas ou sistemas.
+- **Gravação:** somente áudio, quando houver consentimento de todos; o vídeo não é gravado. O arquivo é transferido para a pasta restrita no mesmo dia e removido da nuvem da ferramenta de videochamada.
+- **Anonimização:** participantes identificados como G1-P01, G1-P02 etc. As falas são associadas ao papel na análise interna; no repositório, o papel só aparece quando não permitir identificar a pessoa (por exemplo, quando houver um único QA no conjunto das sessões). Mensagens de chat e notas do quadro compartilhado são anonimizadas da mesma forma.
+- **Armazenamento:** áudios, transcrições, notas e quadros ficam na pasta restrita aos integrantes. O repositório GitHub recebe apenas a matriz consolidada, temas e trechos anonimizados.
+- **Descarte:** nomes e e-mails usados no agendamento ficam separados das notas e são excluídos após a sessão. O áudio é excluído após a transcrição; transcrições, notas e quadros, ao final da disciplina.
+
 ## Parte B — ferramentas de coleta
 
 > Cada integrante deve preparar uma técnica/instrumento completo. As técnicas devem ser diferentes entre si e **questionário deve estar entre as técnicas escolhidas**, conforme o enunciado da disciplina.
@@ -743,6 +783,95 @@ Os resultados alimentam a revisão das personas (Entrega 3), as metas de usabili
 3. **Comparação entre sessões:** fontes usadas no início da investigação; uso das relações entre serviços (DEP) antes ou depois da primeira hipótese e na decisão sobre a origem (H01); volume examinado antes de restringir a análise (H02); concentração de HES e RET, que indica rupturas; sinais citados para separar origem e efeitos.
 4. **Comunicação final:** comparação do conteúdo dos diagnósticos comunicados (origem, serviços afetados, evidências e grau de certeza) para identificar uma estrutura mínima de comunicação.
 5. **Uso no design:** os resultados são apresentados de forma agregada e alimentam a revisão das tarefas da Entrega 5, as metas de eficiência da Entrega 8 — com a ressalva do ambiente controlado — e a composição da primeira visão e da inspeção do subgrafo (F02). Com 3 a 5 sessões, os achados indicam padrões a confirmar; são triangulados com I01 e I02 antes de alterar o estado de H01 e H02.
+
+### Instrumento I04 — Grupo focal
+
+**Autor(a):** João Vitor Sitta Giopatto — 22.123.054-3  
+**Técnica:** grupo focal  
+**Objetivo:** discutir, entre profissionais de papéis diferentes, como o contexto de uma investigação de incidente circula entre quem investiga, quem corrige e quem verifica; que informações cada papel precisa receber; como restrições de acesso, dados sensíveis e lacunas da telemetria interferem; e o que torna confiável uma explicação recebida. Investiga principalmente H04, com contribuições para H02 e H03.  
+**Público:** SREs, especialistas em observabilidade ou engenharia de plataforma, desenvolvedores backend e analistas de QA, conforme os critérios de A04.
+
+#### Procedimento padronizado de aplicação
+
+1. **Preparação:** recrutar os participantes pelo formulário de interesse do questionário I01 e pela rede profissional dos integrantes, respeitando a composição definida em A04. Agendar uma videochamada de 75 minutos e enviar o termo com dois dias de antecedência. Preparar o estímulo (mensagem fictícia) e um quadro compartilhado on-line para a atividade individual; se o quadro não for viável, usar o chat da chamada. Definir moderador e anotador. Ensaiar o roteiro com pessoas fora da amostra para verificar o tempo dos blocos e a clareza do estímulo, aplicando os ajustes antes da primeira sessão.
+2. **Apresentação/consentimento:** ler a abertura padronizada e as regras do grupo. Confirmar o consentimento de todos e a decisão sobre a gravação. Iniciar a gravação somente se todos tiverem concordado.
+3. **Aplicação:** seguir os blocos na ordem e com o tempo indicado. O moderador usa rodadas para que todos falem, limita a dominância de um participante, não emite opinião e não menciona o pipeline do TCC nem ideias de interface. O anotador registra quem fala (por ID e papel), os pontos levantados, as concordâncias, as divergências e a dinâmica do grupo.
+4. **Encerramento:** o moderador resume os principais pontos e pede correções ao grupo; faz a pergunta final; agradece; encerra a gravação.
+5. **Armazenamento/anonimização:** transferir áudio, notas e quadro para a pasta restrita no mesmo dia. Transcrever em até 7 dias, com IDs G1-P01, G1-P02..., substituindo nomes e detalhes identificáveis por marcadores. Excluir o áudio após a conferência da transcrição e os dados de agendamento após a sessão. Publicar no repositório apenas a matriz consolidada, temas e trechos anonimizados.
+
+#### Instrumento
+
+**Abertura padronizada (ler ao grupo):**
+
+> Obrigado por participarem. Este encontro faz parte de um trabalho da disciplina de Interação Humano-Computador da FEI. Queremos entender como a investigação de um incidente passa de uma pessoa para outra em equipes de tecnologia. Estamos estudando a atividade, não avaliando ninguém; não há respostas certas, e opiniões diferentes são bem-vindas. O encontro dura cerca de 75 minutos.
+>
+> Algumas combinações: falem um de cada vez; não citem nomes de empresas, clientes, pessoas ou sistemas; o que for dito aqui não deve ser comentado fora deste grupo; cada um pode deixar de responder ou sair a qualquer momento, e a câmera é opcional.
+>
+> *[Somente se todos tiverem consentido:]* Vou iniciar a gravação do áudio agora. Todos confirmam que concordam?
+
+**Bloco 1 — Apresentação (5 min)**
+
+- **G1.** Em uma rodada: qual é o seu papel e em que momento você costuma entrar na investigação de um incidente?
+
+**Bloco 2 — Circulação do contexto (15 min)**
+
+- **G2.** Pensem na última vez em que uma investigação passou de uma pessoa para outra. Como esse repasse aconteceu?
+  - *Sondagens:* Por qual meio? O que foi enviado? O que se perdeu? Alguém precisou refazer alguma etapa? Isso é comum?
+
+**Bloco 3 — Atividade com estímulo (20 min)**
+
+O moderador apresenta a mensagem fictícia abaixo, na tela e no chat:
+
+> “Pessoal, desde as 14h20 a consulta de status de pedidos está retornando erro 5xx para parte dos clientes. Parece ser o serviço de estoque, que está lento. Vou abrir um chamado para o time responsável. Sigo acompanhando.”
+
+- **Atividade individual (3 min):** “Imaginem que essa mensagem chegou a vocês e que a próxima etapa é sua — investigar, corrigir ou verificar, conforme o seu papel. Escrevam no quadro, cada um na sua área, o que precisariam saber para continuar.”
+- **G3.** O que cada um escreveu? O que aparece em comum? O que só um papel precisa?
+- **G4.** O que nessa mensagem é suficiente para o seu papel? O que é dispensável?
+- **G5.** Em que situação essa mensagem poderia levar alguém a uma ação equivocada?
+
+**Bloco 4 — Acesso e dados sensíveis (12 min)**
+
+- **G6.** Nas equipes de vocês, quem pode ver o quê durante uma investigação? Como isso afeta o repasse?
+  - *Sondagens:* Já precisaram pedir acesso no meio de um incidente? Como lidam com dados pessoais de clientes em logs? Há informação que não pode ser enviada a outro papel?
+- **G7.** Quando faltam dados — um serviço sem registros, traces incompletos —, como isso é comunicado a quem recebe a investigação?
+
+**Bloco 5 — Credibilidade da explicação e registro (12 min)**
+
+- **G8.** O que faz vocês confiarem ou desconfiarem de uma explicação recebida sobre a origem de uma falha?
+  - *Sondagens:* Isso muda conforme quem envia? Muda se a explicação vem de uma ferramenta automática? O que precisariam ver para aceitá-la?
+- **G9.** Depois que o incidente termina, alguém precisa consultar o que foi investigado? Quem e para quê?
+
+**Bloco 6 — Encerramento (8 min)**
+
+- **Resumo do moderador (3 min):** síntese dos principais pontos de concordância e divergência.
+- **G10.** Esse resumo representa o que conversamos? Há algo a corrigir ou completar?
+- **G11.** Há algo sobre esse tema que não discutimos e que vocês consideram importante?
+
+**Fechamento (ler):**
+
+> Obrigado pela participação. As informações serão anonimizadas antes de qualquer análise, e o áudio será excluído depois da transcrição. Lembramos o combinado de não comentar fora do grupo o que os demais disseram. *[Encerrar a gravação.]*
+
+**O moderador não deve:** dar opinião sobre as práticas relatadas; sugerir ferramentas ou soluções; mencionar o pipeline do TCC, grafos, subgrafos, LLM ou telas; tratar uma posição como correta; encerrar uma divergência buscando consenso.
+
+**Ficha do anotador:**
+
+| Bloco | Tempo | Quem fala (ID/papel) | Ponto levantado | Concordância/divergência | Dinâmica observada |
+|---|---|---|---|---|---|
+| | | | | | |
+
+**Registro da atividade do Bloco 3:**
+
+| ID/papel | Informações necessárias para continuar (copiadas do quadro) |
+|---|---|
+| | |
+
+#### Como os dados serão analisados
+
+1. **Preparação:** transcrição anonimizada da sessão ou, sem gravação, consolidação das notas do anotador e do moderador no mesmo dia, junto com o conteúdo do quadro.
+2. **Matriz papel × informação necessária:** construída a partir da atividade do Bloco 3 e da discussão. Informações citadas por todos os papéis indicam o conteúdo mínimo do repasse; informações específicas de um papel indicam candidatos a aprofundamento sob demanda (H02).
+3. **Codificação temática:** códigos iniciais REPASSE, PERDA DE CONTEXTO, RETRABALHO, ACESSO, DADOS SENSÍVEIS, LACUNA DE TELEMETRIA, CREDIBILIDADE e REGISTRO, além de códigos novos que surgirem. Dois integrantes codificam a transcrição separadamente, comparam os resultados e resolvem divergências.
+4. **Convergências, divergências e dinâmica:** registro dos pontos em que os papéis concordam ou discordam, e da dinâmica do grupo — dominância de um participante, concordância rápida, silêncio de algum papel —, para não tratar consenso aparente como acordo.
+5. **Uso no design:** os resultados definem o conteúdo mínimo do diagnóstico compartilhado e os requisitos candidatos para permissões, ocultação de dados sensíveis e exibição de limitações da análise. Também alimentam a revisão de P03 e P04 e a decisão sobre registro/auditoria. As evidências sobre H04, H02 e H03 são trianguladas com I01 e I02 antes de alterar o estado das hipóteses.
 
 ## Síntese
 
