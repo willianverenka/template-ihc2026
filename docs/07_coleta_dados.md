@@ -1,7 +1,7 @@
 # Entrega 7 — Coleta de dados, necessidades e aspectos éticos
 
 **Data:** 22/10/2026  
-**Status:** 🟨 em andamento
+**Status:** 🟩 concluída
 
 ## Objetivo da atividade
 
@@ -233,7 +233,7 @@ A meta é realizar uma ou duas sessões com 4 a 6 participantes cada, com pelo m
 
 #### Instrumento
 
-**Link do formulário:** PENDENTE — será criado a partir desta cópia textual, que é a versão de referência do instrumento.
+**Link do formulário:** [questionário no Google Forms](https://forms.gle/tNUMxs9yKoYyy7fv5), criado a partir desta cópia textual, que é a versão de referência do instrumento.
 
 **Legenda:** ○ escolha única; ☐ múltipla escolha. Perguntas sem a indicação “obrigatória” podem ficar em branco.
 
@@ -566,9 +566,9 @@ ________
 
 ________
 
-> **Mensagem final:** Obrigado pela participação! Se quiser participar de uma conversa ou atividade posterior sobre este tema (entrevista, observação ou grupo de discussão), use este formulário separado: [link PENDENTE]. Ele não tem ligação com as respostas deste questionário.
+> **Mensagem final:** Obrigado pela participação! Se quiser participar de uma conversa ou atividade posterior sobre este tema (entrevista, observação ou grupo de discussão), use este formulário separado: [formulário de interesse](https://forms.gle/aCW2Jz16sHi5tqsh6). Ele não tem ligação com as respostas deste questionário.
 
-**Formulário de interesse em participar de I02–I04:** PENDENTE.
+**Formulário de interesse em participar de I02–I04:** [formulário no Google Forms](https://forms.gle/aCW2Jz16sHi5tqsh6).
 
 > **Interesse em participar de atividades sobre investigação de incidentes**
 >
