@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="2240" viewBox="0 0 1220 2240" font-family="Arial, Helvetica, sans-serif" fill="#1a1a1a">
+<defs><marker id="seta" viewBox="0 0 10 8" refX="10" refY="4" markerWidth="10" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1a1a1a"/></marker></defs>
+<rect width="1220" height="2240" fill="#ffffff"/>
+<rect x="900" y="50" width="160" height="36" rx="18" fill="#c8c8c8" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M980,86 L980,156" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="980" cy="86" r="3.5" fill="#1a1a1a"/>
+<text x="996" y="116" font-size="15">precond: subgrafo disponível</text>
+<text x="996" y="134" font-size="15">u: ajustar o recorte</text>
+<rect x="810" y="158" width="340" height="127" rx="12" fill="#ffffff" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="8 5"/>
+<line x1="810" y1="192" x2="1150" y2="192" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="980" y="181" font-size="16" font-weight="bold" text-anchor="middle">confirmar o ajuste do recorte</text>
+<text x="824" y="214" font-size="15">d: recorte</text>
+<text x="824" y="233" font-size="15">d: "Ajustar o recorte inicia nova análise, que</text>
+<text x="844" y="252" font-size="15">substitui o subgrafo e as hipóteses</text>
+<text x="844" y="271" font-size="15">diagnósticas; o rascunho é preservado."</text>
+<path d="M810,268 L690,268" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="810" cy="268" r="3.5" fill="#1a1a1a"/>
+<text x="706" y="260" font-size="15">u: confirmar</text>
+<path d="M1150,228 L1195,228 L1195,640 L690,640" fill="none" stroke="#1a1a1a" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#seta)"/>
+<circle cx="1150" cy="228" r="3.5" fill="#1a1a1a"/>
+<text x="706" y="632" font-size="15">u: cancelar o ajuste</text>
+<circle cx="500" cy="138" r="11" fill="#1a1a1a"/>
+<path d="M500,149 L500,246" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<text x="516" y="176" font-size="15">u: notificação do alerta de origem</text>
+<text x="516" y="194" font-size="15">gco: investigar um incidente e</text>
+<text x="528" y="212" font-size="15">comunicar o resultado (O01)</text>
+<rect x="310" y="248" width="380" height="146" rx="12" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+<line x1="310" y1="282" x2="690" y2="282" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="500" y="271" font-size="16" font-weight="bold" text-anchor="middle">delimitar o incidente (O02)</text>
+<text x="324" y="304" font-size="15">d: alerta de origem</text>
+<text x="324" y="323" font-size="15">confirmar o recorte proposto {</text>
+<text x="344" y="342" font-size="15">d: recorte(default=alerta de origem) }</text>
+<text x="324" y="361" font-size="15">ajustar o recorte {</text>
+<text x="344" y="380" font-size="15">d+u: *serviço, *sintoma, *período }</text>
+<path d="M500,394 L500,462" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="500" cy="394" r="3.5" fill="#1a1a1a"/>
+<text x="516" y="434" font-size="15">u: solicitar a análise</text>
+<rect x="487" y="462" width="26" height="26" fill="#1a1a1a"/>
+<rect x="513" y="464" width="297" height="22" fill="#ffffff" stroke="#1a1a1a" stroke-width="3.5"/>
+<text x="661" y="480" font-size="15" text-anchor="middle">d: estágio, estado do estágio</text>
+<rect x="810" y="430" width="360" height="108" rx="12" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+<line x1="810" y1="464" x2="1170" y2="464" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="990" y="453" font-size="16" font-weight="bold" text-anchor="middle">acompanhar a análise (O03)</text>
+<text x="824" y="486" font-size="15">acompanhar os estágios {</text>
+<text x="844" y="505" font-size="15">d: estágio, estado do estágio</text>
+<text x="844" y="524" font-size="15">d: "nenhuma hipótese gerada" }</text>
+<path d="M990,430 L990,314 L690,314" fill="none" stroke="#1a1a1a" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#seta)"/>
+<circle cx="990" cy="430" r="3.5" fill="#1a1a1a"/>
+<text x="710" y="306" font-size="15">u: cancelar a análise</text>
+<path d="M487,475 L260,475 L260,340 L310,340" fill="none" stroke="#1a1a1a" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#seta)"/>
+<text x="275" y="497" font-size="15">[RA] d: falha no estágio</text>
+<text x="287" y="515" font-size="15">e causa</text>
+<path d="M500,488 L500,578" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<text x="516" y="538" font-size="15">d: filtragem estrutural concluída</text>
+<rect x="310" y="580" width="380" height="298" rx="12" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+<line x1="310" y1="614" x2="690" y2="614" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="500" y="603" font-size="16" font-weight="bold" text-anchor="middle">inspecionar o subgrafo (O05)</text>
+<text x="324" y="636" font-size="15">d: subgrafo, presença no subgrafo</text>
+<text x="324" y="655" font-size="15">acompanhar os estágios {</text>
+<text x="344" y="674" font-size="15">d: estágio, estado do estágio</text>
+<text x="344" y="693" font-size="15">d: "nenhuma hipótese gerada" }</text>
+<text x="324" y="712" font-size="15">examinar componentes e relações {</text>
+<text x="344" y="731" font-size="15">d: estado do componente, desvio observado,</text>
+<text x="364" y="750" font-size="15">instrumentação, relação, fonte da relação,</text>
+<text x="364" y="769" font-size="15">caminho de propagação }</text>
+<text x="324" y="788" font-size="15">comparar o início do desvio {</text>
+<text x="344" y="807" font-size="15">d: início do desvio, tipo de lacuna }</text>
+<text x="324" y="826" font-size="15">consultar as evidências do componente {</text>
+<text x="344" y="845" font-size="15">d+u: componente em foco</text>
+<text x="344" y="864" font-size="15">d: situação da consulta, lista(evidência) }</text>
+<rect x="60" y="931" width="160" height="36" rx="18" fill="#c8c8c8" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M140,931 L140,867 L310,867" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="140" cy="931" r="3.5" fill="#1a1a1a"/>
+<text x="152" y="901" font-size="15">precond: subgrafo disponível</text>
+<text x="152" y="919" font-size="15">u: subgrafo</text>
+<rect x="897" y="810" width="26" height="26" fill="#1a1a1a"/>
+<path d="M690,783 L910,783 L910,810" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="690" cy="783" r="3.5" fill="#1a1a1a"/>
+<text x="706" y="755" font-size="15">u: consultar as evidências</text>
+<text x="718" y="773" font-size="15">do componente</text>
+<path d="M897,817 L690,817" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<text x="706" y="809" font-size="15">d: com dados ou sem dados</text>
+<path d="M897,829 L880,829 L880,863 L690,863" fill="none" stroke="#1a1a1a" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#seta)"/>
+<text x="706" y="855" font-size="15">[CE] d: acesso restrito</text>
+<path d="M910,836 L910,943" fill="none" stroke="#1a1a1a" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#seta)"/>
+<text x="898" y="887" font-size="15" text-anchor="end">[RA] d: falha de consulta</text>
+<text x="898" y="905" font-size="15" text-anchor="end">e causa</text>
+<rect x="790" y="943" width="340" height="70" rx="12" fill="#ffffff" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="8 5"/>
+<line x1="790" y1="977" x2="1130" y2="977" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="960" y="966" font-size="16" font-weight="bold" text-anchor="middle">repetir a consulta</text>
+<text x="804" y="999" font-size="15">d: tipo de evidência, situação da consulta</text>
+<path d="M1040,943 L1040,823 L923,823" fill="none" stroke="#1a1a1a" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#seta)"/>
+<circle cx="1040" cy="943" r="3.5" fill="#1a1a1a"/>
+<text x="1052" y="889" font-size="15">u: repetir a consulta</text>
+<path d="M500,878 L500,978" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="500" cy="878" r="3.5" fill="#1a1a1a"/>
+<text x="516" y="922" font-size="15">precond: hipóteses diagnósticas geradas</text>
+<text x="516" y="940" font-size="15">u: examinar as hipóteses</text>
+<rect x="310" y="980" width="380" height="165" rx="12" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+<line x1="310" y1="1014" x2="690" y2="1014" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="500" y="1003" font-size="16" font-weight="bold" text-anchor="middle">examinar hipóteses e evidências (O08)</text>
+<text x="324" y="1036" font-size="15">d: hipóteses diagnósticas, origem provável,</text>
+<text x="344" y="1055" font-size="15">explicação, caminho de propagação</text>
+<text x="324" y="1074" font-size="15">conferir as evidências associadas {</text>
+<text x="344" y="1093" font-size="15">d: evidências associadas }</text>
+<text x="324" y="1112" font-size="15">identificar as lacunas {</text>
+<text x="344" y="1131" font-size="15">d: lacunas da hipótese }</text>
+<path d="M500,1145 L500,1228" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="500" cy="1145" r="3.5" fill="#1a1a1a"/>
+<text x="516" y="1192" font-size="15">u: comparar as hipóteses</text>
+<rect x="310" y="1230" width="380" height="127" rx="12" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+<line x1="310" y1="1264" x2="690" y2="1264" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="500" y="1253" font-size="16" font-weight="bold" text-anchor="middle">comparar hipóteses concorrentes (O09)</text>
+<text x="324" y="1286" font-size="15">trocar a hipótese em foco {</text>
+<text x="344" y="1305" font-size="15">d+u: hipótese em foco</text>
+<text x="344" y="1324" font-size="15">d: origem provável, caminho de propagação,</text>
+<text x="364" y="1343" font-size="15">evidências associadas }</text>
+<path d="M310,1310 L260,1310 L260,1100 L310,1100" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="310" cy="1310" r="3.5" fill="#1a1a1a"/>
+<text x="248" y="1210" font-size="15" text-anchor="end">u: identificar as lacunas</text>
+<rect x="420" y="1392" width="160" height="36" rx="18" fill="#c8c8c8" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M500,1428 L500,1498" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="500" cy="1428" r="3.5" fill="#1a1a1a"/>
+<text x="516" y="1458" font-size="15">precond: subgrafo disponível</text>
+<text x="516" y="1476" font-size="15">u: registrar o diagnóstico inicial</text>
+<rect x="310" y="1500" width="380" height="165" rx="12" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+<line x1="310" y1="1534" x2="690" y2="1534" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="500" y="1523" font-size="16" font-weight="bold" text-anchor="middle">registrar o diagnóstico inicial (O12)</text>
+<text x="324" y="1556" font-size="15">d: estado do envio</text>
+<text x="324" y="1575" font-size="15">indicar a origem provável {</text>
+<text x="344" y="1594" font-size="15">d+u: hipótese adotada, *origem provável }</text>
+<text x="324" y="1613" font-size="15">informar o conteúdo do resultado {</text>
+<text x="344" y="1632" font-size="15">d+u: justificativa, *evidências citadas</text>
+<text x="364" y="1651" font-size="15">(a favor, contra), lacunas, *impacto }</text>
+<path d="M500,1665 L500,1748" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="500" cy="1665" r="3.5" fill="#1a1a1a"/>
+<text x="516" y="1698" font-size="15">precond: campos obrigatórios preenchidos</text>
+<text x="516" y="1716" font-size="15">u: escolher os destinatários</text>
+<rect x="310" y="1750" width="380" height="89" rx="12" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+<line x1="310" y1="1784" x2="690" y2="1784" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="500" y="1773" font-size="16" font-weight="bold" text-anchor="middle">enviar o resultado aos destinatários (O16)</text>
+<text x="324" y="1806" font-size="15">escolher os destinatários {</text>
+<text x="344" y="1825" font-size="15">d+u: *destinatários }</text>
+<path d="M500,1839 L500,1908" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="500" cy="1839" r="3.5" fill="#1a1a1a"/>
+<text x="516" y="1878" font-size="15">u: enviar</text>
+<rect x="310" y="1910" width="380" height="70" rx="12" fill="#ffffff" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="8 5"/>
+<line x1="310" y1="1944" x2="690" y2="1944" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="500" y="1933" font-size="16" font-weight="bold" text-anchor="middle">confirmar os destinatários</text>
+<text x="324" y="1966" font-size="15">d: resultado, destinatários, link do resultado</text>
+<path d="M310,1962 L260,1962 L260,1800 L310,1800" fill="none" stroke="#1a1a1a" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#seta)"/>
+<circle cx="310" cy="1962" r="3.5" fill="#1a1a1a"/>
+<text x="248" y="1870" font-size="15" text-anchor="end">u: alterar os</text>
+<text x="248" y="1888" font-size="15" text-anchor="end">destinatários</text>
+<path d="M500,1980 L500,2038" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="500" cy="1980" r="3.5" fill="#1a1a1a"/>
+<text x="516" y="2014" font-size="15">u: confirmar</text>
+<rect x="487" y="2038" width="26" height="26" fill="#1a1a1a"/>
+<rect x="790" y="1900" width="330" height="89" rx="12" fill="#ffffff" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="8 5"/>
+<line x1="790" y1="1934" x2="1120" y2="1934" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="955" y="1923" font-size="16" font-weight="bold" text-anchor="middle">repetir o envio</text>
+<text x="804" y="1956" font-size="15">conferir o envio {</text>
+<text x="824" y="1975" font-size="15">d: estado do envio }</text>
+<path d="M513,2045 L880,2045 L880,1989" fill="none" stroke="#1a1a1a" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#seta)"/>
+<text x="868" y="2010" font-size="15" text-anchor="end">[RA] d: falha de disponibilização;</text>
+<text x="868" y="2028" font-size="15" text-anchor="end">rascunho preservado</text>
+<path d="M1060,1989 L1060,2057 L513,2057" fill="none" stroke="#1a1a1a" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#seta)"/>
+<circle cx="1060" cy="1989" r="3.5" fill="#1a1a1a"/>
+<text x="1072" y="2030" font-size="15">u: repetir o envio</text>
+<rect x="455" y="2106.5" width="90" height="7" fill="#1a1a1a"/>
+<path d="M500,2064 L500,2106" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<path d="M500,2114 L500,2188" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="500" cy="2200" r="12" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.5"/>
+<circle cx="500" cy="2200" r="6.5" fill="#1a1a1a"/>
+<text x="516" y="2146" font-size="15">gcc: investigar um incidente e</text>
+<text x="528" y="2164" font-size="15">comunicar o resultado (O01)</text>
+<path d="M455,2110 L200,2110 L200,2182" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<text x="215" y="2062" font-size="15">d: estado do envio disponível,</text>
+<text x="215" y="2080" font-size="15">horário do envio,</text>
+<text x="215" y="2098" font-size="15">link do resultado</text>
+<rect x="120" y="2182" width="160" height="36" rx="18" fill="#c8c8c8" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M280,2200 L488,2200" fill="none" stroke="#1a1a1a" stroke-width="1.8" marker-end="url(#seta)"/>
+<circle cx="280" cy="2200" r="3.5" fill="#1a1a1a"/>
+<text x="300" y="2192" font-size="15">u: sair</text>
+</svg>

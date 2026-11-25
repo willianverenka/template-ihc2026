@@ -1,88 +1,169 @@
 # Entrega 8 — Ciclo de vida e engenharia de usabilidade
 
-**Data:** {{dd/mm/aaaa}}  
-**Status:** ⬜ não iniciada  
+[← Início do projeto](../README.md) · [Entrega 7 — Coleta de dados](07_coleta_dados.md) · [Entrega 9 — Modelo conceitual](09_modelo_conceitual.md)
+
+**Data:** 16/11/2026
+
+**Status:** 🟩 concluída
+
 **Responsabilidade:** 1 solução por equipe
 
-## Objetivo da atividade
+## Objetivo e entradas
 
 Transformar o conhecimento acumulado sobre usuários, tarefas, plataforma e contexto em princípios e **metas de usabilidade verificáveis**, mantendo o caráter iterativo do projeto.
 
-## Delimitação do sistema interativo
+Esta entrega corresponde à **análise de requisitos** do ciclo de engenharia de usabilidade de Mayhew, apresentado na disciplina: perfil do usuário, análise de tarefas, características da plataforma e princípios gerais de projeto alimentam as metas de usabilidade, que orientam o guia de estilo e as avaliações seguintes. **Meta de usabilidade** é o nível de usabilidade que a interface deve alcançar para uma tarefa e um público definidos. A meta qualitativa é um requisito em termos de funções e características de interface que devem ser implementadas para melhor atender ao tipo de usuário, à tarefa e à plataforma especificados; em 3.1, cada uma indica também a compreensão que a característica deve produzir no usuário. A quantitativa fixa valores mínimos admissíveis para os fatores de usabilidade, principalmente eficácia, eficiência e satisfação.
 
-Antes das características da plataforma, separe:
+| Entrada do ciclo | Fonte no projeto | Uso nesta entrega |
+|---|---|---|
+| Perfil do usuário | [Personas P01–P04](03_personas_contexto_jornada.md) (Entrega 3) | População das metas; decisões de linguagem, acesso e aprofundamento. |
+| Análise de tarefas | [T01–T06](05_analise_tarefas.md), modeladas com HTA, GOMS e CTT na Entrega 5 | Tarefas, critérios de sucesso e erros críticos das metas. |
+| Contexto de uso | [Entrega 1, seção 5](01_conhecendo_o_problema.md#5-entendendo-o-contexto-de-uso), [contexto de uso da Entrega 3](03_personas_contexto_jornada.md#3-contexto-de-uso--consolidação) e [cenários C01–C04](04_cenarios_problema.md) | Características da plataforma, princípios e limites de tempo. |
+| Análise competitiva (engenharia de usabilidade de Nielsen, 1993) | [Recomendações RC01–RC06](02_analise_concorrencia.md#5-recomendações-derivadas) (Entrega 2) | Convenções que o público já conhece e riscos a evitar. |
+| Contribuição técnica e recorte | [Entrega 1](01_conhecendo_o_problema.md), seções 0.4, 0.5, 7, [9.2](01_conhecendo_o_problema.md#92-que-ações-o-usuário-deverá-conseguir-realizar) e 11, e [README](../README.md) | Delimitação do sistema interativo e ações F01–F03. |
+| Hipóteses | H01–H03 ([Entrega 1, seção 10](01_conhecendo_o_problema.md#10-hipóteses-e-dúvidas-prioritárias)), H04 ([Entrega 1, seção 5.4](01_conhecendo_o_problema.md#54-existem-fatores-sociais-ou-organizacionais)) e H05–H06 ([Entrega 4, C02](04_cenarios_problema/c02.md)); [registro de hipóteses](../RASTREABILIDADE.md#2-registro-de-hipóteses-e-lacunas) | Metas da seção 3 que produzirão evidência sobre as hipóteses. |
+
+Os vínculos entre as metas, as linhas R01–R04 e as hipóteses H01–H06 estão na [matriz de rastreabilidade](../RASTREABILIDADE.md#3-rastreabilidade-entre-contribuição-técnica-necessidades-e-artefatos); a delimitação do protótipo está no [registro de mudanças de escopo](../RASTREABILIDADE.md#5-registro-de-mudanças-de-escopo).
+
+## Delimitação do sistema interativo
 
 | Camada | O que pertence ao projeto | O que será avaliado em IHC |
 |---|---|---|
-| contribuição técnica do TCC | {{algoritmo/modelo/API/análise...}} | desempenho técnico não é substituído pelo teste de IHC |
-| camada de interação da disciplina | {{interface/fluxos}} | compreensão, eficácia, eficiência, satisfação, erros, acessibilidade etc. |
-| integrações/dados simulados | {{...}} | {{limites do protótipo}} |
+| contribuição técnica do TCC | Pipeline em dois estágios: representação dos traces como grafos, filtragem estrutural por rede neural em grafos (GNN) ou heurística, que seleciona o subgrafo de evidências, e geração de hipóteses diagnósticas estruturadas por um modelo de linguagem de grande porte (LLM). Inclui a avaliação experimental que compara trace completo, subgrafo GNN e subgrafo heurístico por métricas estruturais, diagnósticas e operacionais (Entrega 1, seções 0.4 e 11). | desempenho técnico não é substituído pelo teste de IHC. A qualidade da filtragem e a correção das hipóteses pertencem à avaliação experimental do TCC. |
+| camada de interação da disciplina | Interface web para investigar um único incidente: delimitar serviço, sintoma e período (F01); acompanhar o processamento; inspecionar o subgrafo e os componentes afetados (F02); examinar hipóteses e evidências (F03); registrar e comunicar o resultado: avaliação da hipótese (T01), parecer sobre a verificação da correção (T02), diagnóstico inicial (T03) e retorno ao SRE (T04–T06). | compreensão da diferença entre hipótese, evidência e conclusão; eficácia, eficiência e satisfação em T01–T06; erros de interpretação e recuperação de falhas (metas MU01–MU14, seção 3); uso de cor e contraste, verificado nas telas do Figma conforme a linha WCAG 2.2 da seção 2. |
+| integrações/dados simulados | Protótipo no Figma (Entrega 11) com um incidente fictício: falha no checkout após uma implantação, com timeouts no serviço de pagamento (C01–C03), uma dependência ausente do mapa de serviços e um serviço com instrumentação parcial (C04). Telemetria, subgrafo, hipóteses e resultados da verificação da correção são elaborados pela equipe; o processamento é simulado por uma espera fixa; registro e compartilhamento são simulados. Não há dados reais nem pessoais. | O protótipo não executa o pipeline nem se liga a fontes de telemetria: não mede o tempo real de processamento, a qualidade das hipóteses ou a integração com ferramentas de observabilidade e de comunicação. Caminhos fora do roteiro não respondem; os campos de texto livre não recebem digitação, e o participante diz em voz alta o que escreveria neles, como definido na seção 3. |
 
-Em um protótipo de disciplina, é aceitável simular processamento ou resultados quando a implementação técnica não estiver integrada, desde que isso seja declarado e a simulação seja suficiente para avaliar a interação.
+Na repartição de tarefas entre pessoa e sistema, o pipeline seleciona evidências e gera hipóteses; delimitar o incidente, conferir as evidências, concluir e comunicar continuam com a pessoa. A interface não confirma causas nem aprova correções, conforme a síntese da [Entrega 5](05_analise_tarefas.md#síntese-da-equipe).
+
+A simulação é suficiente para avaliar a interação porque as tarefas T01–T06 dependem da interpretação dos resultados, não de sua produção. Para que as metas da seção 3 possam ser verificadas, o incidente simulado contém: duas hipóteses concorrentes, uma no serviço que concentra os erros e outra na dependência cuja latência subiu antes (C03); uma evidência que contradiz a hipótese avaliada em T01; uma verificação de correção que não exercita a condição da falha e um trecho de telemetria com acesso restrito (T02); uma dependência ausente do mapa e uma relação sustentada apenas pelo mapa (T05); e uma falha programada na disponibilização do parecer (T02, plano 5).
 
 ## 1. Características da plataforma
 
 | Característica | Descrição | Consequência para IHC |
 |---|---|---|
-| Software | {{...}} | {{...}} |
-| Hardware/dispositivos | {{...}} | {{...}} |
-| Capacidades | {{listar e explicar}} | {{...}} |
-| Restrições | {{listar e explicar}} | {{...}} |
-| Conectividade/latência | {{...}} | {{...}} |
-| Segurança/privacidade | {{...}} | {{...}} |
-| Volume de dados/histórico | {{...}} | {{impacto em busca, filtros, paginação...}} |
-| Tempo de processamento | {{...}} | {{feedback, progresso, cancelamento...}} |
-| Papéis/permissões | {{...}} | {{administração, prevenção de erros...}} |
+| Software | Adota-se uma aplicação web, acessada por navegador atualizado no computador de trabalho. O pipeline do TCC executa em servidor e entrega o subgrafo, as hipóteses e as referências às evidências; logs, métricas e traces vêm das fontes de observabilidade existentes, e o TCC prevê mecanismos para fornecer esses dados e consultar resultados [F] (Entrega 1, seção 0.5). O protótipo é apresentado no modo de protótipo do Figma, no navegador. | Sem instalação local. Padrões da web e das ferramentas de observabilidade conhecidas pelo público (Entrega 2) podem ser reaproveitados. |
+| Hardware/dispositivos | Computador com teclado, mouse e um ou dois monitores adicionais [H] (Entrega 3, contexto de uso). Telas projetadas para 1440 px de largura. Não há versão para celular, pois a investigação descrita em C01–C04 ocorre no computador. | Painéis lado a lado e leitura prolongada; sem otimização para toque ou tela pequena. |
+| Capacidade: tela ampla | Área suficiente para mais de um painel. *Justificativa:* T01 e T03 exigem comparar hipótese, subgrafo e registros, e o ambiente de trabalho inclui monitores adicionais. | Subgrafo, hipóteses e evidências visíveis ao mesmo tempo, sem troca de tela (RC01); detalhes do componente selecionado em painel lateral. |
+| Capacidade: manipulação direta | Seleção e arraste com mouse e digitação com teclado. *Justificativa:* é o equipamento de trabalho de P01–P04. | Selecionar nós e arestas para abrir seus registros; aproximar e deslocar o grafo; escrever diagnóstico, justificativa e parecer. |
+| Capacidade: links que preservam o estado | Um endereço pode reabrir o mesmo incidente com recorte, foco e hipótese. *Justificativa:* P02 precisa receber o contexto do erro por link, e ferramentas do domínio oferecem links permanentes (Entrega 2, C01). | Avaliação, parecer, diagnóstico e retorno são comunicados com link para o mesmo contexto, sem que o destinatário refaça a busca (H05). |
+| Capacidade: processamento em dois estágios no servidor | A filtragem estrutural produz o subgrafo antes da geração das hipóteses, e o computador do usuário não processa a telemetria. *Justificativa:* a separação dos estágios faz parte da contribuição do TCC (Entrega 1, seção 11). | Cada resultado aparece quando seu estágio termina; o subgrafo pode ser inspecionado enquanto as hipóteses são geradas. |
+| Capacidade: acesso às fontes de telemetria | Componentes do subgrafo e hipóteses referenciam spans, logs e métricas. *Justificativa:* mecanismo previsto no TCC [F] (Entrega 1, seção 0.5). | Aprofundamento progressivo da hipótese ao componente e ao registro, sem nova busca (RC01, RC03). |
+| Restrição: hipóteses podem estar erradas ou incompletas | A geração por LLM não garante correção; a documentação do New Relic recomenda verificação humana das respostas geradas [F] (Entrega 2, C02). *Justificativa:* H03 e o risco de orientar a correção ao serviço errado (T01, T03). | Termo "hipótese diagnóstica", nunca "causa raiz confirmada" (RC05); evidência observada, interpretação do pipeline e conclusão da pessoa aparecem separadas. |
+| Restrição: cobertura parcial da telemetria | Mapas e traces dependem de instrumentação, amostragem e permissões [F] (Entrega 2, C02 e C03); serviço pouco instrumentado e log sem identificador da requisição aparecem no cenário C04 [H]. *Justificativa:* limita o que as evidências permitem concluir. | Dado ausente, instrumentação parcial e janela analisada ficam explícitos; ausência de dados nunca é apresentada como normalidade (RC04). |
+| Restrição: o subgrafo é um recorte | A filtragem reduz o volume e pode excluir evidência relevante. *Justificativa:* H02 e o risco de filtros agressivos apontado por P04. | A interface indica que o subgrafo é uma seleção e permite consultar componentes vizinhos ou excluídos (RC02). |
+| Restrição: protótipo no Figma | O protótipo dialoga com o usuário, mas não está ligado a uma base de dados, e o projetista simula as telas de apresentação (slides da disciplina, nível 2 de Mayhew). *Justificativa:* o pipeline não está integrado à interface. | Um único incidente com caminhos previstos; carregamento, consulta sem resultado, acesso restrito e falhas desenhados como telas; classificações, conclusões, evidências citadas e destinatário escolhidos entre opções das telas, e o conteúdo dos campos de texto livre dito em voz alta pelo participante e transcrito pelo observador (seção 3). |
+| Conectividade/latência | A aplicação depende da rede corporativa e das fontes de telemetria; consultas a logs e traces podem demorar ou falhar [H]. | Estados distintos para carregando, consulta sem resultado, falha de consulta e acesso restrito (T02, item 2.2); falha informada com causa e opção de repetir, sem perder o recorte. |
+| Segurança/privacidade | Logs podem revelar dados de usuários, e o acesso deve ser limitado a perfis específicos [F] (Entrega 1, seção 5.5); payloads de spans podem conter dados pessoais (Entrega 3, contexto de uso). | Dados pessoais mascarados por padrão; o conteúdo compartilhado leva referências às evidências, não cópias de payloads; destinatários restritos a pessoas autorizadas; protótipo só com dados fictícios. A identificação do usuário vem do ambiente corporativo, sem tela de login no recorte. |
+| Volume de dados/histórico | Milhares de eventos por minuto, a maioria sem relação com o incidente [H] (Entrega 3, contexto de uso); o subgrafo ainda pode reunir dezenas de componentes [H]. Histórico com busca e filtros foi descartado na [Entrega 1, seção 8](01_conhecendo_o_problema.md#8-levantando-possibilidades-de-interação--sem-desenhar-ainda). | Subgrafo e hipóteses antes dos registros; registros carregados para o componente e o período selecionados, com paginação; lista textual dos componentes como alternativa ao grafo; sem histórico de incidentes com busca e filtros (Entrega 1, seção 8), mantida a delimitação por serviço, sintoma e período de F01. |
+| Tempo de processamento | O pipeline executa sob demanda para o recorte escolhido; a duração real é desconhecida [?] e tende a crescer com o tamanho do recorte e com a geração pelo LLM [H]. No protótipo, a espera é fixa e igual para todos os participantes. | Progresso por estágio (filtragem estrutural, geração de hipóteses); opção de cancelar e ajustar o recorte (T03, I3); subgrafo disponível antes das hipóteses. |
+| Papéis/permissões | SRE, desenvolvedor, QA e especialista em observabilidade têm acessos diferentes; a QA tem acesso limitado à produção [H] (P03); políticas de acesso limitam consulta e compartilhamento (H04). | Sem telas de administração de usuários ou permissões; trecho sem permissão aparece como "acesso restrito", diferente de "sem dados"; destinatário confirmado antes do compartilhamento. |
 
 ## 2. Princípios gerais do projeto
 
-Inclua apenas normas, leis, padrões e princípios realmente relevantes, explicando **como** afetam o projeto. Não transforme esta seção em lista de links.
-
 | Princípio/norma | Aplicabilidade ao contexto | Decisão/requisito decorrente | Fonte |
 |---|---|---|---|
-| Contexto de uso | {{...}} | {{...}} | Entregas 1/3 |
-| LGPD, se aplicável | {{...}} | {{...}} | {{fonte oficial}} |
-| Acessibilidade | {{...}} | {{...}} | {{WCAG/norma aplicável}} |
-| {{outro}} | {{...}} | {{...}} | {{...}} |
+| Contexto de uso | **Usuários:** P01, SRE de plantão (primária), e P02, P03 e P04 (secundárias), com conhecimento de observabilidade de intermediário (P02, P03) a alto (P01, P04) [H]. **Tarefa:** investigar e comunicar um incidente (T01–T06). **Equipamento:** computador com monitores adicionais. **Ambiente:** trabalho híbrido, interrupções por mensagens, pressão de SLAs e acesso restrito a dados de produção. | Resumo do incidente e hipóteses antes do detalhe, com aprofundamento sob demanda; serviço, sintoma e período sempre visíveis; estado da investigação preservado ao alternar entre ferramentas; vocabulário do domínio (serviço, dependência, trace, span, log). | Entrega 1, seção 5; Entrega 3, seções 1 e 3; Entrega 5 |
+| Usabilidade em um contexto de uso especificado | A norma define usabilidade pela eficácia, eficiência e satisfação com que usuários especificados atingem objetivos especificados em um contexto especificado. A mesma tela pode atender o SRE em T03 e não a QA em T02. | Cada meta quantitativa indica tarefa, população, limite e forma de medir; as metas cobrem as três dimensões (MU06–MU14) e medem a interação, não a precisão do pipeline. | ISO 9241-11:2018 — [iso.org/standard/63500](https://www.iso.org/standard/63500.html) |
+| Heurísticas de Nielsen | Base da avaliação heurística da Entrega 13. São pertinentes: visibilidade do estado do sistema (processamento por estágio, resultado das consultas); correspondência com o mundo real (termos do SRE); controle e liberdade (ajustar o recorte, desfazer o foco); prevenção de erros (compartilhamento); reconhecimento em vez de memorização (recorte visível); reconhecer, diagnosticar e recuperar-se de erros (falha de consulta e de disponibilização). | Estados de processamento e de consulta explícitos; "hipótese diagnóstica" em vez de "causa raiz"; ajuste e retorno do recorte sem perder o trabalho; confirmação do destinatário; mensagens de falha com causa e ação, preservando o rascunho (T02). | NIELSEN, *10 Usability Heuristics for User Interface Design* — [nngroup.com](https://www.nngroup.com/articles/ten-usability-heuristics/) |
+| Regra de ouro "projetar diálogos que levem a um fechamento" | Registrar e comunicar encerram T01, T02, T03 e T06. Em T02, registrar não garante que o parecer ficou disponível (Entrega 5, síntese). | Cada sequência de registro termina com confirmação explícita de que o conteúdo ficou registrado e disponível ao destinatário; sem essa confirmação, a interface não indica a comunicação como concluída. | SHNEIDERMAN, *The Eight Golden Rules of Interface Design*, regra 4 — [cs.umd.edu](https://www.cs.umd.edu/users/ben/goldenrules.html) |
+| Convenções das ferramentas de observabilidade | O público conhece Datadog, New Relic e Dynatrace [F] (Entregas 1 e 2). São familiares o seletor de período, os filtros por serviço e ambiente, o mapa de dependências com serviço focal, o painel lateral e o aprofundamento progressivo; as avaliações públicas dessas ferramentas apontam complexidade e curva de aprendizagem. | Reutilizar esses padrões em F01 e F02 (RC01, RC02); vincular hipótese e evidências (RC03); não incluir dashboard genérico, administração ou CRUD (RC06). | [Entrega 2, seção 5](02_analise_concorrencia.md#5-recomendações-derivadas) |
+| LGPD — Lei nº 13.709/2018 | Logs podem revelar dados de usuários [F] (Entrega 1, seção 5.5), e payloads de spans podem conter dados pessoais (Entrega 3, contexto de uso). Aplicam-se os princípios de finalidade, necessidade e segurança (art. 6º, I, III e VII) e o dever de proteger os dados pessoais contra acessos não autorizados (art. 46). | Dados pessoais mascarados por padrão nos detalhes de spans e logs; comunicação por referência às evidências, sem copiar payloads; compartilhamento só com destinatários autorizados; apenas dados fictícios no protótipo e IDs anônimos (U01–U04) nos testes. | BRASIL, Lei nº 13.709/2018 — [planalto.gov.br](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm) |
+| Acessibilidade — WCAG 2.2 | O subgrafo e os estados dos componentes dependem de codificação visual; a Entrega 2 observou uso intenso de cor nas ferramentas analisadas, sem avaliar sua acessibilidade [?]. Aplicam-se os critérios 1.1.1 (conteúdo não textual), 1.4.1 (uso de cor), 1.4.3 (contraste mínimo) e 1.4.11 (contraste não textual). | Estado de cada componente indicado por cor, ícone e rótulo; lista textual dos componentes do subgrafo com estado e relação; contraste de ao menos 4,5:1 para texto e 3:1 para nós, arestas e ícones, verificado nas telas do Figma. O acesso por teclado (2.1.1) é requisito da implementação e não é verificável no protótipo. | W3C, *WCAG 2.2* — [w3.org/TR/WCAG22](https://www.w3.org/TR/WCAG22/) |
 
 ## 3. Metas de usabilidade
 
-Usabilidade deve ser discutida **no contexto de uso**. Metas quantitativas devem dizer o que será medido, em qual tarefa, com qual população e qual limite será considerado aceitável.
+As metas valem para o contexto de uso da seção 2 e para o protótipo no Figma com o incidente simulado descrito na delimitação. A população é formada pelos 4 participantes do teste da Entrega 14, identificados como U01–U04, que não integram a equipe, cada um representante de uma persona: P01 (SRE), P02 (desenvolvedor backend), P03 (QA) e P04 (especialista em observabilidade). Todos realizam as quatro tarefas de teste derivadas de T01, T02, T03 e T04 (esta com T05 e T06), no primeiro contato com o protótipo, e os resultados são registrados por participante e por tarefa na [planilha de observação](../instrumentos/planilha_observacao_modelo.md).
+
+- **Sucesso sem ajuda:** sucesso total no critério da tarefa, sem intervenção do moderador sobre o caminho ou o conteúdo; repetir a instrução não conta como ajuda.
+- **Tempo:** do fim da leitura da instrução até o participante declarar a tarefa concluída, medido por cronômetro ou na gravação de tela; inclui a espera simulada, igual para todos.
+- **Erro crítico:** conclusão comunicada que, em um incidente real, orientaria a equipe com base em informação incorreta.
+- **SEQ** (*Single Ease Question*): nota de 1 (muito difícil) a 7 (muito fácil) para a facilidade da tarefa, dada ao fim de cada uma.
+- **Conteúdo registrado:** no protótipo, classificação da hipótese, conclusão do parecer, origem provável, classificação das dependências e das relações, evidências citadas e destinatário são escolhidos entre as opções oferecidas nas telas; o texto livre (justificativa, impacto, limitações, informações faltantes e lacunas) é dito em voz alta pelo participante ao acionar o campo correspondente, registrado na gravação e transcrito pelo observador na planilha de observação. MU06–MU08, MU10 e MU11 são analisadas sobre essas escolhas e transcrições.
 
 ### 3.1 Metas qualitativas
 
 | Meta | Para quem/tarefa | Evidência desejada | Justificativa |
 |---|---|---|---|
-| {{ex.: compreensão clara da diferença entre X e Y}} | {{...}} | {{fala/observação}} | {{...}} |
+| **MU01** — Separação visual entre evidência observada, interpretação do pipeline e conclusão da pessoa, com o termo "hipótese diagnóstica", para que o usuário compreenda que a hipótese é gerada pelo pipeline e precisa ser conferida, distinguindo-a da evidência e da conclusão que ele registra. | Todos os participantes; foco em P01/T03 e P02/T01. | Consulta evidências antes de concluir; ao comunicar, usa termos de probabilidade ou indica limitações; no pós-teste, explica de onde vem a hipótese e o que a sustenta. | H03; RC03 e RC05; restrição sobre a confiabilidade das hipóteses (seção 1); risco de aceitar uma explicação convincente (T01, objetivo 0). |
+| **MU02** — Estados distintos para sem dados, acesso restrito, falha de consulta e instrumentação parcial, para que o usuário reconheça essas situações como lacunas, e não como normalidade ou correção confirmada. | P03/T02 e P04/T05; observada em todos os participantes. | Verbaliza a diferença entre "sem dados" e "sem erro"; procura outra fonte ou registra a lacuna; não conclui pela correção a partir do teste bem-sucedido. | H04 (acesso restrito) e H06; RC04; decisões de P03 e P04 (Entrega 3); T02, item 2.2; C04. |
+| **MU03** — Progresso por estágio (filtragem estrutural, geração de hipóteses), com cada resultado exibido quando seu estágio termina, para que o usuário perceba se o pipeline está processando, qual estágio terminou e de qual estágio vem cada resultado. | P01/T03 e P04/T04. | Aguarda sem repetir comandos nem abandonar a tarefa; descreve o que o sistema está fazendo; não procura hipóteses antes de estarem disponíveis. | Restrição de tempo de processamento (seção 1); heurística de visibilidade do estado do sistema; decisões de P01 e P04 sobre o estado da análise. |
+| **MU04** — Recorte (incidente, serviço, sintoma e período) sempre visível e link que preserva o estado, para que o usuário mantenha o recorte reconhecível durante o aprofundamento e o transmita ao destinatário sem que este refaça a delimitação. | P02/T01 e P03/T02, que recebem o contexto compartilhado; P01/T03. | Não volta à delimitação para lembrar o recorte; informa, quando perguntado, o serviço e o período em análise; o conteúdo comunicado inclui o recorte e o link para as evidências. | RC01; H05; interrupções do contexto de uso (Entrega 3); capacidade de links que preservam o estado (seção 1). |
+| **MU05** — Caminho de propagação destacado no subgrafo, estado de cada componente indicado por cor, ícone e rótulo e lista textual dos componentes, para que o usuário identifique o caminho e distinga o componente de origem provável, os afetados e os apenas relacionados. | P04/T04 e P02/T01; P01/T03. | Aponta o caminho no grafo ou na lista de componentes; explica por que um componente aparece; não toma o componente com mais erros como origem sem consultar a ordem dos eventos. | H01 e H02; distinção entre causa e efeito em C03; caminho visual analisado na Entrega 2 (C03); linha WCAG 2.2 (seção 2). |
 
 ### 3.2 Metas quantitativas
 
 | ID | Dimensão | Métrica | Tarefa/escopo | Meta | Como medir | Justificativa |
 |---|---|---|---|---|---|---|
-| MU01 | eficácia | taxa de conclusão sem ajuda | T01 | ≥ {{x}}% | teste observado | {{...}} |
-| MU02 | eficiência | tempo mediano | T02 | ≤ {{tempo}} | cronômetro/log | {{...}} |
-| MU03 | satisfação | escala pós-tarefa | T01–T03 | ≥ {{valor}} | questionário | {{...}} |
+| MU06 | eficácia | taxa de conclusão sem ajuda | T03 · 4 participantes (U01–U04) | ≥ 3 de 4 | Observação. Sucesso: diagnóstico registrado e comunicado com sintoma, origem provável ou declaração de que ela não foi determinada, impacto, ao menos uma evidência e ao menos uma limitação, com a confirmação de envio reconhecida. | T03 é a tarefa central de P01, persona primária; o objetivo só se cumpre com a comunicação (T03, item 4). |
+| MU07 | eficácia | taxa de identificação da evidência contraditória | T01 · 4 participantes (U01–U04) | ≥ 3 de 4 | Observação e registro. Sucesso: classifica a hipótese como parcialmente sustentada ou não sustentada e cita a evidência contraditória na justificativa, sem ajuda. | Tarefa de teste sugerida na síntese de T01; H03. |
+| MU08 | eficácia | taxa de parecer compatível com as evidências | T02 · 4 participantes (U01–U04) | ≥ 3 de 4 | Observação e registro. No caso simulado, as evidências não permitem confirmar a correção; sucesso é o parecer inconclusivo que indica ao menos uma informação faltante específica (condição de reprodução, vínculo, cobertura ou acesso), sem ajuda. | Critérios do parecer em T02 (seção 2); C02; H06. |
+| MU09 | eficácia | taxa de classificação correta das dependências | T05, dentro da tarefa de teste de T04 · 4 participantes (U01–U04) | ≥ 3 de 4 | Observação. Sucesso: classifica como observada a relação com a dependência ausente do mapa, vista no trace, e como não verificada a relação sustentada só pelo mapa, sem ajuda. | Regra de parada de T05; mapa desatualizado em C04. |
+| MU10 | eficácia | taxa de retornos com relações classificadas | T04 e T06 · 4 participantes (U01–U04) | ≥ 3 de 4 | Análise do retorno enviado. Sucesso: serviços afetados, ordem de propagação, cada relação marcada como observada, inferida ou não verificada e ao menos uma lacuna, sem ajuda. | T04, itens 4.3 e 5.2; em C04, um "provável" foi lido como confirmado. |
+| MU11 | erros | participantes com erro crítico de interpretação | T01, T02, T03 e T04/T06 · 4 participantes (U01–U04) | 0 de 4 em cada tarefa | Análise do conteúdo comunicado e da gravação. Erros críticos: comunicar hipótese como causa confirmada (T01, T03); registrar "correção sustentada" apenas pelo teste bem-sucedido ou pela ausência de erros (T02); comunicar relação inferida ou não verificada como observada (T04/T06). | São os erros de maior consequência nos cenários: correção no serviço errado (C01, C03), reincidência da falha (C02) e acionamento indevido de equipes (C04). Um único caso exige revisão. |
+| MU12 | erros (recuperação) | taxa de recuperação sem ajuda | T02, plano 5 · 4 participantes (U01–U04) | ≥ 3 de 4 | Observação. Diante da falha simulada de disponibilização, percebe a mensagem, repete a ação sem perder o parecer e reconhece a confirmação final. | T02, plano 5, e CTT de T02 (A3 e U4); heurística de recuperação de erros. |
+| MU13 | eficiência | tempo mediano por tarefa | T01, T02, T03 e T04 (com T05 e T06) · 4 participantes (U01–U04) | T01 ≤ 5 min; T02 ≤ 6 min; T03 ≤ 7 min; T04 ≤ 8 min | Cronômetro ou gravação de tela; mediana dos 4 tempos de cada tarefa. | Limites definidos pela equipe para o incidente simulado. Em C04, o SRE decide cerca de 20 minutos após os alertas e o retorno chegou depois da decisão; T03 e T04 precisam caber com folga nessa janela. T01 parte da hipótese já disponível; T02 inclui a recuperação de MU12. |
+| MU14 | satisfação | SEQ mediana por tarefa | T01, T02, T03 e T04 · 4 participantes (U01–U04) | ≥ 5 em cada tarefa | SEQ ao fim de cada tarefa. | Medida curta e aplicável após cada tarefa (Sauro e Dumas, 2009), viável com 4 participantes; 5 é o primeiro valor acima do ponto neutro da escala. |
 
 ### 3.3 Priorização das metas (se exigida na disciplina)
 
-Se o professor solicitar porcentagens que somem 100%, trate-as como **peso de prioridade**, não como métrica de usabilidade.
+Os pesos indicam a ordem de revisão quando uma meta não for atingida; não são métricas de usabilidade.
 
 | Meta | Peso de prioridade | Justificativa |
 |---|---:|---|
-| MU01 | {{...}}% | {{...}} |
+| MU01 | 8% | Condição para MU07 e MU11; H03 é central ao valor da interface. |
+| MU02 | 6% | Evita tomar lacuna por normalidade ou correção (H06), risco de T02 e T05. |
+| MU03 | 3% | A espera simulada é curta e fixa, o que limita a observação. |
+| MU04 | 4% | Continuidade entre papéis (H05); parte dela já é exigida em MU06–MU10. |
+| MU05 | 5% | Base para distinguir origem e efeito (H01, H02, C03). |
+| MU06 | 12% | Tarefa central da persona primária. |
+| MU07 | 10% | T01 é crítica pelo risco de orientar a correção ao serviço errado (Entrega 5). |
+| MU08 | 9% | T02 é crítica pelo risco de afirmar a correção sem evidência suficiente (Entrega 5). |
+| MU09 | 7% | O mapa desatualizado originou o desvio da investigação em C04. |
+| MU10 | 8% | O retorno orienta decisões do SRE com prazo (C04). |
+| MU11 | 14% | Erros críticos têm a maior consequência nos cenários. |
+| MU12 | 4% | A falha de comunicação é recuperável e não altera o mérito do parecer (T02). |
+| MU13 | 6% | Eficiência importa sob pressão, mas não compensa uma conclusão incorreta. |
+| MU14 | 4% | Satisfação no primeiro uso complementa as medidas de desempenho. |
 | **Total** | **100%** | |
 
 ## 4. Como o ciclo será iterado
 
-Explique que artefatos serão revisitados após protótipos e avaliações.
+O projeto segue o ciclo de engenharia de usabilidade de Mayhew. A análise de requisitos reúne o perfil do usuário (personas da Entrega 3), a análise de tarefas (Entrega 5) e as seções 1 e 2 desta entrega, e produz as metas da seção 3. As decisões das seções 1 e 2 são o conteúdo inicial do guia de estilo do projeto, registrado nesta entrega; a partir daí, a coluna "Decisão/melhoria" da [matriz de rastreabilidade](../RASTREABILIDADE.md#3-rastreabilidade-entre-contribuição-técnica-necessidades-e-artefatos) reúne as decisões das fases seguintes, com remissão à entrega que as detalha. Os três níveis de projeto se repetem para cada grupo de funcionalidades essenciais: F01 (delimitar o incidente), F02 (inspecionar o subgrafo), F03 (examinar hipóteses e evidências) e o registro e a comunicação do resultado.
+
+- **Nível 1 — projeto essencial.** A maquete deste nível é o protótipo em papel da [Entrega 6](06_prototipacao_papel.md), elaborado para T03 antes desta entrega. Em 16/11/2026, uma pessoa que não elaborou as folhas o simulou (Entrega 6, seção 4); as duas falhas observadas levaram ao redesenho das folhas P06 e P07 e à folha P11, e essas alterações serão incorporadas à versão final do protótipo. A reengenharia do trabalho aparece nos cenários de interação CI01–CI04 da Entrega 9, com a repartição definida na delimitação. O modelo conceitual corresponde ao mapa de objetivos e ao esquema de signos da Entrega 9 e aos diagramas MoLIC M01–M04 da Entrega 10, elaborados pelo design centrado na comunicação.
+- **Nível 2 — padrões de tela.** O protótipo no Figma (Entrega 11) fixa controles, terminologia, cores e tipografia a partir da seção 2 e já contém os estados de que T01–T06 dependem, previstos na seção 1: carregamento, consulta sem resultado, falha de consulta, acesso restrito e falha de disponibilização. A avaliação heurística da Entrega 13, feita pelos avaliadores A01–A04 em todas as telas e estados desse protótipo, verifica esses padrões; violações que comprometam MU01–MU05 ou os critérios de MU06–MU12 são corrigidas antes do teste com usuários.
+- **Nível 3 — projeto detalhado.** Entra no protótipo apenas o que não é essencial a T01–T06 e não foi previsto até então: ajustes de conteúdo e mensagens secundárias apontados pela inspeção da Entrega 13. A Entrega 12 converte MU01–MU14 em perguntas de avaliação e tarefas de teste, e a Entrega 14 mede sucesso, erros, ajudas, tempo e SEQ e compara cada resultado à meta.
+- **Instalação.** Fica fora da disciplina; depende de a interface ser implementada no TCC, decisão da equipe e do orientador.
+
+Quando uma meta não for atingida na Entrega 14, a equipe localiza a origem do problema nas gravações e falas e retorna ao nível correspondente: conceitos mal compreendidos, como confundir hipótese e evidência, levam aos signos e ao MoLIC; controles não encontrados, grafo ilegível ou estado não percebido levam aos padrões de tela; ajuda frequente ou tempo acima do limite em um fluxo compreendido levam ao projeto detalhado. A ordem de revisão segue os pesos da seção 3.3. Cada revisão atualiza a coluna de decisão da matriz de rastreabilidade, o estado das hipóteses H01–H06 e o histórico de revisões da entrega afetada. Se o teste mostrar que uma meta não corresponde ao contexto de uso, ela é revisada com justificativa, preservando a versão anterior.
+
+## Síntese da equipe
+
+As restrições de plataforma que mais afetam a interação estão mais nos resultados do que no equipamento: hipóteses que podem estar erradas, telemetria incompleta, processamento de duração desconhecida e acesso restrito a dados. Por isso, as decisões separam evidência observada, interpretação do pipeline e conclusão da pessoa; tornam visíveis lacunas e estados; e preservam o contexto do incidente na comunicação. As metas priorizam a interpretação correta: os maiores pesos estão nos erros críticos (MU11) e na eficácia de T03, T01 e T02. Tempo e satisfação também são verificados, mas um bom resultado neles não justifica uma conclusão mal fundamentada.
+
+Para as próximas entregas, o esquema de signos da Entrega 9 precisa incluir hipótese diagnóstica, evidência, lacuna, acesso restrito, as classificações das relações (observada, inferida, não verificada) e as conclusões do parecer; o MoLIC da Entrega 10 precisa representar as rupturas de falha de consulta e de disponibilização; o protótipo da Entrega 11 precisa conter as condições do incidente simulado; e as perguntas de avaliação da Entrega 12 partem de MU01–MU14.
 
 ## Checklist
 
-- [ ] Capacidades e restrições têm impacto de IHC explicitado.
-- [ ] Está claro o limite entre contribuição técnica do TCC e camada interativa da disciplina.
-- [ ] Resultados/processamento simulados no protótipo foram explicitados.
-- [ ] Metas de usabilidade avaliam a interação, não substituem métricas técnicas do TCC.
-- [ ] Normas/princípios estão contextualizados, não apenas copiados.
-- [ ] Metas quantitativas são mensuráveis e associadas a tarefas/público.
-- [ ] Eficácia, eficiência e satisfação são consideradas quando pertinentes.
-- [ ] Metas poderão ser verificadas nas Entregas 12–14.
+- [x] Capacidades e restrições têm impacto de IHC explicitado.
+- [x] Está claro o limite entre contribuição técnica do TCC e camada interativa da disciplina.
+- [x] Resultados/processamento simulados no protótipo foram explicitados.
+- [x] Metas de usabilidade avaliam a interação, não substituem métricas técnicas do TCC.
+- [x] Normas/princípios estão contextualizados, não apenas copiados.
+- [x] Metas quantitativas são mensuráveis e associadas a tarefas/público.
+- [x] Eficácia, eficiência e satisfação são consideradas quando pertinentes.
+- [x] Metas poderão ser verificadas nas Entregas 12–14.
+
+## Referências
+
+- **CC8122 — Processos de Projeto de IHC, partes 1 e 2.** Material de aula disponibilizado na disciplina, baseado em Barbosa e Silva (2010), consultado em 16/11/2026. Ciclos de vida, engenharia de usabilidade de Nielsen e de Mayhew e atividade sobre características da plataforma e princípios gerais de projeto.
+- BARBOSA, Simone D. J.; SILVA, Bruno S. **Interação Humano-Computador**. Rio de Janeiro: Elsevier/Campus, 2010.
+- MAYHEW, Deborah J. **The Usability Engineering Lifecycle: A Practitioner's Handbook for User Interface Design**. San Francisco: Morgan Kaufmann, 1999.
+- NIELSEN, Jakob. **Usability Engineering**. Boston: Academic Press, 1993.
+- NIELSEN, Jakob. *10 Usability Heuristics for User Interface Design*. Nielsen Norman Group, 24 abr. 1994, revisado em 30 jan. 2024. Disponível em: [https://www.nngroup.com/articles/ten-usability-heuristics/](https://www.nngroup.com/articles/ten-usability-heuristics/). Acesso em: 16 nov. 2026.
+- INTERNATIONAL ORGANIZATION FOR STANDARDIZATION. **ISO 9241-11:2018 — Ergonomics of human-system interaction — Part 11: Usability: Definitions and concepts**. Genebra: ISO, 2018. Disponível em: [https://www.iso.org/standard/63500.html](https://www.iso.org/standard/63500.html).
+- SHNEIDERMAN, Ben. *The Eight Golden Rules of Interface Design*. University of Maryland, s.d. Síntese da seção 3.3.4 de SHNEIDERMAN, Ben et al. **Designing the User Interface**. 6. ed. Pearson, 2016. Disponível em: [https://www.cs.umd.edu/users/ben/goldenrules.html](https://www.cs.umd.edu/users/ben/goldenrules.html). Acesso em: 16 nov. 2026.
+- BRASIL. **Lei nº 13.709, de 14 de agosto de 2018**. Lei Geral de Proteção de Dados Pessoais (LGPD). Disponível em: [https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm). Acesso em: 16 nov. 2026.
+- W3C. **Web Content Accessibility Guidelines (WCAG) 2.2**. W3C Recommendation, 12 dez. 2024. Disponível em: [https://www.w3.org/TR/WCAG22/](https://www.w3.org/TR/WCAG22/). Acesso em: 16 nov. 2026.
+- SAURO, Jeff; DUMAS, Joseph S. Comparison of three one-question, post-task usability questionnaires. In: **Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '09)**. ACM, 2009. p. 1599–1608. DOI: [10.1145/1518701.1518946](https://doi.org/10.1145/1518701.1518946).
+- Documentos do projeto: [Entrega 1](01_conhecendo_o_problema.md), [Entrega 2](02_analise_concorrencia.md), [Entrega 3](03_personas_contexto_jornada.md), [Entrega 4](04_cenarios_problema.md), [Entrega 5](05_analise_tarefas.md) e [matriz de rastreabilidade](../RASTREABILIDADE.md).

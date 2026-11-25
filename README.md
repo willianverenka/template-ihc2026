@@ -29,7 +29,7 @@ A interface de IHC aprofunda essa interação parcialmente prevista. Sua impleme
 | Willian Verenka Oliveira Silva | 22.124.081-5 | [@willianverenka](https://github.com/willianverenka) | PENDENTE |
 | Gabriel Lovato | 22.123.004-8 | [@gabriellovato7](https://github.com/gabriellovato7) | PENDENTE |
 | Théo Zago Zimmermann | 22.123.035-2 | [@theozago](https://github.com/theozago) | PENDENTE |
-| João Vitor Sitta | 22.123.054-3 | [@JVSittaG](https://github.com/JVSittaG) | PENDENTE |
+| João Vitor Sitta Giopatto | 22.123.054-3 | [@JVSittaG](https://github.com/JVSittaG) | PENDENTE |
 
 Fonte: seção 0.1 da [Entrega 1](docs/01_conhecendo_o_problema.md). [?] A divisão de responsabilidades principais não está registrada nessa entrega; cada integrante deve cumprir as contribuições individuais e participar das consolidações indicadas na tabela de entregas abaixo.
 
@@ -91,15 +91,15 @@ O treinamento de redes neurais em grafos (GNNs), a construção dos grafos e a d
 | 3 | [Personas, empatia, contexto e jornada](docs/03_personas_contexto_jornada.md) | 1 persona por integrante; demais artefatos consolidados | 🟩 |
 | 4 | [Cenários de análise/problema](docs/04_cenarios_problema.md) | 1 solução completa por integrante | 🟩 |
 | 5 | [Análise de tarefas: HTA, GOMS e CTT](docs/05_analise_tarefas.md) | cada integrante: pelo menos 1 HTA + 1 GOMS + 1 CTT | 🟩 |
-| 6 | [Prototipação em papel](docs/06_prototipacao_papel.md) | 1 protótipo integrado por equipe | ⬜ |
-| 7 | [Coleta de dados e aspectos éticos](docs/07_coleta_dados.md) | soluções individuais + técnicas distintas; questionário entre as técnicas | ⬜ |
-| 8 | [Ciclo de vida e engenharia de usabilidade](docs/08_engenharia_usabilidade.md) | 1 solução consolidada por equipe | ⬜ |
-| 9 | [Modelo conceitual e design centrado na comunicação](docs/09_modelo_conceitual.md) | soluções individuais + consolidação de objetivos/signos | ⬜ |
-| 10 | [MoLIC](docs/10_molic.md) | 1 diagrama completo por integrante | ⬜ |
-| 11 | [Protótipo no Figma](docs/11_figma.md) | 1 protótipo integrado por equipe, cobrindo fluxos modelados | ⬜ |
-| 12 | [Planejamento da avaliação — DECIDE](docs/12_planejamento_avaliacao.md) | 1 plano consolidado por equipe | ⬜ |
-| 13 | [Avaliação heurística](docs/13_avaliacao_heuristica.md) | 1 avaliação completa por integrante, todas as telas/estados e 10 heurísticas | ⬜ |
-| 14 | [Avaliação por observação de usuários](docs/14_observacao_usuario.md) | avaliação consolidada; nº de participantes finais = nº de integrantes | ⬜ |
+| 6 | [Prototipação em papel](docs/06_prototipacao_papel.md) | 1 protótipo integrado por equipe | 🟩 |
+| 7 | [Coleta de dados e aspectos éticos](docs/07_coleta_dados.md) | soluções individuais + técnicas distintas; questionário entre as técnicas | 🟩 |
+| 8 | [Ciclo de vida e engenharia de usabilidade](docs/08_engenharia_usabilidade.md) | 1 solução consolidada por equipe | 🟩 |
+| 9 | [Modelo conceitual e design centrado na comunicação](docs/09_modelo_conceitual.md) | soluções individuais + consolidação de objetivos/signos | 🟩 |
+| 10 | [MoLIC](docs/10_molic.md) | 1 diagrama completo por integrante | 🟩 |
+| 11 | [Protótipo no Figma](docs/11_figma.md) | 1 protótipo integrado por equipe, cobrindo fluxos modelados | 🟩 |
+| 12 | [Planejamento da avaliação — DECIDE](docs/12_planejamento_avaliacao.md) | 1 plano consolidado por equipe | 🟩 |
+| 13 | [Avaliação heurística](docs/13_avaliacao_heuristica.md) | 1 avaliação completa por integrante, todas as telas/estados e 10 heurísticas | 🟩 |
+| 14 | [Avaliação por observação de usuários](docs/14_observacao_usuario.md) | avaliação consolidada; nº de participantes finais = nº de integrantes | 🟩 |
 
 > Se o docente definir quantidade diferente para a turma/semestre, a orientação da disciplina prevalece.
 

@@ -2,7 +2,7 @@
 
 **Data:** 03/09/2026
 
-**Status:** 🟨 em andamento
+**Status:** 🟩 concluída
 
 **Responsabilidade mínima:** cada integrante analisa pelo menos 1 concorrente/interface representativa; a equipe produz síntese comparativa.
 
