@@ -54,11 +54,11 @@
 - [x] Problemas duplicados entre avaliadores foram consolidados sem apagar a autoria da descoberta.
 - [ ] O número final de usuários observados atende ao exigido pela disciplina.
 - [ ] Participantes finais representam o público-alvo e não são membros da equipe.
-- [ ] Se o perfil profissional é difícil de recrutar, qualquer uso de participante aproximado/proxy foi justificado e registrado como limitação.
+- [x] Se o perfil profissional é difícil de recrutar, qualquer uso de participante aproximado/proxy foi justificado e registrado como limitação.
 - [x] Tarefas de teste possuem cenário, instrução neutra e critério de sucesso.
 - [ ] Tempos, erros, ajudas, sucesso e satisfação foram registrados por usuário/tarefa.
 - [x] A avaliação mede a **interação com o protótipo**, e não tenta substituir a avaliação técnica/científica do algoritmo ou modelo do TCC.
-- [ ] A conclusão identifica padrões, problemas prioritários e mudanças concretas.
+- [x] A conclusão identifica padrões, problemas prioritários e mudanças concretas.
 
 ## Ética e privacidade
 
