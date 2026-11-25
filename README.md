@@ -29,7 +29,7 @@ A interface de IHC aprofunda essa interação parcialmente prevista. Sua impleme
 | Willian Verenka Oliveira Silva | 22.124.081-5 | [@willianverenka](https://github.com/willianverenka) | PENDENTE |
 | Gabriel Lovato | 22.123.004-8 | [@gabriellovato7](https://github.com/gabriellovato7) | PENDENTE |
 | Théo Zago Zimmermann | 22.123.035-2 | [@theozago](https://github.com/theozago) | PENDENTE |
-| João Vitor Sitta | 22.123.054-3 | [@JVSittaG](https://github.com/JVSittaG) | PENDENTE |
+| João Vitor Sitta Giopatto | 22.123.054-3 | [@JVSittaG](https://github.com/JVSittaG) | PENDENTE |
 
 Fonte: seção 0.1 da [Entrega 1](docs/01_conhecendo_o_problema.md). [?] A divisão de responsabilidades principais não está registrada nessa entrega; cada integrante deve cumprir as contribuições individuais e participar das consolidações indicadas na tabela de entregas abaixo.
 
