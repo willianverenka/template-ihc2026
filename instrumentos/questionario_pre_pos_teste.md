@@ -16,7 +16,7 @@ O moderador lê as perguntas e registra as respostas. Não registre nome, empres
 
 ## Pré-teste
 
-Depois do aceite do termo e antes do início da gravação.
+Depois do aceite do termo.
 
 1. Qual é o seu papel atual no trabalho?\
 ( ) SRE ou plantão de operações ( ) desenvolvimento backend ( ) QA, com verificação de correções ( ) observabilidade ou *platform engineering* ( ) outro: ____________________

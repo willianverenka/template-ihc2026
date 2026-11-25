@@ -3,11 +3,11 @@
 ## 1. Antes da sessão
 
 - verificar protótipo/versão: abrir, em janela anônima e 30 min antes da sessão, a versão do protótipo identificada na Entrega 14 (passo 1), pelo link registrado na Entrega 11, e conferir se os pontos de partida abrem: F00B (UT01), F00C (UT02), F00A do fluxo M03 (UT03) e F00A do fluxo M04 (UT04);
-- testar gravação e áudio: no início da chamada, antes de gravar, testar com o participante o áudio, o compartilhamento de tela e a gravação e conferir se a tela dele tem pelo menos 1440 px de largura; se a tela for menor, o link não abrir ou o compartilhamento atrasar a ponto de impedir a leitura, seguir a tabela de riscos técnicos da Entrega 12; o observador entra com câmera e microfone desligados;
+- testar gravação e áudio: não há gravação; no início da chamada, testar com o participante o áudio e o compartilhamento de tela e conferir se a tela dele tem pelo menos 1440 px de largura; se a tela for menor, o link não abrir ou o compartilhamento atrasar a ponto de impedir a leitura, seguir a tabela de riscos técnicos da Entrega 12; o observador entra com câmera e microfone desligados;
 - abrir formulários/planilhas: o moderador abre o [questionário pré e pós-teste](questionario_pre_pos_teste.md), e o observador, em outro computador, a [planilha de observação](planilha_observacao_modelo.md) e um cronômetro, ambos com o identificador da sessão (U01 a U04) e sem o nome do participante;
 - limpar dados de sessão/conta de teste: não há conta nem login; cada tarefa é aberta pelo link do seu ponto de partida, em aba nova, para que o protótipo comece no estado de abertura e as rupturas aconteçam nos mesmos trechos para todos;
 - separar instruções das tarefas: deixar prontos os textos da seção 4, para colar no chat da chamada;
-- confirmar consentimento e duração: confirmar com o participante a duração (cerca de 50 min, com 70 min reservados), a exigência de tela e a leitura do termo no início da sessão;
+- confirmar consentimento e duração: confirmar com o participante a duração (cerca de 20 min, com 30 min reservados), a exigência de tela e a leitura do termo no início da sessão;
 - quando o protótipo usar resultados/processamentos simulados, preparar dados realistas e manter a simulação consistente entre participantes: o incidente INC-4721, as esperas, as rupturas, as instruções e a ordem das tarefas são os mesmos em todas as sessões, e a indicação de áreas clicáveis do modo de apresentação fica desligada.
 
 ## 2. Abertura padronizada
@@ -15,8 +15,8 @@
 - agradecer participação: receber o participante com uma conversa breve, sem falar do protótipo, e agradecer: "Obrigado por participar.";
 - explicar objetivo geral sem revelar hipóteses específicas: "Estamos avaliando o protótipo de uma interface de apoio à investigação de incidentes em sistemas distribuídos, para encontrar problemas antes de qualquer implementação. Você vai fazer quatro tarefas e responder a algumas perguntas. Eu conduzo a sessão, e um colega, com câmera e microfone desligados, anota o que acontece.";
 - reforçar que o produto, não a pessoa, está sendo avaliado: "Não há resposta certa ou errada. Se algo for difícil, o problema é do protótipo, não seu.";
-- explicar possibilidade de interrupção: "Você pode interromper a sessão a qualquer momento, sem justificar, e pedir a exclusão dos seus dados até 04/12/2026. Depois disso, ainda pode pedir que a gravação e os dados que identificam você sejam apagados."; se a sessão for na data de reserva, 04/12/2026, o prazo dito é 06/12/2026;
-- obter consentimento: ler o [termo](termo_consentimento_modelo.md), deixá-lo no chat, esclarecer as dúvidas e registrar o aceite e as autorizações de gravação e de uso no vídeo da disciplina; em seguida, aplicar o perfil pré-teste (seção 3) e só então, se autorizado, iniciar a gravação de tela e áudio;
+- explicar possibilidade de interrupção: "Você pode interromper a sessão a qualquer momento, sem justificar, e pedir a exclusão dos seus dados até 04/12/2026. Depois disso, ainda pode pedir que o termo e os dados que identificam você sejam apagados.";
+- obter consentimento: ler o [termo](termo_consentimento_modelo.md), enviar no chat o link do formulário on-line do termo, esclarecer as dúvidas e confirmar que o participante enviou o aceite; em seguida, aplicar o perfil pré-teste (seção 3);
 - explicar *think aloud* apenas se essa técnica for usada: "Enquanto faz as tarefas, diga em voz alta o que está pensando: o que procura, o que entende do que vê e o que espera que aconteça. Vou interferir o mínimo possível; se você me perguntar como fazer algo, posso devolver a pergunta, e conversamos sobre as dúvidas no final."
 
 ### Quando a interface é um protótipo de aplicação do tema do TCC
@@ -25,7 +25,7 @@ Explique de forma simples que a sessão avalia **como a pessoa interage com o pr
 
 Se algum resultado técnico estiver simulado, não engane o participante sobre o nível de implementação. Use uma explicação compatível com o objetivo do teste, sem antecipar o caminho da tarefa.
 
-Depois de iniciar a gravação, o moderador lê a apresentação do sistema e das regras da simulação, que substitui a exploração livre. Ela não explica como o sistema produz os resultados mostrados, porque isso é perguntado no pós-teste:
+Depois do perfil pré-teste, o moderador lê a apresentação do sistema e das regras da simulação, que substitui a exploração livre. Ela não explica como o sistema produz os resultados mostrados, porque isso é perguntado no pós-teste:
 
 > "O sistema apoia a investigação de incidentes em sistemas distribuídos. Você vai usar um protótipo com um único incidente fictício, visto em quatro momentos diferentes. Em cada tarefa, você assume o papel de uma pessoa da equipe, que pode não ser o seu papel no trabalho. Tudo o que aparece nele é simulado: o protótipo não está ligado a nenhum sistema real, e os dados e os tempos de espera foram preparados pela equipe. Estamos avaliando a interface, isto é, se ela ajuda você a fazer o que cada tarefa pede.
 >
@@ -37,7 +37,7 @@ Depois de iniciar a gravação, o moderador lê a apresentação do sistema e da
 
 Colete somente informações relevantes à interpretação dos resultados: experiência com domínio, frequência de uso de soluções similares, familiaridade com ferramentas profissionais, necessidades de acessibilidade pertinentes etc.
 
-O moderador aplica oralmente a parte de pré-teste do [questionário](questionario_pre_pos_teste.md), antes de iniciar a gravação, e registra as respostas com o identificador da sessão. Os participantes têm perfil profissional especializado: no cabeçalho do questionário, registre o perfil de referência (P01 a P04) e os critérios da seção C da Entrega 12 que tornam o participante representativo. Se for participante proxy, registre essa condição, a justificativa e a limitação, que também vão para o perfil resumido da planilha e para a Entrega 14.
+O moderador aplica oralmente a parte de pré-teste do [questionário](questionario_pre_pos_teste.md) e registra as respostas com o identificador da sessão. Os participantes têm perfil profissional especializado: no cabeçalho do questionário, registre o perfil de referência (P01 a P04) e os critérios da seção C da Entrega 12 que tornam o participante representativo. Se for participante proxy, registre essa condição, a justificativa e a limitação, que também vão para o perfil resumido da planilha e para a Entrega 14.
 
 ## 4. Tarefas
 
@@ -67,7 +67,7 @@ O moderador não interrompe nem faz perguntas durante a tarefa e segue estas reg
 - se o participante disser que não consegue seguir, pergunta: "Você prefere continuar com uma indicação ou encerrar esta tarefa?"; a indicação dada é anotada com o momento e o conteúdo, e o encerramento conta como abandono;
 - se o participante tentar digitar em um campo de texto, repete a regra de dizer em voz alta o que escreveria;
 - se uma tela mostrar valores diferentes das escolhas do participante e ele perguntar, responde: "Considere o que você escolheu";
-- se o protótipo falhar (link sem resposta ou ruptura fora de ordem), reabre o fluxo pelo link da tarefa; o tempo perdido é anotado como incidente técnico e descontado, e a tarefa que não puder ser concluída é repetida no fim da sessão ou em 04/12/2026;
+- se o protótipo falhar (link sem resposta ou ruptura fora de ordem), reabre o fluxo pelo link da tarefa; o tempo perdido é anotado como incidente técnico e descontado, e a tarefa que não puder ser concluída é repetida no fim da sessão;
 - ao atingir o tempo-limite, encerra a tarefa dizendo "Vamos passar à próxima tarefa".
 
 Observe também, quando pertinente:
@@ -88,6 +88,6 @@ Logo depois do fim de cada tarefa e antes de qualquer comentário, aplicar oralm
 - perguntas gerais: aplicar a parte pós-teste do questionário, na ordem, começando pela pergunta sobre as hipóteses diagnósticas; depois, conversar sobre as dúvidas anotadas durante as tarefas;
 - explicar que as falhas encontradas (acesso restrito, consulta sem dados, falha de consulta e falha no envio) foram programadas e são iguais para todos os participantes;
 - agradecer;
-- confirmar como os dados serão usados: identificador anônimo, gravação apagada até 31/01/2027 e possibilidade de pedir, pelo canal do convite, a exclusão dos dados até 04/12/2026 (06/12/2026 para sessão na data de reserva) e, depois desse prazo, a exclusão da gravação e dos dados que identificam o participante;
-- salvar registros com ID anônimo: encerrar a gravação e salvá-la, com a planilha e o questionário, com o identificador da sessão no nome do arquivo (por exemplo, `U03_planilha`), na pasta de acesso restrito, fora do repositório;
+- confirmar como os dados serão usados: identificador anônimo, termo apagado até 31/01/2027 e possibilidade de pedir, pelo canal do convite, a exclusão dos dados até 04/12/2026 e, depois desse prazo, a exclusão do termo e dos dados que identificam o participante;
+- salvar registros com ID anônimo: salvar a planilha e o questionário com o identificador da sessão no nome do arquivo (por exemplo, `U03_planilha`), na pasta de acesso restrito, fora do repositório;
 - registrar limitações de perfil, ambiente ou simulação que afetem a interpretação: participante proxy, passagem para a sessão presencial, incidentes técnicos e tempo descontado, valores das telas diferentes das escolhas do participante e tarefa repetida ou não avaliada.

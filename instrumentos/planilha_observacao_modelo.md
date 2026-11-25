@@ -29,6 +29,6 @@
 
 **Ajuda:** intervenção do moderador sobre caminho, controle ou conteúdo, anotada com o momento e o conteúdo. Não são ajuda repetir a instrução, o lembrete de pensar em voz alta, esclarecer termos do cenário ou as regras da simulação e reabrir o fluxo depois de falha do protótipo, que é incidente técnico. A dúvida (pergunta ao moderador ou fala de incerteza sobre o significado de um elemento ou sobre o próximo passo) não é ajuda e vai em "Hesitações/comportamentos"; o silêncio, sozinho, não é dúvida.
 
-**Tempo:** "Início" é o fim da leitura da instrução, e "Fim", a declaração de tarefa concluída, o abandono ou o tempo-limite, ambos em mm:ss do cronômetro do observador, que começa a contar quando a gravação começa, ou começaria, e não é parado; os horários das anotações usam o mesmo cronômetro. O tempo da tarefa é Fim menos Início, com as esperas simuladas e sem o incidente técnico, e a gravação, quando autorizada, confere o valor e prevalece.
+**Tempo:** "Início" é o fim da leitura da instrução, e "Fim", a declaração de tarefa concluída, o abandono ou o tempo-limite, ambos em mm:ss do cronômetro do observador, que começa a contar no início da primeira tarefa e não é parado; os horários das anotações usam o mesmo cronômetro. O tempo da tarefa é Fim menos Início, com as esperas simuladas e sem o incidente técnico.
 
 Defina antes da coleta para todos os observadores classificarem de forma semelhante.
