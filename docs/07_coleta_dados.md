@@ -75,11 +75,11 @@ Esta solução prioriza dados que precisam ser obtidos de um número maior de pr
 | Analista de QA | Verificou a correção de falha ocorrida em produção nos últimos 12 meses. | P03. |
 | Gestor(a) de equipe técnica | Recebeu ou utilizou diagnósticos de incidentes para priorizar correções nos últimos 12 meses. | Stakeholder da Entrega 1, seção 2.2, sem persona; respostas analisadas separadamente. |
 
-Ficam excluídos os integrantes da equipe e quem não participou de investigações no período, filtrados pela pergunta Q1. [H] O recrutamento será por conveniência, na rede profissional dos integrantes — dois atuam como desenvolvedores (Entrega 1, seção 1.2) — e em comunidades on-line de observabilidade. Por isso, é provável que desenvolvedores e poucas organizações predominem na amostra. Se responderem menos de cinco SREs, os resultados sobre esse perfil serão tratados como indícios, e o uso de DevOps e profissionais de plataforma com plantão como participantes proxy será discutido com o docente e registrado como limitação. Os resultados descrevem a amostra obtida, não a população de profissionais.
+Ficam excluídos os integrantes da equipe e quem não participou de investigações no período, filtrados pela pergunta Q1. [H] O recrutamento será por conveniência, na rede profissional dos integrantes (dois deles atuam como desenvolvedores, conforme a Entrega 1, seção 1.2) e em comunidades on-line de observabilidade. Por isso, é provável que desenvolvedores e poucas organizações predominem na amostra. Se responderem menos de cinco SREs, os resultados sobre esse perfil serão tratados como indícios, e o uso de DevOps e profissionais de plataforma com plantão como participantes proxy será discutido com o docente e registrado como limitação. Os resultados descrevem a amostra obtida, não a população de profissionais.
 
 #### Aspectos éticos
 
-- **Dados e riscos deste projeto:** o questionário trata de incidentes de trabalho. O principal risco não está nos dados pessoais pedidos, que são mínimos, mas no que o respondente pode relatar nas perguntas abertas: nomes de sistemas, arquitetura interna, clientes ou falhas não divulgadas do empregador; trechos de logs com dados pessoais de usuários finais ou credenciais, possibilidade já registrada na Entrega 1, seção 5.5; relatos de erros de diagnóstico que exponham o respondente ou colegas.
+- **Dados e riscos deste projeto:** o questionário trata de incidentes de trabalho. Os dados pessoais pedidos são mínimos. O principal risco está no que o respondente pode relatar nas perguntas abertas: nomes de sistemas, arquitetura interna, clientes ou falhas não divulgadas do empregador; trechos de logs com dados pessoais de usuários finais ou credenciais, possibilidade já registrada na Entrega 1, seção 5.5; relatos de erros de diagnóstico que exponham o respondente ou colegas.
 - **Voluntariedade:** parte dos contatos são colegas de trabalho dos integrantes. Para reduzir a pressão para participar, o convite é enviado por canais coletivos, sem cobrança individual nem lembretes personalizados, e não há incentivo. Apenas o consentimento, a triagem e o papel profissional são obrigatórios; as demais perguntas podem ficar em branco.
 - **Consentimento:** a primeira página informa objetivo, duração, uso dos dados, ausência de identificação e prazo de descarte. O questionário só prossegue após o aceite. O texto também informa o limite do direito de desistir: antes do envio, basta fechar a página; depois dele, como as respostas não são identificadas, não é possível localizar e excluir uma resposta específica.
 - **Minimização:** não são coletados nome, e-mail, empresa, cargo exato, idade, gênero ou localização. A coleta automática de e-mail fica desativada na ferramenta. Experiência e tamanho do sistema são perguntados em faixas. Cada pergunta corresponde a um dado da tabela acima.
@@ -116,13 +116,13 @@ Esta solução prioriza dados que exigem aprofundamento e que um questionário c
 |---|---|---|
 | Desenvolvedor(a) backend | Mantém pelo menos um serviço em produção e participou da investigação ou da correção de um incidente nos últimos 6 meses. | P02. |
 | SRE | Atuou na triagem ou no diagnóstico de um incidente nos últimos 6 meses. | P01; contraponto do repasse entre SRE e desenvolvedor. |
-| DevOps ou engenharia de plataforma | Mesmo critério do SRE, em organizações que não possuem esse cargo. | Participante proxy de P01, registrado como tal. |
+| DevOps ou engenharia de plataforma | Mesmo critério do SRE, em organizações que não têm esse cargo. | Participante proxy de P01, registrado como tal. |
 
 A meta é realizar de 4 a 6 entrevistas, com pelo menos dois desenvolvedores e dois SREs ou proxies. A janela de 6 meses é menor que a do questionário porque a entrevista depende da memória de um incidente específico. Ficam excluídos os integrantes da equipe e pessoas que trabalham na mesma equipe do entrevistador; se não houver alternativa, outro integrante conduz a entrevista. O recrutamento usa o formulário de interesse do questionário I01 e a rede profissional dos integrantes. [H] A amostra será pequena e por conveniência, e os relatos estão sujeitos a viés de memória e à tendência de descrever o processo ideal em vez do real; perguntar sobre um incidente concreto reduz, mas não elimina, esse viés. Essas limitações serão registradas com os resultados.
 
 #### Aspectos éticos
 
-- **Dados e riscos deste projeto:** a entrevista pede o relato detalhado de um incidente real. Isso pode revelar informações confidenciais do empregador — arquitetura, clientes, falhas não divulgadas — e expor erros do participante ou de colegas. A voz gravada também é um dado pessoal identificável.
+- **Dados e riscos deste projeto:** a entrevista pede o relato detalhado de um incidente real. Isso pode revelar informações confidenciais do empregador (arquitetura, clientes, falhas não divulgadas) e expor erros do participante ou de colegas. A voz gravada também é um dado pessoal identificável.
 - **Voluntariedade:** o entrevistador não entrevista colegas da própria equipe de trabalho. O participante pode deixar de responder qualquer pergunta ou interromper a entrevista sem justificativa e sem consequência. Não há incentivo.
 - **Consentimento:** o termo, adaptado de `instrumentos/termo_consentimento_modelo.md`, é enviado com antecedência e confirmado verbalmente no início. A gravação de áudio tem consentimento separado; se recusada, a entrevista ocorre apenas com anotações.
 - **Minimização:** registram-se apenas papel, faixa de experiência e tipo de sistema. Não se registram nome, empresa ou cargo exato. O participante é orientado a descrever os serviços de forma genérica (por exemplo, “o serviço de pagamento”) e a não compartilhar tela nem trechos de logs.
@@ -155,7 +155,7 @@ Esta solução prioriza o comportamento efetivo do SRE durante uma investigaçã
 
 | Perfil/stakeholder | Critério de inclusão | Relação com persona/público |
 |---|---|---|
-| SRE | Tem pelo menos 1 ano de experiência com sistemas compostos por vários serviços, investigou incidentes nos últimos 12 meses e já usou ferramentas de traces e de métricas. | P01 — usuário prioritário. |
+| SRE | Tem pelo menos 1 ano de experiência com sistemas compostos por vários serviços, investigou incidentes nos últimos 12 meses e já usou ferramentas de traces e de métricas. | P01, usuário prioritário. |
 | DevOps ou engenharia de plataforma com plantão | Mesmos critérios, em organizações que não possuem o cargo de SRE. | Participante proxy de P01, registrado como tal; relacionado a P04. |
 
 A meta é realizar de 3 a 5 sessões. Ficam excluídos os integrantes da equipe, o participante do piloto e pessoas que trabalham na mesma equipe do moderador. [H] A observação ocorre em um ambiente controlado, com dados sintéticos e ferramentas que podem ser diferentes das usadas pelo participante no trabalho. Por isso, a familiaridade prévia com as ferramentas é registrada e a semelhança com o trabalho real é perguntada ao final. A presença do observador também pode alterar o comportamento. Essas limitações e o eventual uso de proxies serão registrados com os resultados.
@@ -243,14 +243,14 @@ A meta é realizar uma ou duas sessões com 4 a 6 participantes cada, com pelo m
 
 > **Investigação de incidentes em sistemas com vários serviços**
 >
-> Este questionário faz parte de um trabalho da disciplina de Interação Humano-Computador da FEI. Queremos entender como profissionais investigam incidentes — falhas, indisponibilidades ou degradação de desempenho — em sistemas compostos por vários serviços que se comunicam entre si. **Estamos estudando a atividade e as ferramentas, não avaliando o seu desempenho.**
+> Este questionário faz parte de um trabalho da disciplina de Interação Humano-Computador da FEI. Queremos entender como profissionais investigam incidentes (falhas, indisponibilidades ou degradação de desempenho) em sistemas compostos por vários serviços que se comunicam entre si. **Estamos estudando a atividade e as ferramentas, não avaliando o seu desempenho.**
 >
 > - Duração estimada: 10 a 15 minutos.
 > - Não pedimos nome, e-mail nem empresa. Nas respostas abertas, **não inclua** nomes de pessoas, empresas, clientes ou sistemas, nem trechos de logs ou outros dados de produção.
 > - Somente as perguntas marcadas como obrigatórias precisam ser respondidas.
 > - A participação é voluntária. Você pode desistir a qualquer momento antes do envio, fechando esta página, e nada será registrado. Como as respostas não são identificadas, depois do envio não conseguiremos localizar e excluir uma resposta específica.
 > - As respostas serão usadas apenas nesta disciplina, analisadas pela equipe e divulgadas somente de forma agregada ou em trechos anonimizados. Os dados brutos serão excluídos ao final do semestre letivo.
-> - Responsáveis: Willian Verenka Oliveira Silva, Gabriel Lovato, Théo Zago Zimmermann e João Vitor Sitta Giopatto (Equipe 11). Contato: PENDENTE — e-mail institucional de um integrante, a definir antes do piloto.
+> - Responsáveis: Willian Verenka Oliveira Silva, Gabriel Lovato, Théo Zago Zimmermann e João Vitor Sitta Giopatto (Equipe 11). Contato: willianverenkag@gmail.com.
 
 **C1.** Você leu as informações acima e concorda em participar? *(obrigatória)*
 
@@ -568,6 +568,31 @@ ________
 
 > **Mensagem final:** Obrigado pela participação! Se quiser participar de uma conversa ou atividade posterior sobre este tema (entrevista, observação ou grupo de discussão), use este formulário separado: [link PENDENTE]. Ele não tem ligação com as respostas deste questionário.
 
+**Formulário de interesse em participar de I02–I04:** PENDENTE.
+
+> **Interesse em participar de atividades sobre investigação de incidentes**
+>
+> Este formulário é separado do questionário sobre investigação de incidentes e não tem ligação com as suas respostas. O contato informado aqui serve só para convidar você para uma das atividades abaixo e será excluído depois do fim das coletas. Responsáveis: Willian Verenka Oliveira Silva, Gabriel Lovato, Théo Zago Zimmermann e João Vitor Sitta Giopatto (Equipe 11). Contato: willianverenkag@gmail.com.
+
+**1.** Como podemos falar com você? Informe um e-mail ou um telefone. *(obrigatória; resposta curta)*
+
+**2.** Qual é o seu papel principal no trabalho atualmente? *(obrigatória)*
+
+- ○ SRE (Site Reliability Engineer)
+- ○ DevOps ou engenharia de plataforma
+- ○ Especialista em observabilidade ou monitoramento
+- ○ Desenvolvimento de software — backend
+- ○ Desenvolvimento de software — outro (frontend, mobile, full stack)
+- ○ Qualidade de software (QA)
+- ○ Gestão de equipe técnica
+- ○ Outro: ________
+
+**3.** De quais atividades você aceitaria participar? *(obrigatória)*
+
+- ☐ Entrevista individual por videochamada (cerca de 45 minutos)
+- ☐ Sessão de observação de uma investigação simulada (cerca de 45 minutos)
+- ☐ Grupo de discussão por videochamada (cerca de 75 minutos)
+
 #### Como os dados serão analisados
 
 1. **Preparação da base:** excluir respostas sem consentimento, com “Não” em Q1 ou do piloto; sinalizar respostas idênticas enviadas em sequência como possíveis duplicatas; anonimizar as respostas abertas, conforme os aspectos éticos de A01.
@@ -679,8 +704,8 @@ Os resultados alimentam a revisão das personas (Entrega 3), as metas de usabili
 #### Como os dados serão analisados
 
 1. **Preparação:** transcrição anonimizada de cada entrevista ou, quando não houver gravação, consolidação das notas do anotador no mesmo dia.
-2. **Linha do tempo por entrevista:** reconstrução do incidente relatado — gatilho, sequência de fontes consultadas, mudanças de direção, momento da primeira explicação e repasse —, o que permite comparar participantes e confrontar o relato com as tarefas modeladas na Entrega 5.
-3. **Codificação temática:** códigos iniciais derivados das hipóteses — ORIGEM-EFEITO e DEPENDÊNCIAS (H01); VOLUME e APROFUNDAMENTO (H02); SUFICIÊNCIA, CONFIANÇA e REJEIÇÃO (H03); REPASSE, RETRABALHO e ACESSO (H04) — e códigos novos que surgirem. Dois integrantes codificam separadamente as duas primeiras entrevistas, comparam os resultados, ajustam as definições dos códigos e só então codificam as demais.
+2. **Linha do tempo por entrevista:** reconstrução do incidente relatado (gatilho, sequência de fontes consultadas, mudanças de direção, momento da primeira explicação e repasse), o que permite comparar participantes e confrontar o relato com as tarefas modeladas na Entrega 5.
+3. **Codificação temática:** códigos iniciais derivados das hipóteses e códigos novos que surgirem. Os códigos iniciais são ORIGEM-EFEITO e DEPENDÊNCIAS (H01); VOLUME e APROFUNDAMENTO (H02); SUFICIÊNCIA, CONFIANÇA e REJEIÇÃO (H03); REPASSE, RETRABALHO e ACESSO (H04). Dois integrantes codificam separadamente as duas primeiras entrevistas, comparam os resultados, ajustam as definições dos códigos e só então codificam as demais.
 4. **Comparação entre papéis:** matriz participante × tema, comparando desenvolvedores e SREs. Temas citados por um único participante são mantidos como indícios, não como padrões.
 5. **Uso no design:** os resultados produzem uma lista de critérios de suficiência e de informações mínimas do repasse, com o número de participantes que citou cada item, e uma lista de termos do domínio. Esses produtos alimentam a revisão de P01 e P02, o conteúdo das hipóteses e evidências (F03) e a comunicação do diagnóstico. As evidências sobre H01–H04 são trianguladas com I01, I03 e I04 antes de alterar o estado das hipóteses.
 
@@ -693,7 +718,7 @@ Os resultados alimentam a revisão das personas (Entrega 3), as metas de usabili
 
 #### Procedimento padronizado de aplicação
 
-1. **Preparação:** instalar, em máquina da equipe, uma aplicação de demonstração de microsserviços com telemetria sintética — por exemplo, a aplicação de demonstração do projeto OpenTelemetry, que simula uma loja virtual e oferece traces, métricas, logs e injeção de falhas por *feature flags*. Registrar a versão e a configuração utilizadas. Manter o gerador de carga ativo e, 10 minutos antes de cada sessão, ativar a mesma falha no serviço de pagamento, de modo que os erros também apareçam no serviço de finalização da compra e na loja. Restaurar o ambiente entre as sessões. Testar a gravação, preparar a ficha e realizar uma sessão piloto com um profissional fora da amostra para calibrar a instrução, o tempo e as definições da ficha. Definir moderador e observador. Se o ambiente não puder ser preparado, a técnica será rediscutida com o docente antes da aplicação; dados de produção não serão usados como substituto.
+1. **Preparação:** instalar, em máquina da equipe, uma aplicação de demonstração de microsserviços com telemetria sintética. Um exemplo é a aplicação de demonstração do projeto OpenTelemetry, que simula uma loja virtual e oferece traces, métricas, logs e injeção de falhas por *feature flags*. Registrar a versão e a configuração utilizadas. Manter o gerador de carga ativo e, 10 minutos antes de cada sessão, ativar a mesma falha no serviço de pagamento, de modo que os erros também apareçam no serviço de finalização da compra e na loja. Restaurar o ambiente entre as sessões. Testar a gravação, preparar a ficha e realizar uma sessão piloto com um profissional fora da amostra para calibrar a instrução, o tempo e as definições da ficha. Definir moderador e observador. Se o ambiente não puder ser preparado, a técnica será rediscutida com o docente antes da aplicação; dados de produção não serão usados como substituto.
 2. **Apresentação/consentimento:** ler a abertura padronizada e confirmar o consentimento e as opções de gravação. Fazer o aquecimento do pensar em voz alta. Conduzir uma familiarização de até 5 minutos, em que o moderador mostra onde ficam traces, métricas e logs usando um serviço sem relação com a falha.
 3. **Aplicação:** ler e entregar por escrito a instrução da tarefa. Iniciar a cronometragem. O moderador usa apenas as intervenções permitidas; o observador preenche a ficha com a minutagem dos eventos. A tarefa termina quando o participante comunica o diagnóstico ou após 25 minutos.
 4. **Encerramento:** fazer as perguntas pós-sessão, agradecer e, se o participante quiser, informar qual falha foi simulada. Encerrar a gravação e restaurar o ambiente.
@@ -779,10 +804,10 @@ Os resultados alimentam a revisão das personas (Entrega 3), as metas de usabili
 #### Como os dados serão analisados
 
 1. **Codificação das sessões:** o observador completa a ficha a partir da gravação. Na primeira sessão, dois integrantes codificam os eventos separadamente, comparam o resultado e ajustam as definições dos códigos antes de codificar as demais.
-2. **Linha do tempo por sessão:** sequência codificada de eventos e medidas descritivas — tempos até HIP+ e COM, número de trocas de fonte, filtros e serviços examinados antes da primeira hipótese.
+2. **Linha do tempo por sessão:** sequência codificada de eventos e medidas descritivas: tempos até HIP+ e COM, número de trocas de fonte, filtros e serviços examinados antes da primeira hipótese.
 3. **Comparação entre sessões:** fontes usadas no início da investigação; uso das relações entre serviços (DEP) antes ou depois da primeira hipótese e na decisão sobre a origem (H01); volume examinado antes de restringir a análise (H02); concentração de HES e RET, que indica rupturas; sinais citados para separar origem e efeitos.
 4. **Comunicação final:** comparação do conteúdo dos diagnósticos comunicados (origem, serviços afetados, evidências e grau de certeza) para identificar uma estrutura mínima de comunicação.
-5. **Uso no design:** os resultados são apresentados de forma agregada e alimentam a revisão das tarefas da Entrega 5, as metas de eficiência da Entrega 8 — com a ressalva do ambiente controlado — e a composição da primeira visão e da inspeção do subgrafo (F02). Com 3 a 5 sessões, os achados indicam padrões a confirmar; são triangulados com I01 e I02 antes de alterar o estado de H01 e H02.
+5. **Uso no design:** os resultados são apresentados de forma agregada e alimentam a revisão das tarefas da Entrega 5, as metas de eficiência da Entrega 8 (com a ressalva do ambiente controlado) e a composição da primeira visão e da inspeção do subgrafo (F02). Com 3 a 5 sessões, os achados indicam padrões a confirmar; são triangulados com I01 e I02 antes de alterar o estado de H01 e H02.
 
 ### Instrumento I04 — Grupo focal
 
@@ -824,7 +849,7 @@ O moderador apresenta a mensagem fictícia abaixo, na tela e no chat:
 
 > “Pessoal, desde as 14h20 a consulta de status de pedidos está retornando erro 5xx para parte dos clientes. Parece ser o serviço de estoque, que está lento. Vou abrir um chamado para o time responsável. Sigo acompanhando.”
 
-- **Atividade individual (3 min):** “Imaginem que essa mensagem chegou a vocês e que a próxima etapa é sua — investigar, corrigir ou verificar, conforme o seu papel. Escrevam no quadro, cada um na sua área, o que precisariam saber para continuar.”
+- **Atividade individual (3 min):** “Imaginem que essa mensagem chegou a vocês e que a próxima etapa é sua: investigar, corrigir ou verificar, conforme o seu papel. Escrevam no quadro, cada um na sua área, o que precisariam saber para continuar.”
 - **G3.** O que cada um escreveu? O que aparece em comum? O que só um papel precisa?
 - **G4.** O que nessa mensagem é suficiente para o seu papel? O que é dispensável?
 - **G5.** Em que situação essa mensagem poderia levar alguém a uma ação equivocada?
@@ -833,7 +858,7 @@ O moderador apresenta a mensagem fictícia abaixo, na tela e no chat:
 
 - **G6.** Nas equipes de vocês, quem pode ver o quê durante uma investigação? Como isso afeta o repasse?
   - *Sondagens:* Já precisaram pedir acesso no meio de um incidente? Como lidam com dados pessoais de clientes em logs? Há informação que não pode ser enviada a outro papel?
-- **G7.** Quando faltam dados — um serviço sem registros, traces incompletos —, como isso é comunicado a quem recebe a investigação?
+- **G7.** Quando faltam dados (um serviço sem registros, traces incompletos), como isso é comunicado a quem recebe a investigação?
 
 **Bloco 5 — Credibilidade da explicação e registro (12 min)**
 
@@ -870,7 +895,7 @@ O moderador apresenta a mensagem fictícia abaixo, na tela e no chat:
 1. **Preparação:** transcrição anonimizada da sessão ou, sem gravação, consolidação das notas do anotador e do moderador no mesmo dia, junto com o conteúdo do quadro.
 2. **Matriz papel × informação necessária:** construída a partir da atividade do Bloco 3 e da discussão. Informações citadas por todos os papéis indicam o conteúdo mínimo do repasse; informações específicas de um papel indicam candidatos a aprofundamento sob demanda (H02).
 3. **Codificação temática:** códigos iniciais REPASSE, PERDA DE CONTEXTO, RETRABALHO, ACESSO, DADOS SENSÍVEIS, LACUNA DE TELEMETRIA, CREDIBILIDADE e REGISTRO, além de códigos novos que surgirem. Dois integrantes codificam a transcrição separadamente, comparam os resultados e resolvem divergências.
-4. **Convergências, divergências e dinâmica:** registro dos pontos em que os papéis concordam ou discordam, e da dinâmica do grupo — dominância de um participante, concordância rápida, silêncio de algum papel —, para não tratar consenso aparente como acordo.
+4. **Convergências, divergências e dinâmica:** registro dos pontos em que os papéis concordam ou discordam, e da dinâmica do grupo (dominância de um participante, concordância rápida, silêncio de algum papel), para não tratar consenso aparente como acordo.
 5. **Uso no design:** os resultados definem o conteúdo mínimo do diagnóstico compartilhado e os requisitos candidatos para permissões, ocultação de dados sensíveis e exibição de limitações da análise. Também alimentam a revisão de P03 e P04 e a decisão sobre registro/auditoria. As evidências sobre H04, H02 e H03 são trianguladas com I01 e I02 antes de alterar o estado das hipóteses.
 
 ## Síntese
@@ -891,14 +916,14 @@ Os resultados terão limitações já conhecidas: amostra por conveniência, pro
 
 ## Checklist
 
-- [ ] Hipóteses/lacunas prioritárias da Entrega 1 foram revisitadas.
-- [ ] Se o escopo de IHC foi derivado de TCC técnico, a coleta investiga a plausibilidade do usuário, tarefa e contexto adotados.
-- [ ] Perguntas não pressupõem que dashboard, CRUD, filtros ou relatórios sejam necessários; investigam a necessidade.
-- [ ] Cada dado a coletar responde uma dúvida concreta do projeto ou justifica outra necessidade de informação.
-- [ ] Parte A identifica dados e perfis de coleta de forma específica.
-- [ ] Aspectos éticos são contextualizados para o projeto.
-- [ ] Há uma técnica completa por integrante e técnicas distintas.
-- [ ] Questionário está incluído entre as técnicas.
-- [ ] Cada instrumento possui objetivo, público, procedimento e conteúdo integral.
-- [ ] Perguntas evitam indução e coletam apenas dados necessários.
-- [ ] Está claro como os dados serão analisados e usados no design.
+- [x] Hipóteses/lacunas prioritárias da Entrega 1 foram revisitadas.
+- [x] Se o escopo de IHC foi derivado de TCC técnico, a coleta investiga a plausibilidade do usuário, tarefa e contexto adotados.
+- [x] Perguntas não pressupõem que dashboard, CRUD, filtros ou relatórios sejam necessários; investigam a necessidade.
+- [x] Cada dado a coletar responde uma dúvida concreta do projeto ou justifica outra necessidade de informação.
+- [x] Parte A identifica dados e perfis de coleta de forma específica.
+- [x] Aspectos éticos são contextualizados para o projeto.
+- [x] Há uma técnica completa por integrante e técnicas distintas.
+- [x] Questionário está incluído entre as técnicas.
+- [x] Cada instrumento possui objetivo, público, procedimento e conteúdo integral.
+- [x] Perguntas evitam indução e coletam apenas dados necessários.
+- [x] Está claro como os dados serão analisados e usados no design.
